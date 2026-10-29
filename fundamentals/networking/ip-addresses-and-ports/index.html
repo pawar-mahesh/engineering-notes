@@ -9,6 +9,8 @@
         <meta name="description" content="Practical, interconnected notes for engineering foundations.">
       
       
+        <meta name="author" content="Mahesh Pawar">
+      
       
         <link rel="canonical" href="https://pawar-mahesh.github.io/engineering-notes/fundamentals/networking/ip-addresses-and-ports/">
       
@@ -126,7 +128,8 @@
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         </label>
-        <div class="md-search" data-md-component="search" role="dialog">
+        
+<div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -138,7 +141,6 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
-        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -419,6 +421,292 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#ipv4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPv4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPv6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public IP Address
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Private IP Address
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Localhost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is a Port?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-ports-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Are Ports Needed?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IP + Port
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-urls-often-do-not-show-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why URLs Often Do Not Show Ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-ip-port-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS + IP + Port + HTTP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mern-mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MERN Mental Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-multiple-applications-use-the-same-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can Multiple Applications Use the Same Port?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Labs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Problems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misunderstandings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misunderstandings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Revision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completion-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Topics
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -667,6 +955,93 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/notes-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes Preparation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -709,6 +1084,292 @@
     <span class="md-ellipsis">
       
         Why Do We Need IP Addresses?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipv4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPv4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ipv6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IPv6
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#public-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Public IP Address
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#private-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Private IP Address
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#localhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Localhost
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is a Port?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-ports-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Are Ports Needed?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ip-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IP + Port
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-urls-often-do-not-show-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why URLs Often Do Not Show Ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#development-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Development Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-ip-port-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS + IP + Port + HTTP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mern-mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MERN Mental Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#can-multiple-applications-use-the-same-port" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Can Multiple Applications Use the Same Port?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Labs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Problems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misunderstandings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misunderstandings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Revision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completion-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Topics
       
     </span>
   </a>
@@ -771,7 +1432,7 @@
 <a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Destination IP
 </code></pre></div>
 <hr />
-<h1 id="ipv4">IPv4</h1>
+<h2 id="ipv4">IPv4</h2>
 <p>IPv4 addresses are commonly represented using four decimal numbers.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>192.168.1.10
@@ -783,7 +1444,7 @@
 <p>IPv4 provides a 32-bit address space.</p>
 <p>For Day 2, you do not need to study binary representation or subnet calculations deeply.</p>
 <hr />
-<h1 id="ipv6">IPv6</h1>
+<h2 id="ipv6">IPv6</h2>
 <p>IPv6 was introduced partly because the available IPv4 address space is limited.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>2001:db8::1
@@ -814,7 +1475,7 @@
 </table>
 <p>For now, understand the purpose rather than memorizing IPv6 formatting rules.</p>
 <hr />
-<h1 id="public-ip-address">Public IP Address</h1>
+<h2 id="public-ip-address">Public IP Address</h2>
 <p>A public IP address is globally routable on the public internet, subject to network and firewall configuration.</p>
 <p>Conceptually:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Internet
@@ -833,7 +1494,7 @@
 <a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>Web Server
 </code></pre></div>
 <hr />
-<h1 id="private-ip-address">Private IP Address</h1>
+<h2 id="private-ip-address">Private IP Address</h2>
 <p>Private IP addresses are intended for private networks and are not directly globally routed across the public internet.</p>
 <p>Common IPv4 private ranges include:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>10.0.0.0/8
@@ -847,7 +1508,7 @@
 </code></pre></div>
 <p>may represent a laptop inside a home or office network.</p>
 <hr />
-<h2 id="public-vs-private-ip">Public vs Private IP</h2>
+<h3 id="public-vs-private-ip">Public vs Private IP</h3>
 <table>
 <thead>
 <tr>
@@ -884,7 +1545,7 @@
 <li>Docker networking</li>
 </ul>
 <hr />
-<h1 id="localhost">Localhost</h1>
+<h2 id="localhost">Localhost</h2>
 <p><code>localhost</code> refers to the local computer.</p>
 <p>Common IPv4 loopback address:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>127.0.0.1
@@ -901,7 +1562,7 @@
 </code></pre></div>
 <p>typically refers to the same local machine.</p>
 <hr />
-<h2 id="loopback">Loopback</h2>
+<h3 id="loopback">Loopback</h3>
 <p>Loopback traffic does not need to leave the machine and travel across the external network.</p>
 <p>Conceptually:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Application
@@ -912,7 +1573,7 @@
 </code></pre></div>
 <p>This is extremely useful during local development.</p>
 <hr />
-<h1 id="what-is-a-port">What Is a Port?</h1>
+<h2 id="what-is-a-port">What Is a Port?</h2>
 <p>A machine can run many network services at the same time.</p>
 <p>An IP address identifies the network endpoint.</p>
 <p>A port helps distinguish the service/process endpoint being addressed for a transport protocol.</p>
@@ -938,7 +1599,7 @@
 <a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>Port
 </code></pre></div>
 <hr />
-<h1 id="why-are-ports-needed">Why Are Ports Needed?</h1>
+<h2 id="why-are-ports-needed">Why Are Ports Needed?</h2>
 <p>Imagine one server running:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>SSH
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>HTTP Server
@@ -961,7 +1622,7 @@
 </code></pre></div>
 <p>Without ports, the transport layer would have no standard way to distinguish multiple network services sharing an IP address.</p>
 <hr />
-<h1 id="common-ports">Common Ports</h1>
+<h2 id="common-ports">Common Ports</h2>
 <p>Know these common defaults:</p>
 <table>
 <thead>
@@ -1011,7 +1672,7 @@
 <p>Many services can be configured to listen on different ports.</p>
 </blockquote>
 <hr />
-<h1 id="ip-port">IP + Port</h1>
+<h2 id="ip-port">IP + Port</h2>
 <p>An IP address and port commonly appear together:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>203.0.113.10:443
 </code></pre></div>
@@ -1037,7 +1698,7 @@
 <a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a>Service listening on port 3000
 </code></pre></div>
 <hr />
-<h1 id="why-urls-often-do-not-show-ports">Why URLs Often Do Not Show Ports</h1>
+<h2 id="why-urls-often-do-not-show-ports">Why URLs Often Do Not Show Ports</h2>
 <p>When a URL uses a protocol with a default port, the port can usually be omitted.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>http://example.com
@@ -1059,7 +1720,7 @@
 </code></pre></div>
 <p>normally refer to the same default HTTPS port.</p>
 <hr />
-<h1 id="development-example">Development Example</h1>
+<h2 id="development-example">Development Example</h2>
 <p>Suppose locally you run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>React
 <a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>localhost:5173
@@ -1083,7 +1744,7 @@
 </code></pre></div>
 <p>This is why the browser can distinguish between the frontend and backend.</p>
 <hr />
-<h1 id="dns-ip-port-http">DNS + IP + Port + HTTP</h1>
+<h2 id="dns-ip-port-http">DNS + IP + Port + HTTP</h2>
 <p>Now combine Day 1 and Day 2.</p>
 <p>Suppose the browser requests:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>https://api.example.com/users
@@ -1120,7 +1781,7 @@
 </code></pre></div>
 <p>This distinction should become automatic.</p>
 <hr />
-<h1 id="mern-mental-model">MERN Mental Model</h1>
+<h2 id="mern-mental-model">MERN Mental Model</h2>
 <p>Suppose React calls:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://api.myapp.com/users"</span><span class="p">);</span>
 </code></pre></div>
@@ -1144,7 +1805,7 @@
 <p>Day 1 explained the HTTP layer.</p>
 <p>Day 2 explains how the client locates and reaches the service.</p>
 <hr />
-<h1 id="can-multiple-applications-use-the-same-port">Can Multiple Applications Use the Same Port?</h1>
+<h2 id="can-multiple-applications-use-the-same-port">Can Multiple Applications Use the Same Port?</h2>
 <p>Normally, two processes cannot bind to the exact same combination of:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>IP address
 <a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>+
@@ -1165,8 +1826,8 @@
 </code></pre></div>
 <p>This is a common development issue.</p>
 <hr />
-<h1 id="practical-labs">Practical Labs</h1>
-<h2 id="lab-1-start-a-local-server">Lab 1 — Start a Local Server</h2>
+<h2 id="practical-labs">Practical Labs</h2>
+<h3 id="lab-1-start-a-local-server">Lab 1 — Start a Local Server</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span>
 </code></pre></div>
@@ -1180,7 +1841,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>curl<span class="w"> </span>http://localhost:8000
 </code></pre></div>
 <hr />
-<h2 id="lab-2-identify-the-listening-process">Lab 2 — Identify the Listening Process</h2>
+<h3 id="lab-2-identify-the-listening-process">Lab 2 — Identify the Listening Process</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>lsof<span class="w"> </span>-i<span class="w"> </span>:8000
 </code></pre></div>
@@ -1191,7 +1852,7 @@
 <a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>Listening Process
 </code></pre></div>
 <hr />
-<h2 id="lab-3-try-the-wrong-port">Lab 3 — Try the Wrong Port</h2>
+<h3 id="lab-3-try-the-wrong-port">Lab 3 — Try the Wrong Port</h3>
 <p>While the server is running on:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>8000
 </code></pre></div>
@@ -1207,7 +1868,7 @@
 <a id="__codelineno-54-5" name="__codelineno-54-5" href="#__codelineno-54-5"></a>Wrong service endpoint
 </code></pre></div>
 <hr />
-<h2 id="lab-4-run-two-services">Lab 4 — Run Two Services</h2>
+<h3 id="lab-4-run-two-services">Lab 4 — Run Two Services</h3>
 <p>Start one service on:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>8000
 </code></pre></div>
@@ -1227,21 +1888,21 @@
 </code></pre></div>
 <p>represent different server processes/services.</p>
 <hr />
-<h1 id="debugging-commands">Debugging Commands</h1>
-<h2 id="find-a-process-using-a-port">Find a Process Using a Port</h2>
+<h2 id="debugging-commands">Debugging Commands</h2>
+<h3 id="find-a-process-using-a-port">Find a Process Using a Port</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a>lsof<span class="w"> </span>-i<span class="w"> </span>:3000
 </code></pre></div>
 <p>Useful when you see:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>Address already in use
 </code></pre></div>
 <hr />
-<h2 id="show-network-connections">Show Network Connections</h2>
+<h3 id="show-network-connections">Show Network Connections</h3>
 <p>On macOS/Linux:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>lsof<span class="w"> </span>-i<span class="w"> </span>-P<span class="w"> </span>-n
 </code></pre></div>
 <p>Depending on the operating system, <code>ss</code> or <code>netstat</code> may also be useful.</p>
 <hr />
-<h2 id="test-a-local-service">Test a Local Service</h2>
+<h3 id="test-a-local-service">Test a Local Service</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>curl<span class="w"> </span>http://localhost:3000
 </code></pre></div>
 <p>This helps answer:</p>
@@ -1249,8 +1910,8 @@
 <p>Is something actually listening and responding on this port?</p>
 </blockquote>
 <hr />
-<h1 id="common-problems">Common Problems</h1>
-<h2 id="connection-refused">Connection Refused</h2>
+<h2 id="common-problems">Common Problems</h2>
+<h3 id="connection-refused">Connection Refused</h3>
 <p>Possible reasons:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a>No service running
 <a id="__codelineno-65-2" name="__codelineno-65-2" href="#__codelineno-65-2"></a>Wrong port
@@ -1269,7 +1930,7 @@
 <a id="__codelineno-66-7" name="__codelineno-66-7" href="#__codelineno-66-7"></a>Can curl reach it?
 </code></pre></div>
 <hr />
-<h2 id="port-already-in-use">Port Already in Use</h2>
+<h3 id="port-already-in-use">Port Already in Use</h3>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>EADDRINUSE
 </code></pre></div>
@@ -1281,8 +1942,8 @@
 </code></pre></div>
 <p>Then identify the process before deciding whether it should be stopped.</p>
 <hr />
-<h1 id="common-misunderstandings">Common Misunderstandings</h1>
-<h2 id="ip-address-and-port-are-not-the-same">IP Address and Port Are Not the Same</h2>
+<h2 id="common-misunderstandings">Common Misunderstandings</h2>
+<h3 id="ip-address-and-port-are-not-the-same">IP Address and Port Are Not the Same</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-70-1" name="__codelineno-70-1" href="#__codelineno-70-1"></a>IP
 <a id="__codelineno-70-2" name="__codelineno-70-2" href="#__codelineno-70-2"></a>→ destination endpoint/address
 <a id="__codelineno-70-3" name="__codelineno-70-3" href="#__codelineno-70-3"></a>
@@ -1290,7 +1951,7 @@
 <a id="__codelineno-70-5" name="__codelineno-70-5" href="#__codelineno-70-5"></a>→ transport service endpoint
 </code></pre></div>
 <hr />
-<h2 id="localhost-does-not-mean-internet">localhost Does Not Mean Internet</h2>
+<h3 id="localhost-does-not-mean-internet">localhost Does Not Mean Internet</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-71-1" name="__codelineno-71-1" href="#__codelineno-71-1"></a>localhost
 </code></pre></div>
 <p>means the current computer.</p>
@@ -1298,7 +1959,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-72-1" name="__codelineno-72-1" href="#__codelineno-72-1"></a>development server somewhere on the internet
 </code></pre></div>
 <hr />
-<h2 id="a-port-does-not-identify-a-global-application">A Port Does Not Identify a Global Application</h2>
+<h3 id="a-port-does-not-identify-a-global-application">A Port Does Not Identify a Global Application</h3>
 <p>Port <code>3000</code> on your laptop and port <code>3000</code> on another server are unrelated.</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-73-1" name="__codelineno-73-1" href="#__codelineno-73-1"></a>192.168.1.10:3000
@@ -1308,7 +1969,7 @@
 </code></pre></div>
 <p>represent different endpoints.</p>
 <hr />
-<h1 id="security-considerations">Security Considerations</h1>
+<h2 id="security-considerations">Security Considerations</h2>
 <p>Network services should not expose unnecessary ports.</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-75-1" name="__codelineno-75-1" href="#__codelineno-75-1"></a>Public internet
@@ -1326,7 +1987,7 @@
 </ul>
 <p>Later AWS networking topics will build heavily on this.</p>
 <hr />
-<h1 id="performance-considerations">Performance Considerations</h1>
+<h2 id="performance-considerations">Performance Considerations</h2>
 <p>IP addressing and ports themselves are not usually the main application performance bottleneck.</p>
 <p>However network architecture can affect:</p>
 <ul>
@@ -1339,7 +2000,7 @@
 </ul>
 <p>These topics will be explored later.</p>
 <hr />
-<h1 id="interview-questions">Interview Questions</h1>
+<h2 id="interview-questions">Interview Questions</h2>
 <p>Try answering these without reading your notes.</p>
 <ol>
 <li>What is an IP address?</li>
@@ -1364,7 +2025,7 @@
 <li>Explain DNS → IP → port → HTTP.</li>
 </ol>
 <hr />
-<h1 id="quick-revision">Quick Revision</h1>
+<h2 id="quick-revision">Quick Revision</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-76-1" name="__codelineno-76-1" href="#__codelineno-76-1"></a>Network Communication
 <a id="__codelineno-76-2" name="__codelineno-76-2" href="#__codelineno-76-2"></a>│
 <a id="__codelineno-76-3" name="__codelineno-76-3" href="#__codelineno-76-3"></a>├── DNS
@@ -1387,45 +2048,45 @@
 <a id="__codelineno-77-5" name="__codelineno-77-5" href="#__codelineno-77-5"></a>└── Local Computer
 </code></pre></div>
 <hr />
-<h1 id="my-understanding">My Understanding</h1>
+<h2 id="my-understanding">My Understanding</h2>
 <p>An IP address identifies a destination on an IP network, while a port helps identify a specific service endpoint used by a transport protocol.</p>
 <p>A single machine can run many network applications because different services can listen on different ports.</p>
 <p><code>localhost</code> refers to the current machine, while public and private IP addresses serve different networking scopes.</p>
 <p>When a browser communicates with an application, DNS can first resolve the hostname to an IP address, the connection targets a service port, and HTTP carries the application request and response.</p>
 <hr />
-<h1 id="completion-checklist">Completion Checklist</h1>
+<h2 id="completion-checklist">Completion Checklist</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand what an IP address is</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand IPv4 vs IPv6 at a high level</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand public vs private IP</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Know the private IPv4 ranges</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand localhost</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand loopback</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand what a port is</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand why ports exist</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Know common ports</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand default HTTP and HTTPS ports</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand IP + port</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Run a local server on port 8000</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Use <code>curl</code> to access it</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Use <code>lsof</code> to identify the process</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Try accessing an unused port</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Explain DNS → IP → port → HTTP without notes</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand what an IP address is</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand IPv4 vs IPv6 at a high level</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand public vs private IP</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Know the private IPv4 ranges</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand localhost</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand loopback</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand what a port is</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand why ports exist</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Know common ports</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand default HTTP and HTTPS ports</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand IP + port</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Run a local server on port 8000</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Use <code>curl</code> to access it</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Use <code>lsof</code> to identify the process</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Try accessing an unused port</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Explain DNS → IP → port → HTTP without notes</li>
 </ul>
 <hr />
-<h1 id="references">References</h1>
-<h2 id="primary">Primary</h2>
+<h2 id="references">References</h2>
+<h3 id="primary">Primary</h3>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works">MDN — How the Web Works</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL">MDN — What Is a URL?</a></li>
 <li><a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml">IANA — Service Name and Port Number Registry</a></li>
 </ul>
-<h2 id="supporting">Supporting</h2>
+<h3 id="supporting">Supporting</h3>
 <ul>
 <li><a href="https://www.cloudflare.com/learning/dns/glossary/what-is-my-ip-address/">Cloudflare — What Is My IP Address?</a></li>
 </ul>
 <hr />
-<h1 id="related-topics">Related Topics</h1>
+<h2 id="related-topics">Related Topics</h2>
 <ul>
 <li><a href="../dns/">DNS</a></li>
 <li><a href="../tcp/">TCP</a></li>
@@ -1538,7 +2199,7 @@
     
       <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
-        <script src="../../../assets/javascripts/copyright.js"></script>
+        <script src="../../../assets/javascripts/site.js"></script>
       
     
   </body>

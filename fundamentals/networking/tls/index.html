@@ -9,6 +9,8 @@
         <meta name="description" content="Practical, interconnected notes for engineering foundations.">
       
       
+        <meta name="author" content="Mahesh Pawar">
+      
       
         <link rel="canonical" href="https://pawar-mahesh.github.io/engineering-notes/fundamentals/networking/tls/">
       
@@ -126,7 +128,8 @@
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         </label>
-        <div class="md-search" data-md-component="search" role="dialog">
+        
+<div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -138,7 +141,6 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
-        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -587,6 +589,303 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#confidentiality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confidentiality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integrity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symmetric-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symmetric Encryption
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asymmetric-cryptography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asymmetric Cryptography
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-tls-uses-both" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why TLS Uses Both
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tls-handshake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS Handshake
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clienthello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ClientHello
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serverhello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ServerHello
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#certificate-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificate Exchange
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-agreement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Agreement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session Keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tls-and-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS and HTTP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SNI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-sni-is-useful" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why SNI Is Useful
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tls-12-vs-tls-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS 1.2 vs TLS 1.3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Labs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Problems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misunderstandings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misunderstandings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Revision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completion-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Topics
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -667,6 +966,93 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/notes-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes Preparation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -709,6 +1095,303 @@
     <span class="md-ellipsis">
       
         Why Does TLS Exist?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confidentiality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Confidentiality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integrity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integrity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symmetric-encryption" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symmetric Encryption
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asymmetric-cryptography" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Asymmetric Cryptography
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-tls-uses-both" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why TLS Uses Both
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tls-handshake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS Handshake
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clienthello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ClientHello
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serverhello" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ServerHello
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#certificate-exchange" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Certificate Exchange
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-agreement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Agreement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session Keys
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tls-and-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS and HTTP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sni" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SNI
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-sni-is-useful" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why SNI Is Useful
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tls-12-vs-tls-13" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TLS 1.2 vs TLS 1.3
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Labs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Problems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misunderstandings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misunderstandings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Revision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completion-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Topics
       
     </span>
   </a>
@@ -780,7 +1463,7 @@
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>Authentication
 </code></pre></div>
 <hr />
-<h1 id="confidentiality">Confidentiality</h1>
+<h2 id="confidentiality">Confidentiality</h2>
 <p>Confidentiality protects data from unauthorized reading.</p>
 <p>Conceptually:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Plaintext
@@ -797,11 +1480,11 @@
 </code></pre></div>
 <p>The network carries protected data rather than the original plaintext.</p>
 <hr />
-<h1 id="integrity">Integrity</h1>
+<h2 id="integrity">Integrity</h2>
 <p>Integrity ensures that protected data cannot be modified unnoticed.</p>
 <p>If encrypted traffic is changed in transit, cryptographic integrity mechanisms allow the receiver to detect that the data is no longer valid.</p>
 <hr />
-<h1 id="authentication">Authentication</h1>
+<h2 id="authentication">Authentication</h2>
 <p>Authentication allows a client to verify the identity of the server.</p>
 <p>TLS commonly uses certificates for server authentication.</p>
 <p>Conceptually:</p>
@@ -812,7 +1495,7 @@
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Client validates identity
 </code></pre></div>
 <hr />
-<h1 id="symmetric-encryption">Symmetric Encryption</h1>
+<h2 id="symmetric-encryption">Symmetric Encryption</h2>
 <p>Symmetric cryptography uses the same shared secret key for encryption and decryption.</p>
 <p>Conceptually:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Shared Secret Key
@@ -836,7 +1519,7 @@
 </blockquote>
 <p>TLS solves this during the handshake.</p>
 <hr />
-<h1 id="asymmetric-cryptography">Asymmetric Cryptography</h1>
+<h2 id="asymmetric-cryptography">Asymmetric Cryptography</h2>
 <p>Asymmetric cryptography uses a key pair:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Public Key
 <a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Private Key
@@ -857,7 +1540,7 @@
 </ul>
 <p>depending on the TLS version and negotiated algorithms.</p>
 <hr />
-<h1 id="why-tls-uses-both">Why TLS Uses Both</h1>
+<h2 id="why-tls-uses-both">Why TLS Uses Both</h2>
 <p>Public-key cryptography is useful for authentication and securely establishing shared secrets.</p>
 <p>Symmetric cryptography is much more efficient for bulk traffic.</p>
 <p>Therefore:</p>
@@ -877,7 +1560,7 @@
 </blockquote>
 <p>That is a common misunderstanding.</p>
 <hr />
-<h1 id="tls-handshake">TLS Handshake</h1>
+<h2 id="tls-handshake">TLS Handshake</h2>
 <p>The TLS handshake establishes secure communication before protected application traffic is exchanged.</p>
 <p>A simplified mental model:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Client                         Server
@@ -898,7 +1581,7 @@
 <p>Actual TLS 1.3 messages and ordering are more detailed.</p>
 <p>For initial learning, understand the purpose rather than memorizing packets.</p>
 <hr />
-<h1 id="clienthello">ClientHello</h1>
+<h2 id="clienthello">ClientHello</h2>
 <p>The client begins the TLS handshake by sending a <code>ClientHello</code>.</p>
 <p>It can include information such as:</p>
 <ul>
@@ -913,7 +1596,7 @@
 <a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>Here is what I support.
 </code></pre></div>
 <hr />
-<h1 id="serverhello">ServerHello</h1>
+<h2 id="serverhello">ServerHello</h2>
 <p>The server responds with a <code>ServerHello</code>.</p>
 <p>It selects compatible connection parameters from what the client supports.</p>
 <p>Simplified:</p>
@@ -927,7 +1610,7 @@
 </code></pre></div>
 <p>The server also participates in key agreement and provides authentication information.</p>
 <hr />
-<h1 id="certificate-exchange">Certificate Exchange</h1>
+<h2 id="certificate-exchange">Certificate Exchange</h2>
 <p>The server normally provides a certificate chain.</p>
 <p>The client validates it.</p>
 <p>Conceptually:</p>
@@ -945,7 +1628,7 @@
 </code></pre></div>
 <p>If validation fails, the connection may be rejected or the user may receive a security warning.</p>
 <hr />
-<h1 id="key-agreement">Key Agreement</h1>
+<h2 id="key-agreement">Key Agreement</h2>
 <p>The client and server perform cryptographic operations allowing both sides to derive shared secrets.</p>
 <p>Modern TLS commonly uses ephemeral Diffie-Hellman-style key exchange.</p>
 <p>At this stage, understand only the result:</p>
@@ -957,7 +1640,7 @@
 </code></pre></div>
 <p>The secrets are not simply transmitted as plaintext across the network.</p>
 <hr />
-<h1 id="session-keys">Session Keys</h1>
+<h2 id="session-keys">Session Keys</h2>
 <p>After the handshake, both sides derive session keys.</p>
 <p>These keys are used to protect application data.</p>
 <p>Conceptually:</p>
@@ -973,7 +1656,7 @@
 </code></pre></div>
 <p>Session keys are efficient for ongoing communication.</p>
 <hr />
-<h1 id="tls-and-http">TLS and HTTP</h1>
+<h2 id="tls-and-http">TLS and HTTP</h2>
 <p>TLS does not understand business concepts such as:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>GET /users
 <a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>POST /orders
@@ -995,7 +1678,7 @@
 <a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>→ routing
 </code></pre></div>
 <hr />
-<h1 id="sni">SNI</h1>
+<h2 id="sni">SNI</h2>
 <p>SNI stands for:</p>
 <p><strong>Server Name Indication</strong></p>
 <p>A single server or IP address can host multiple HTTPS domains.</p>
@@ -1016,7 +1699,7 @@
 <a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>Use certificate for api.example.com
 </code></pre></div>
 <hr />
-<h1 id="why-sni-is-useful">Why SNI Is Useful</h1>
+<h2 id="why-sni-is-useful">Why SNI Is Useful</h2>
 <p>Without hostname information, a server hosting many HTTPS domains on one address would have difficulty choosing the correct certificate before HTTP begins.</p>
 <p>Remember:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>TLS handshake
@@ -1025,7 +1708,7 @@
 </code></pre></div>
 <p>SNI helps solve this.</p>
 <hr />
-<h1 id="tls-12-vs-tls-13">TLS 1.2 vs TLS 1.3</h1>
+<h2 id="tls-12-vs-tls-13">TLS 1.2 vs TLS 1.3</h2>
 <p>At a high level:</p>
 <p>TLS 1.3 simplifies and modernizes the handshake compared with TLS 1.2.</p>
 <p>Benefits include:</p>
@@ -1044,8 +1727,8 @@
 <a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>→ more efficient handshake
 </code></pre></div>
 <hr />
-<h1 id="practical-labs">Practical Labs</h1>
-<h2 id="lab-1-inspect-tls-with-curl">Lab 1 — Inspect TLS with curl</h2>
+<h2 id="practical-labs">Practical Labs</h2>
+<h3 id="lab-1-inspect-tls-with-curl">Lab 1 — Inspect TLS with curl</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>curl<span class="w"> </span>-v<span class="w"> </span>https://example.com
 </code></pre></div>
@@ -1058,7 +1741,7 @@
 <a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>HTTP
 </code></pre></div>
 <hr />
-<h2 id="lab-2-use-openssl">Lab 2 — Use OpenSSL</h2>
+<h3 id="lab-2-use-openssl">Lab 2 — Use OpenSSL</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>openssl<span class="w"> </span>s_client<span class="w"> </span>-connect<span class="w"> </span>example.com:443<span class="w"> </span>-servername<span class="w"> </span>example.com
 </code></pre></div>
@@ -1071,7 +1754,7 @@
 <li>connection details</li>
 </ul>
 <hr />
-<h2 id="lab-3-check-negotiated-tls-version">Lab 3 — Check Negotiated TLS Version</h2>
+<h3 id="lab-3-check-negotiated-tls-version">Lab 3 — Check Negotiated TLS Version</h3>
 <p>Depending on your OpenSSL version:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>openssl<span class="w"> </span>s_client<span class="w"> </span>-connect<span class="w"> </span>example.com:443<span class="w"> </span>-servername<span class="w"> </span>example.com
 </code></pre></div>
@@ -1081,7 +1764,7 @@
 </code></pre></div>
 <p>Do not memorize cipher names yet.</p>
 <hr />
-<h1 id="common-problems">Common Problems</h1>
+<h2 id="common-problems">Common Problems</h2>
 <p>TLS failures may be caused by:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>Expired certificate
 <a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>Hostname mismatch
@@ -1107,7 +1790,7 @@
 <a id="__codelineno-27-13" name="__codelineno-27-13" href="#__codelineno-27-13"></a>Compatible TLS algorithms?
 </code></pre></div>
 <hr />
-<h1 id="security-considerations">Security Considerations</h1>
+<h2 id="security-considerations">Security Considerations</h2>
 <p>Important TLS practices include:</p>
 <ul>
 <li>use supported modern TLS versions</li>
@@ -1120,7 +1803,7 @@
 <li>keep TLS libraries patched</li>
 </ul>
 <hr />
-<h1 id="performance-considerations">Performance Considerations</h1>
+<h2 id="performance-considerations">Performance Considerations</h2>
 <p>TLS introduces:</p>
 <ul>
 <li>handshake latency</li>
@@ -1136,23 +1819,23 @@
 </ul>
 <p>For production systems, security should not be disabled merely to remove TLS overhead.</p>
 <hr />
-<h1 id="common-misunderstandings">Common Misunderstandings</h1>
-<h2 id="tls-is-not-http">TLS Is Not HTTP</h2>
+<h2 id="common-misunderstandings">Common Misunderstandings</h2>
+<h3 id="tls-is-not-http">TLS Is Not HTTP</h3>
 <p>TLS provides security.</p>
 <p>HTTP provides application semantics.</p>
 <hr />
-<h2 id="private-key-is-not-shared">Private Key Is Not Shared</h2>
+<h3 id="private-key-is-not-shared">Private Key Is Not Shared</h3>
 <p>The server's private key must remain secret.</p>
 <p>It is not sent to clients during normal TLS operation.</p>
 <hr />
-<h2 id="tls-does-not-encrypt-everything-with-the-private-key">TLS Does Not Encrypt Everything with the Private Key</h2>
+<h3 id="tls-does-not-encrypt-everything-with-the-private-key">TLS Does Not Encrypt Everything with the Private Key</h3>
 <p>TLS establishes shared session keys and then uses efficient symmetric protection for application traffic.</p>
 <hr />
-<h2 id="tcp-does-not-provide-tls-security">TCP Does Not Provide TLS Security</h2>
+<h3 id="tcp-does-not-provide-tls-security">TCP Does Not Provide TLS Security</h3>
 <p>TCP provides reliable transport.</p>
 <p>TLS provides cryptographic security.</p>
 <hr />
-<h1 id="interview-questions">Interview Questions</h1>
+<h2 id="interview-questions">Interview Questions</h2>
 <ol>
 <li>What is TLS?</li>
 <li>Why does TLS exist?</li>
@@ -1180,7 +1863,7 @@
 <li>Where does TLS fit in the networking stack?</li>
 </ol>
 <hr />
-<h1 id="quick-revision">Quick Revision</h1>
+<h2 id="quick-revision">Quick Revision</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>TLS
 <a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>│
 <a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>├── Confidentiality
@@ -1198,47 +1881,47 @@
 <a id="__codelineno-28-15" name="__codelineno-28-15" href="#__codelineno-28-15"></a>└── Protected Application Data
 </code></pre></div>
 <hr />
-<h1 id="my-understanding">My Understanding</h1>
+<h2 id="my-understanding">My Understanding</h2>
 <p>TLS is a security protocol that protects communication between applications over a network.</p>
 <p>It authenticates the server using certificates, performs cryptographic key agreement, and derives shared session keys.</p>
 <p>Those session keys are then used to efficiently protect application traffic using symmetric cryptography.</p>
 <p>In HTTPS, TLS sits between HTTP and TCP and protects HTTP communication without changing HTTP's application semantics.</p>
 <hr />
-<h1 id="completion-checklist">Completion Checklist</h1>
+<h2 id="completion-checklist">Completion Checklist</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand what TLS is</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand why TLS exists</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand confidentiality</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand integrity</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand authentication</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand symmetric encryption</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand asymmetric cryptography</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand why TLS uses both</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand the TLS handshake</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand ClientHello</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand ServerHello</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand key agreement</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand session keys</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand SNI</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand TLS 1.2 vs TLS 1.3 at a high level</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect TLS using curl</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect TLS using OpenSSL</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Answer interview questions without notes</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand what TLS is</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand why TLS exists</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand confidentiality</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand integrity</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand authentication</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand symmetric encryption</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand asymmetric cryptography</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand why TLS uses both</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand the TLS handshake</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand ClientHello</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand ServerHello</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand key agreement</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand session keys</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand SNI</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand TLS 1.2 vs TLS 1.3 at a high level</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Inspect TLS using curl</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Inspect TLS using OpenSSL</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Answer interview questions without notes</li>
 </ul>
 <hr />
-<h1 id="references">References</h1>
-<h2 id="primary">Primary</h2>
+<h2 id="references">References</h2>
+<h3 id="primary">Primary</h3>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/Security/Transport_Layer_Security">MDN — Transport Layer Security</a></li>
 <li><a href="https://www.cloudflare.com/learning/ssl/transport-layer-security-tls/">Cloudflare — What is TLS?</a></li>
 <li><a href="https://www.cloudflare.com/learning/ssl/what-happens-in-a-tls-handshake/">Cloudflare — TLS Handshake</a></li>
 </ul>
-<h2 id="deeper-reference">Deeper Reference</h2>
+<h3 id="deeper-reference">Deeper Reference</h3>
 <ul>
 <li><a href="https://www.rfc-editor.org/rfc/rfc8446">RFC 8446 — TLS 1.3</a></li>
 </ul>
 <hr />
-<h1 id="related-topics">Related Topics</h1>
+<h2 id="related-topics">Related Topics</h2>
 <ul>
 <li><a href="../https/">HTTPS</a></li>
 <li><a href="../certificates/">TLS Certificates</a></li>
@@ -1348,7 +2031,7 @@
     
       <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
-        <script src="../../../assets/javascripts/copyright.js"></script>
+        <script src="../../../assets/javascripts/site.js"></script>
       
     
   </body>

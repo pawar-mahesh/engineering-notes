@@ -9,6 +9,8 @@
         <meta name="description" content="Practical, interconnected notes for engineering foundations.">
       
       
+        <meta name="author" content="Mahesh Pawar">
+      
       
         <link rel="canonical" href="https://pawar-mahesh.github.io/engineering-notes/fundamentals/networking/http/">
       
@@ -72,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#http-fundamentals" class="md-skip">
+        <a href="#http" class="md-skip">
           Skip to content
         </a>
       
@@ -126,7 +128,8 @@
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         </label>
-        <div class="md-search" data-md-component="search" role="dialog">
+        
+<div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -138,7 +141,6 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
-        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -548,6 +550,248 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#http-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Request
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Response
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-status-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Status Codes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Headers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#path-parameters-vs-query-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters vs Query Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-is-stateless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Is Stateless
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Connections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mern-request-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MERN Request Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Labs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#browser-devtools-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browser DevTools Practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mern-application-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MERN Application Practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misunderstandings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misunderstandings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Revision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#day-1-completion-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Day 1 Completion Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Topics
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -656,6 +900,93 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/notes-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes Preparation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -693,6 +1024,248 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#http-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Request
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Response
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-status-codes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Status Codes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Headers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#path-parameters-vs-query-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Path Parameters vs Query Parameters
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-is-stateless" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Is Stateless
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-connections" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Connections
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-versions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP Versions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mern-request-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MERN Request Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Labs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#browser-devtools-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Browser DevTools Practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mern-application-practice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MERN Application Practice
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misunderstandings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misunderstandings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Revision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#day-1-completion-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Day 1 Completion Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Topics
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -710,7 +1283,7 @@
 
 
 
-<h1 id="http-fundamentals">HTTP Fundamentals</h1>
+<h1 id="http">HTTP</h1>
 <blockquote>
 <p>HTTP is an application-layer request-response protocol used for communication between clients and servers.</p>
 </blockquote>
@@ -764,7 +1337,7 @@
 <p>Node/Express contains the application logic that decides what to do with the request.</p>
 </blockquote>
 <hr />
-<h1 id="http-request">HTTP Request</h1>
+<h2 id="http-request">HTTP Request</h2>
 <p>An HTTP request represents something that a client wants the server to do.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">GET</span> <span class="nn">/api/users/123</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
@@ -805,7 +1378,7 @@
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>JSON                    → Request body
 </code></pre></div>
 <hr />
-<h1 id="http-methods">HTTP Methods</h1>
+<h2 id="http-methods">HTTP Methods</h2>
 <p>HTTP methods communicate the <strong>intention of the request</strong>.</p>
 <table>
 <thead>
@@ -854,7 +1427,7 @@
 </code></pre></div>
 <p>Delete user <code>123</code>.</p>
 <hr />
-<h2 id="put-vs-patch">PUT vs PATCH</h2>
+<h3 id="put-vs-patch">PUT vs PATCH</h3>
 <p>Consider this resource:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
 <a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mahesh"</span><span class="p">,</span>
@@ -877,7 +1450,7 @@
 <p>Real-world APIs sometimes implement <code>PUT</code> differently, so always check the API contract.</p>
 </blockquote>
 <hr />
-<h1 id="http-response">HTTP Response</h1>
+<h2 id="http-response">HTTP Response</h2>
 <p>After processing a request, the server sends an HTTP response.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
@@ -905,7 +1478,7 @@
 </code></pre></div>
 <p>The status code tells the client the outcome of the request.</p>
 <hr />
-<h1 id="http-status-codes">HTTP Status Codes</h1>
+<h2 id="http-status-codes">HTTP Status Codes</h2>
 <p>HTTP status codes are grouped into five categories.</p>
 <table>
 <thead>
@@ -938,8 +1511,8 @@
 </tbody>
 </table>
 <hr />
-<h2 id="important-status-codes">Important Status Codes</h2>
-<h3 id="success">Success</h3>
+<h3 id="important-status-codes">Important Status Codes</h3>
+<h4 id="success">Success</h4>
 <table>
 <thead>
 <tr>
@@ -962,7 +1535,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="redirection">Redirection</h3>
+<h4 id="redirection">Redirection</h4>
 <table>
 <thead>
 <tr>
@@ -981,7 +1554,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="client-errors">Client Errors</h3>
+<h4 id="client-errors">Client Errors</h4>
 <table>
 <thead>
 <tr>
@@ -1016,7 +1589,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="server-errors">Server Errors</h3>
+<h4 id="server-errors">Server Errors</h4>
 <table>
 <thead>
 <tr>
@@ -1040,7 +1613,7 @@
 </tbody>
 </table>
 <hr />
-<h2 id="401-vs-403">401 vs 403</h2>
+<h3 id="401-vs-403">401 vs 403</h3>
 <p>This distinction is important.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>401 Unauthorized
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>        ↓
@@ -1077,7 +1650,7 @@ Think:</p>
 <strong>403 → You cannot do that.</strong></p>
 </blockquote>
 <hr />
-<h1 id="http-headers">HTTP Headers</h1>
+<h2 id="http-headers">HTTP Headers</h2>
 <p>HTTP headers contain <strong>metadata about the HTTP message</strong>.</p>
 <p>Examples:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="err">Content-Type: application/json</span>
@@ -1096,35 +1669,35 @@ Think:</p>
 <a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>The actual data being transferred
 </code></pre></div>
 <hr />
-<h2 id="common-headers">Common Headers</h2>
-<h3 id="content-type">Content-Type</h3>
+<h3 id="common-headers">Common Headers</h3>
+<h4 id="content-type">Content-Type</h4>
 <p>Describes the format of the request or response body.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="err">Content-Type: application/json</span>
 </code></pre></div>
 <hr />
-<h3 id="accept">Accept</h3>
+<h4 id="accept">Accept</h4>
 <p>Tells the server which response formats the client can understand.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="err">Accept: application/json</span>
 </code></pre></div>
 <hr />
-<h3 id="authorization">Authorization</h3>
+<h4 id="authorization">Authorization</h4>
 <p>Provides authentication credentials.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="err">Authorization: Bearer &lt;token&gt;</span>
 </code></pre></div>
 <hr />
-<h3 id="user-agent">User-Agent</h3>
+<h4 id="user-agent">User-Agent</h4>
 <p>Provides information about the client.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="err">User-Agent: Mozilla/5.0</span>
 </code></pre></div>
 <hr />
-<h3 id="cache-control">Cache-Control</h3>
+<h4 id="cache-control">Cache-Control</h4>
 <p>Defines caching behavior.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="err">Cache-Control: no-cache</span>
 </code></pre></div>
 <p>Caching will be studied separately later.</p>
 <hr />
-<h1 id="path-parameters-vs-query-parameters">Path Parameters vs Query Parameters</h1>
+<h2 id="path-parameters-vs-query-parameters">Path Parameters vs Query Parameters</h2>
 <p>Consider:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="err">GET /users/123</span>
 </code></pre></div>
@@ -1168,7 +1741,7 @@ Think:</p>
 <p>Give me up to 20 products belonging to the phone category.</p>
 </blockquote>
 <hr />
-<h1 id="http-is-stateless">HTTP Is Stateless</h1>
+<h2 id="http-is-stateless">HTTP Is Stateless</h2>
 <p>HTTP is fundamentally a <strong>stateless protocol</strong>.</p>
 <p>This means HTTP itself does not automatically remember previous requests.</p>
 <p>Consider:</p>
@@ -1206,7 +1779,7 @@ Think:</p>
 </blockquote>
 <p>Cookies, sessions, JWTs, and authentication will be studied separately.</p>
 <hr />
-<h1 id="http-connections">HTTP Connections</h1>
+<h2 id="http-connections">HTTP Connections</h2>
 <p>A simplified HTTP interaction looks like:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>Establish Connection
 <a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>        ↓
@@ -1221,7 +1794,7 @@ Think:</p>
 <p>Repeatedly establishing connections can be expensive.</p>
 <p>Modern HTTP versions therefore include mechanisms for improving connection efficiency.</p>
 <hr />
-<h1 id="http-versions">HTTP Versions</h1>
+<h2 id="http-versions">HTTP Versions</h2>
 <p>For now, only understand the high-level differences.</p>
 <table>
 <thead>
@@ -1246,7 +1819,7 @@ Think:</p>
 </tbody>
 </table>
 <hr />
-<h2 id="http11">HTTP/1.1</h2>
+<h3 id="http11">HTTP/1.1</h3>
 <p>HTTP/1.1 commonly allows a TCP connection to remain open and be reused for multiple requests.</p>
 <p>Conceptually:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>Without connection reuse
@@ -1277,7 +1850,7 @@ Think:</p>
 <a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a>Response 2
 </code></pre></div>
 <hr />
-<h2 id="http2">HTTP/2</h2>
+<h3 id="http2">HTTP/2</h3>
 <p>HTTP/2 introduced improvements including <strong>multiplexing</strong>.</p>
 <p>Multiple streams can share a single connection.</p>
 <p>Simplified mental model:</p>
@@ -1293,7 +1866,7 @@ Think:</p>
 </code></pre></div>
 <p>Do not go deep into HTTP/2 internals yet.</p>
 <hr />
-<h2 id="http3">HTTP/3</h2>
+<h3 id="http3">HTTP/3</h3>
 <p>HTTP/3 uses <strong>QUIC</strong> rather than TCP as its transport foundation.</p>
 <p>For now, remember only:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>HTTP/1.1
@@ -1310,7 +1883,7 @@ Think:</p>
 </code></pre></div>
 <p>TCP, TLS, QUIC, and transport internals will be studied separately.</p>
 <hr />
-<h1 id="mern-request-lifecycle">MERN Request Lifecycle</h1>
+<h2 id="mern-request-lifecycle">MERN Request Lifecycle</h2>
 <p>Consider:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="nx">fetch</span><span class="p">(</span><span class="s2">"/api/users"</span><span class="p">);</span>
 </code></pre></div>
@@ -1358,8 +1931,8 @@ Think:</p>
 </code></pre></div>
 <p>This is the key connection between HTTP fundamentals and practical MERN development.</p>
 <hr />
-<h1 id="practical-labs">Practical Labs</h1>
-<h2 id="lab-1-inspect-response-headers">Lab 1 — Inspect Response Headers</h2>
+<h2 id="practical-labs">Practical Labs</h2>
+<h3 id="lab-1-inspect-response-headers">Lab 1 — Inspect Response Headers</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>curl<span class="w"> </span>-I<span class="w"> </span>https://example.com
 </code></pre></div>
@@ -1372,7 +1945,7 @@ Think:</p>
 </code></pre></div>
 <p>Do not worry if the exact output differs.</p>
 <hr />
-<h2 id="lab-2-inspect-full-http-communication">Lab 2 — Inspect Full HTTP Communication</h2>
+<h3 id="lab-2-inspect-full-http-communication">Lab 2 — Inspect Full HTTP Communication</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>curl<span class="w"> </span>-v<span class="w"> </span>https://example.com
 </code></pre></div>
@@ -1393,7 +1966,7 @@ Think:</p>
 <a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>&lt; Content-Type: text/html
 </code></pre></div>
 <hr />
-<h2 id="lab-3-send-a-get-request">Lab 3 — Send a GET Request</h2>
+<h3 id="lab-3-send-a-get-request">Lab 3 — Send a GET Request</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>curl<span class="w"> </span>https://httpbin.org/get
 </code></pre></div>
@@ -1406,7 +1979,7 @@ Think:</p>
 <li>response body</li>
 </ul>
 <hr />
-<h2 id="lab-4-send-a-post-request">Lab 4 — Send a POST Request</h2>
+<h3 id="lab-4-send-a-post-request">Lab 4 — Send a POST Request</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://httpbin.org/post<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
@@ -1420,7 +1993,7 @@ Think:</p>
 <a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a>Response Body
 </code></pre></div>
 <hr />
-<h2 id="lab-5-send-a-custom-header">Lab 5 — Send a Custom Header</h2>
+<h3 id="lab-5-send-a-custom-header">Lab 5 — Send a Custom Header</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>curl<span class="w"> </span>https://httpbin.org/headers<span class="w"> </span><span class="se">\</span>
 <a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">"X-Learning: HTTP-Day-1"</span>
@@ -1430,7 +2003,7 @@ Think:</p>
 </code></pre></div>
 <p>This demonstrates that headers travel as part of the HTTP request.</p>
 <hr />
-<h1 id="browser-devtools-practice">Browser DevTools Practice</h1>
+<h2 id="browser-devtools-practice">Browser DevTools Practice</h2>
 <p>Open Chrome Developer Tools.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>Developer Tools
 <a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>      ↓
@@ -1475,7 +2048,7 @@ Think:</p>
 <a id="__codelineno-58-15" name="__codelineno-58-15" href="#__codelineno-58-15"></a>Where is the response body?
 </code></pre></div>
 <hr />
-<h1 id="mern-application-practice">MERN Application Practice</h1>
+<h2 id="mern-application-practice">MERN Application Practice</h2>
 <p>Open any existing React + Node application.</p>
 <p>Use:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>Chrome DevTools
@@ -1510,8 +2083,8 @@ Think:</p>
 </code></pre></div>
 <p>This is one of the best exercises for connecting theory with existing development experience.</p>
 <hr />
-<h1 id="common-misunderstandings">Common Misunderstandings</h1>
-<h2 id="http-and-rest-are-not-the-same-thing">HTTP and REST Are Not the Same Thing</h2>
+<h2 id="common-misunderstandings">Common Misunderstandings</h2>
+<h3 id="http-and-rest-are-not-the-same-thing">HTTP and REST Are Not the Same Thing</h3>
 <p>HTTP is a communication protocol.</p>
 <p>REST is an architectural style that commonly uses HTTP.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>HTTP
@@ -1522,7 +2095,7 @@ Think:</p>
 </code></pre></div>
 <p>REST will be studied separately.</p>
 <hr />
-<h2 id="http-does-not-mean-json">HTTP Does Not Mean JSON</h2>
+<h3 id="http-does-not-mean-json">HTTP Does Not Mean JSON</h3>
 <p>HTTP can transport many types of content.</p>
 <p>Examples:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>JSON
@@ -1537,7 +2110,7 @@ Think:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="err">Content-Type: application/json</span>
 </code></pre></div>
 <hr />
-<h2 id="http-does-not-execute-business-logic">HTTP Does Not Execute Business Logic</h2>
+<h3 id="http-does-not-execute-business-logic">HTTP Does Not Execute Business Logic</h3>
 <p>HTTP transports messages.</p>
 <p>Your application performs the actual processing.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>HTTP Request
@@ -1549,7 +2122,7 @@ Think:</p>
 <a id="__codelineno-66-7" name="__codelineno-66-7" href="#__codelineno-66-7"></a>Database
 </code></pre></div>
 <hr />
-<h1 id="security-considerations">Security Considerations</h1>
+<h2 id="security-considerations">Security Considerations</h2>
 <p>At this stage, remember:</p>
 <ul>
 <li>HTTP by itself does not encrypt traffic.</li>
@@ -1560,7 +2133,7 @@ Think:</p>
 </ul>
 <p>HTTPS and TLS will be studied separately.</p>
 <hr />
-<h1 id="performance-considerations">Performance Considerations</h1>
+<h2 id="performance-considerations">Performance Considerations</h2>
 <p>HTTP performance can be influenced by:</p>
 <ul>
 <li>connection establishment</li>
@@ -1574,7 +2147,7 @@ Think:</p>
 </ul>
 <p>These topics will be explored later.</p>
 <hr />
-<h1 id="interview-questions">Interview Questions</h1>
+<h2 id="interview-questions">Interview Questions</h2>
 <p>Try answering these without referring to the notes.</p>
 <h3 id="fundamentals">Fundamentals</h3>
 <ol>
@@ -1615,7 +2188,7 @@ Think:</p>
 <li>What transport does HTTP/3 use?</li>
 </ol>
 <hr />
-<h1 id="quick-revision">Quick Revision</h1>
+<h2 id="quick-revision">Quick Revision</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>HTTP
 <a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>│
 <a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a>├── Application-layer protocol
@@ -1653,43 +2226,43 @@ Think:</p>
 <a id="__codelineno-67-35" name="__codelineno-67-35" href="#__codelineno-67-35"></a>    └── HTTP/3
 </code></pre></div>
 <hr />
-<h1 id="my-understanding">My Understanding</h1>
+<h2 id="my-understanding">My Understanding</h2>
 <p>HTTP is an application-layer protocol that provides a standard request-response communication model between clients and servers.</p>
 <p>A client sends an HTTP request containing information such as the method, URL, headers, and optionally a body.</p>
 <p>The server processes the request using application logic and returns an HTTP response containing a status code, headers, and optionally a response body.</p>
 <p>HTTP itself is stateless. Applications maintain user state through additional mechanisms such as cookies, sessions, and tokens.</p>
 <p>In a MERN application, HTTP provides the communication layer between the React frontend and the Node/Express backend, while the application code and database perform the actual business processing.</p>
 <hr />
-<h1 id="day-1-completion-checklist">Day 1 Completion Checklist</h1>
+<h2 id="day-1-completion-checklist">Day 1 Completion Checklist</h2>
 <p>Before marking this topic complete:</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand the client-server request-response model</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand HTTP request structure</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand HTTP response structure</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand GET, POST, PUT, PATCH, DELETE</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand status-code categories</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Explain <code>401</code> vs <code>403</code></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand headers vs body</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand path vs query parameters</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Explain why HTTP is stateless</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand HTTP/1.1, HTTP/2, HTTP/3 at a high level</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Run <code>curl -I</code></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Run <code>curl -v</code></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Perform GET and POST using <code>httpbin</code></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect an HTTP request using Chrome DevTools</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect one request in an existing MERN application</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Answer the interview questions without notes</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand the client-server request-response model</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand HTTP request structure</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand HTTP response structure</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand GET, POST, PUT, PATCH, DELETE</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand status-code categories</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Explain <code>401</code> vs <code>403</code></li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand headers vs body</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand path vs query parameters</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Explain why HTTP is stateless</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand HTTP/1.1, HTTP/2, HTTP/3 at a high level</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Run <code>curl -I</code></li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Run <code>curl -v</code></li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Perform GET and POST using <code>httpbin</code></li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Inspect an HTTP request using Chrome DevTools</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Inspect one request in an existing MERN application</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Answer the interview questions without notes</li>
 </ul>
 <hr />
-<h1 id="references">References</h1>
-<h2 id="primary-reading">Primary Reading</h2>
+<h2 id="references">References</h2>
+<h3 id="primary-reading">Primary Reading</h3>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Overview">MDN — Overview of HTTP</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Messages">MDN — HTTP Messages</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference">MDN — HTTP Reference</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Session">MDN — A Typical HTTP Session</a></li>
 </ul>
-<h2 id="deeper-reference">Deeper Reference</h2>
+<h3 id="deeper-reference">Deeper Reference</h3>
 <ul>
 <li><a href="https://www.rfc-editor.org/rfc/rfc9110">RFC 9110 — HTTP Semantics</a></li>
 </ul>
@@ -1698,29 +2271,29 @@ Think:</p>
 The RFC is primarily a reference. It does not need to be read end-to-end while learning HTTP fundamentals.</p>
 </blockquote>
 <hr />
-<h1 id="related-topics">Related Topics</h1>
+<h2 id="related-topics">Related Topics</h2>
 <p>Study these separately after completing HTTP fundamentals:</p>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../dns/">DNS</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../ip-addresses-and-ports/">IP addresses and ports</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../tcp/">TCP</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../udp/">UDP</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../sockets/">Network sockets</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../tls/">TLS</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../certificates/">TLS Certificates</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../https/">HTTPS</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Cookies</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Sessions</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Authentication</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> CORS</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> HTTP caching</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Reverse proxies</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Load balancing</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> CDN</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> WebSockets</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> <a href="../dns/">DNS</a></li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> <a href="../ip-addresses-and-ports/">IP addresses and ports</a></li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> <a href="../tcp/">TCP</a></li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> <a href="../udp/">UDP</a></li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> <a href="../sockets/">Network sockets</a></li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> <a href="../tls/">TLS</a></li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> <a href="../certificates/">TLS Certificates</a></li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> <a href="../https/">HTTPS</a></li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Cookies</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Sessions</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Authentication</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> CORS</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> HTTP caching</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Reverse proxies</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Load balancing</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> CDN</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> WebSockets</li>
 </ul>
 <hr />
-<h2 id="not-required-yet">Not Required Yet</h2>
+<h3 id="not-required-yet">Not Required Yet</h3>
 <p>Do not go deep into these while completing this note:</p>
 <ul>
 <li>TCP internals</li>
@@ -1833,7 +2406,7 @@ The RFC is primarily a reference. It does not need to be read end-to-end while l
     
       <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
-        <script src="../../../assets/javascripts/copyright.js"></script>
+        <script src="../../../assets/javascripts/site.js"></script>
       
     
   </body>

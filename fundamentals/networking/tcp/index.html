@@ -9,6 +9,8 @@
         <meta name="description" content="Practical, interconnected notes for engineering foundations.">
       
       
+        <meta name="author" content="Mahesh Pawar">
+      
       
         <link rel="canonical" href="https://pawar-mahesh.github.io/engineering-notes/fundamentals/networking/tcp/">
       
@@ -126,7 +128,8 @@
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         </label>
-        <div class="md-search" data-md-component="search" role="dialog">
+        
+<div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -138,7 +141,6 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
-        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -502,6 +504,226 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#tcp-three-way-handshake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCP Three-Way Handshake
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acknowledgements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retransmission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retransmission
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flow-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#congestion-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Congestion Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-connection-termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCP Connection Termination
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-and-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCP and HTTP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-request-mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Request Mental Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Labs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Problems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misunderstandings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misunderstandings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Revision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completion-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Topics
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -722,6 +944,93 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/notes-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes Preparation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -819,6 +1128,226 @@
     <span class="md-ellipsis">
       
         Byte Stream
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-three-way-handshake" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCP Three-Way Handshake
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#acknowledgements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acknowledgements
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retransmission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Retransmission
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#flow-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flow Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#congestion-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Congestion Control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-connection-termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCP Connection Termination
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-and-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCP and HTTP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-request-mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete Request Mental Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Labs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Problems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misunderstandings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misunderstandings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Revision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completion-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Topics
       
     </span>
   </a>
@@ -989,7 +1518,7 @@
 <p>TCP guarantees byte ordering, not application-level message boundaries.</p>
 </blockquote>
 <hr />
-<h1 id="tcp-three-way-handshake">TCP Three-Way Handshake</h1>
+<h2 id="tcp-three-way-handshake">TCP Three-Way Handshake</h2>
 <p>Before normal data exchange begins, a TCP connection is established using a three-way handshake.</p>
 <p>The simplified sequence is:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Client                          Server
@@ -1010,7 +1539,7 @@
 <a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>ACK
 </code></pre></div>
 <hr />
-<h2 id="why-is-the-handshake-needed">Why Is the Handshake Needed?</h2>
+<h3 id="why-is-the-handshake-needed">Why Is the Handshake Needed?</h3>
 <p>The handshake allows both sides to establish connection state and synchronize the initial sequence information used by TCP.</p>
 <p>At a high level:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Client
@@ -1024,7 +1553,7 @@
 </code></pre></div>
 <p>After that, application data can be exchanged.</p>
 <hr />
-<h1 id="acknowledgements">Acknowledgements</h1>
+<h2 id="acknowledgements">Acknowledgements</h2>
 <p>TCP uses acknowledgements to confirm received data.</p>
 <p>Simplified:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Sender
@@ -1040,7 +1569,7 @@
 <p>An acknowledgement tells the sender that expected data has been successfully received up to a certain point.</p>
 <p>If expected acknowledgement information does not arrive, TCP may retransmit data.</p>
 <hr />
-<h1 id="retransmission">Retransmission</h1>
+<h2 id="retransmission">Retransmission</h2>
 <p>Suppose the sender transmits data and some of it is lost.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Sender
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   ↓
@@ -1062,7 +1591,7 @@
 </code></pre></div>
 <p>The exact algorithms are more complex, but this high-level model is enough for now.</p>
 <hr />
-<h1 id="flow-control">Flow Control</h1>
+<h2 id="flow-control">Flow Control</h2>
 <p>Flow control prevents a sender from overwhelming a receiver.</p>
 <p>Imagine:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>Fast Sender
@@ -1082,14 +1611,14 @@
 <a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>Sender adjusts
 </code></pre></div>
 <hr />
-<h2 id="flow-control-mental-model">Flow Control Mental Model</h2>
+<h3 id="flow-control-mental-model">Flow Control Mental Model</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Question:
 <a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
 <a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>Can the receiver keep up?
 </code></pre></div>
 <p>Flow control primarily protects the receiver.</p>
 <hr />
-<h1 id="congestion-control">Congestion Control</h1>
+<h2 id="congestion-control">Congestion Control</h2>
 <p>Congestion control deals with the capacity of the network itself.</p>
 <p>Imagine:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>Many Senders
@@ -1108,7 +1637,7 @@
 </code></pre></div>
 <p>Do not study individual congestion-control algorithms deeply yet.</p>
 <hr />
-<h1 id="tcp-connection-termination">TCP Connection Termination</h1>
+<h2 id="tcp-connection-termination">TCP Connection Termination</h2>
 <p>A TCP connection should eventually be closed.</p>
 <p>A simplified close may involve:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Client                          Server
@@ -1124,7 +1653,7 @@
 </blockquote>
 <p>The exact state machine will be studied later if required.</p>
 <hr />
-<h1 id="tcp-and-http">TCP and HTTP</h1>
+<h2 id="tcp-and-http">TCP and HTTP</h2>
 <p>HTTP/1.1 and HTTP/2 commonly use TCP as their transport protocol.</p>
 <p>Conceptually:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>HTTP
@@ -1147,7 +1676,7 @@
 <p>HTTP defines the application message.</p>
 <p>TCP provides reliable transport.</p>
 <hr />
-<h1 id="complete-request-mental-model">Complete Request Mental Model</h1>
+<h2 id="complete-request-mental-model">Complete Request Mental Model</h2>
 <p>Suppose the browser requests:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>https://example.com/users
 </code></pre></div>
@@ -1170,8 +1699,8 @@
 </code></pre></div>
 <p>This connects Day 1, Day 2, and Day 3.</p>
 <hr />
-<h1 id="practical-labs">Practical Labs</h1>
-<h2 id="lab-1-inspect-established-tcp-connections">Lab 1 — Inspect Established TCP Connections</h2>
+<h2 id="practical-labs">Practical Labs</h2>
+<h3 id="lab-1-inspect-established-tcp-connections">Lab 1 — Inspect Established TCP Connections</h3>
 <p>On macOS:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>lsof<span class="w"> </span>-iTCP<span class="w"> </span>-sTCP:ESTABLISHED
 </code></pre></div>
@@ -1186,7 +1715,7 @@
 <li>connection state</li>
 </ul>
 <hr />
-<h2 id="lab-2-start-a-tcp-based-http-server">Lab 2 — Start a TCP-Based HTTP Server</h2>
+<h3 id="lab-2-start-a-tcp-based-http-server">Lab 2 — Start a TCP-Based HTTP Server</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>python3<span class="w"> </span>-m<span class="w"> </span>http.server<span class="w"> </span><span class="m">8000</span>
 </code></pre></div>
@@ -1195,7 +1724,7 @@
 </code></pre></div>
 <p>You should see a process listening on TCP port <code>8000</code>.</p>
 <hr />
-<h2 id="lab-3-send-an-http-request">Lab 3 — Send an HTTP Request</h2>
+<h3 id="lab-3-send-an-http-request">Lab 3 — Send an HTTP Request</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>curl<span class="w"> </span>-v<span class="w"> </span>http://localhost:8000
 </code></pre></div>
@@ -1211,7 +1740,7 @@
 <a id="__codelineno-28-9" name="__codelineno-28-9" href="#__codelineno-28-9"></a>Python HTTP server
 </code></pre></div>
 <hr />
-<h2 id="lab-4-experiment-with-netcat">Lab 4 — Experiment with Netcat</h2>
+<h3 id="lab-4-experiment-with-netcat">Lab 4 — Experiment with Netcat</h3>
 <p>Terminal 1:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>nc<span class="w"> </span>-l<span class="w"> </span><span class="m">9000</span>
 </code></pre></div>
@@ -1224,7 +1753,7 @@
 <p>Observe the data appear on the server side.</p>
 <p>This gives a simple demonstration of TCP socket communication.</p>
 <hr />
-<h1 id="common-problems">Common Problems</h1>
+<h2 id="common-problems">Common Problems</h2>
 <p>TCP-related failures can appear as:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>Connection refused
 <a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>Connection timed out
@@ -1232,7 +1761,7 @@
 <a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>Broken pipe
 </code></pre></div>
 <hr />
-<h2 id="connection-refused">Connection Refused</h2>
+<h3 id="connection-refused">Connection Refused</h3>
 <p>Usually means:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>Target reachable
 <a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>+
@@ -1246,7 +1775,7 @@
 <li>connection actively rejected</li>
 </ul>
 <hr />
-<h2 id="connection-timeout">Connection Timeout</h2>
+<h3 id="connection-timeout">Connection Timeout</h3>
 <p>Possible reasons:</p>
 <ul>
 <li>network path unavailable</li>
@@ -1256,13 +1785,13 @@
 <li>severe network delay</li>
 </ul>
 <hr />
-<h2 id="connection-reset">Connection Reset</h2>
+<h3 id="connection-reset">Connection Reset</h3>
 <p>A TCP connection may be abruptly terminated by one side.</p>
 <p>Applications may report errors similar to:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>ECONNRESET
 </code></pre></div>
 <hr />
-<h1 id="debugging">Debugging</h1>
+<h2 id="debugging">Debugging</h2>
 <p>A useful debugging sequence:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>Is DNS resolving?
 <a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>        ↓
@@ -1286,7 +1815,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>nc<span class="w"> </span>-vz<span class="w"> </span>example.com<span class="w"> </span><span class="m">443</span>
 </code></pre></div>
 <hr />
-<h1 id="security-considerations">Security Considerations</h1>
+<h2 id="security-considerations">Security Considerations</h2>
 <p>TCP itself does not encrypt application data.</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>HTTP
@@ -1303,7 +1832,7 @@
 </code></pre></div>
 <p>This will be covered in the TLS notes.</p>
 <hr />
-<h1 id="performance-considerations">Performance Considerations</h1>
+<h2 id="performance-considerations">Performance Considerations</h2>
 <p>TCP performance can be affected by:</p>
 <ul>
 <li>connection establishment</li>
@@ -1318,20 +1847,20 @@
 <p>Repeated connection establishment can add latency.</p>
 <p>That is one reason HTTP persistent connections are useful.</p>
 <hr />
-<h1 id="common-misunderstandings">Common Misunderstandings</h1>
-<h2 id="tcp-does-not-mean-encrypted">TCP Does Not Mean Encrypted</h2>
+<h2 id="common-misunderstandings">Common Misunderstandings</h2>
+<h3 id="tcp-does-not-mean-encrypted">TCP Does Not Mean Encrypted</h3>
 <p>TCP provides reliable transport.</p>
 <p>It does not automatically provide encryption.</p>
 <hr />
-<h2 id="tcp-does-not-preserve-messages">TCP Does Not Preserve Messages</h2>
+<h3 id="tcp-does-not-preserve-messages">TCP Does Not Preserve Messages</h3>
 <p>TCP delivers a byte stream.</p>
 <p>The application protocol must determine where messages begin and end.</p>
 <hr />
-<h2 id="tcp-does-not-guarantee-infinite-reliability">TCP Does Not Guarantee Infinite Reliability</h2>
+<h3 id="tcp-does-not-guarantee-infinite-reliability">TCP Does Not Guarantee Infinite Reliability</h3>
 <p>TCP makes a strong effort to reliably deliver data, but communication can still fail completely when connectivity disappears or endpoints terminate.</p>
 <p>Applications must still handle errors.</p>
 <hr />
-<h1 id="interview-questions">Interview Questions</h1>
+<h2 id="interview-questions">Interview Questions</h2>
 <p>Try answering without notes.</p>
 <ol>
 <li>What is TCP?</li>
@@ -1356,7 +1885,7 @@
 <li>Where does TCP fit relative to HTTP and IP?</li>
 </ol>
 <hr />
-<h1 id="quick-revision">Quick Revision</h1>
+<h2 id="quick-revision">Quick Revision</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>TCP
 <a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>│
 <a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>├── Transport Layer
@@ -1382,41 +1911,41 @@
 <a id="__codelineno-42-23" name="__codelineno-42-23" href="#__codelineno-42-23"></a>└── Connection Termination
 </code></pre></div>
 <hr />
-<h1 id="my-understanding">My Understanding</h1>
+<h2 id="my-understanding">My Understanding</h2>
 <p>TCP is a transport-layer protocol that provides applications with a reliable and ordered byte stream between network endpoints.</p>
 <p>Before normal data exchange, TCP establishes connection state through a three-way handshake.</p>
 <p>TCP uses mechanisms such as acknowledgements, retransmission, sequencing, flow control, and congestion control to make communication more reliable.</p>
 <p>Protocols such as HTTP/1.1 and HTTP/2 use TCP underneath, while TCP itself does not understand application business logic or provide encryption.</p>
 <hr />
-<h1 id="completion-checklist">Completion Checklist</h1>
+<h2 id="completion-checklist">Completion Checklist</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand what TCP is</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand why TCP exists</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand connection-oriented communication</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand the three-way handshake</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Explain SYN, SYN-ACK, ACK</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand reliable delivery</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand ordered delivery</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand TCP byte streams</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand acknowledgements</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand retransmission</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand flow control</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand congestion control</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Explain flow control vs congestion control</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand connection termination</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect established TCP connections</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect a listening TCP port</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Experiment using netcat</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Answer interview questions without notes</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand what TCP is</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand why TCP exists</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand connection-oriented communication</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand the three-way handshake</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Explain SYN, SYN-ACK, ACK</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand reliable delivery</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand ordered delivery</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand TCP byte streams</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand acknowledgements</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand retransmission</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand flow control</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand congestion control</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Explain flow control vs congestion control</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand connection termination</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Inspect established TCP connections</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Inspect a listening TCP port</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Experiment using netcat</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Answer interview questions without notes</li>
 </ul>
 <hr />
-<h1 id="references">References</h1>
-<h2 id="primary">Primary</h2>
+<h2 id="references">References</h2>
+<h3 id="primary">Primary</h3>
 <ul>
 <li><a href="https://www.cloudflare.com/learning/ddos/glossary/tcp-ip/">Cloudflare — What is TCP/IP?</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works">MDN — How the Web Works</a></li>
 </ul>
-<h2 id="deeper-reference">Deeper Reference</h2>
+<h3 id="deeper-reference">Deeper Reference</h3>
 <ul>
 <li><a href="https://www.rfc-editor.org/rfc/rfc9293">RFC 9293 — Transmission Control Protocol</a></li>
 </ul>
@@ -1425,7 +1954,7 @@
 <p>RFC 9293 is reference material. It is not necessary to read it end-to-end at this stage.</p>
 </blockquote>
 <hr />
-<h1 id="related-topics">Related Topics</h1>
+<h2 id="related-topics">Related Topics</h2>
 <ul>
 <li><a href="../ip-addresses-and-ports/">IP Addresses and Ports</a></li>
 <li><a href="../udp/">UDP</a></li>
@@ -1534,7 +2063,7 @@
     
       <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
-        <script src="../../../assets/javascripts/copyright.js"></script>
+        <script src="../../../assets/javascripts/site.js"></script>
       
     
   </body>

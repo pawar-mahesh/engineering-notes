@@ -9,6 +9,8 @@
         <meta name="description" content="Practical, interconnected notes for engineering foundations.">
       
       
+        <meta name="author" content="Mahesh Pawar">
+      
       
         <link rel="canonical" href="https://pawar-mahesh.github.io/engineering-notes/fundamentals/networking/udp/">
       
@@ -126,7 +128,8 @@
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         </label>
-        <div class="md-search" data-md-component="search" role="dialog">
+        
+<div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -138,7 +141,6 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
-        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -475,6 +477,226 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#core-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connectionless-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connectionless Communication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datagram-oriented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datagram-Oriented
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-built-in-delivery-guarantee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No Built-In Delivery Guarantee
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-built-in-ordering-guarantee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No Built-In Ordering Guarantee
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-vs-udp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCP vs UDP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mental Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#udp-and-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UDP and Ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Labs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trade-Offs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misunderstandings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misunderstandings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Revision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completion-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Topics
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -667,6 +889,93 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/notes-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes Preparation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -709,6 +1018,226 @@
     <span class="md-ellipsis">
       
         Why Does UDP Exist?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Properties
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connectionless-communication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connectionless Communication
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#datagram-oriented" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Datagram-Oriented
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-built-in-delivery-guarantee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No Built-In Delivery Guarantee
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no-built-in-ordering-guarantee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        No Built-In Ordering Guarantee
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tcp-vs-udp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TCP vs UDP
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mental Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Use Cases
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#udp-and-ports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UDP and Ports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Labs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trade-offs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trade-Offs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misunderstandings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misunderstandings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Revision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completion-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Topics
       
     </span>
   </a>
@@ -773,7 +1302,7 @@
 </ul>
 <p>UDP provides a simpler transport mechanism for these situations.</p>
 <hr />
-<h1 id="core-properties">Core Properties</h1>
+<h2 id="core-properties">Core Properties</h2>
 <p>UDP is generally:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Connectionless
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Datagram-oriented
@@ -783,7 +1312,7 @@
 <a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Low protocol overhead
 </code></pre></div>
 <hr />
-<h1 id="connectionless-communication">Connectionless Communication</h1>
+<h2 id="connectionless-communication">Connectionless Communication</h2>
 <p>UDP does not perform a TCP-style three-way handshake before sending data.</p>
 <p>Conceptually:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Sender
@@ -794,7 +1323,7 @@
 </code></pre></div>
 <p>The sender can transmit a datagram without first establishing a transport connection.</p>
 <hr />
-<h1 id="datagram-oriented">Datagram-Oriented</h1>
+<h2 id="datagram-oriented">Datagram-Oriented</h2>
 <p>UDP preserves message/datagram boundaries.</p>
 <p>If an application sends:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Message A
@@ -810,7 +1339,7 @@
 <a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>→ individual datagrams
 </code></pre></div>
 <hr />
-<h1 id="no-built-in-delivery-guarantee">No Built-In Delivery Guarantee</h1>
+<h2 id="no-built-in-delivery-guarantee">No Built-In Delivery Guarantee</h2>
 <p>Suppose the sender sends:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Datagram 1
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Datagram 2
@@ -824,7 +1353,7 @@
 <p>UDP itself does not automatically retransmit the lost datagram.</p>
 <p>If the application requires retransmission, it must implement suitable logic itself or use a higher-level protocol that does so.</p>
 <hr />
-<h1 id="no-built-in-ordering-guarantee">No Built-In Ordering Guarantee</h1>
+<h2 id="no-built-in-ordering-guarantee">No Built-In Ordering Guarantee</h2>
 <p>Suppose:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Sent:
 <a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>1
@@ -838,7 +1367,7 @@
 </code></pre></div>
 <p>UDP does not reorder the datagrams for the application.</p>
 <hr />
-<h1 id="tcp-vs-udp">TCP vs UDP</h1>
+<h2 id="tcp-vs-udp">TCP vs UDP</h2>
 <table>
 <thead>
 <tr>
@@ -878,7 +1407,7 @@
 </tbody>
 </table>
 <hr />
-<h1 id="mental-model">Mental Model</h1>
+<h2 id="mental-model">Mental Model</h2>
 <p>Use TCP when you think:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>I need a reliable ordered stream.
 </code></pre></div>
@@ -894,8 +1423,8 @@
 <p>That is too simplistic.</p>
 <p>The important difference is the <strong>transport guarantees and behavior</strong>.</p>
 <hr />
-<h1 id="common-use-cases">Common Use Cases</h1>
-<h2 id="dns">DNS</h2>
+<h2 id="common-use-cases">Common Use Cases</h2>
+<h3 id="dns">DNS</h3>
 <p>Many traditional DNS queries use UDP.</p>
 <p>Conceptually:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Client
@@ -912,7 +1441,7 @@
 <p>DNS always uses only UDP.</p>
 </blockquote>
 <hr />
-<h2 id="real-time-media">Real-Time Media</h2>
+<h3 id="real-time-media">Real-Time Media</h3>
 <p>For live voice or video, receiving a very old packet may sometimes be less useful than continuing with newer data.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Live Audio
@@ -926,11 +1455,11 @@
 <p>The application may prefer continuing playback instead of stopping everything waiting for Packet 3.</p>
 <p>Actual real-time systems are more sophisticated, but this illustrates the motivation.</p>
 <hr />
-<h2 id="online-gaming">Online Gaming</h2>
+<h3 id="online-gaming">Online Gaming</h3>
 <p>Fast-changing game state can sometimes tolerate missing individual updates because a newer update may quickly replace an older one.</p>
 <p>The exact protocol design depends on the game.</p>
 <hr />
-<h2 id="quic">QUIC</h2>
+<h3 id="quic">QUIC</h3>
 <p>QUIC uses UDP as its transport foundation.</p>
 <p>HTTP/3 runs over QUIC.</p>
 <p>Conceptually:</p>
@@ -948,7 +1477,7 @@
 <p>UDP being underneath does not mean HTTP/3 itself is unreliable.</p>
 </blockquote>
 <hr />
-<h1 id="udp-and-ports">UDP and Ports</h1>
+<h2 id="udp-and-ports">UDP and Ports</h2>
 <p>UDP also uses port numbers.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Client
@@ -962,8 +1491,8 @@
 <p>Port <code>53</code> is commonly associated with DNS.</p>
 <p>TCP port <code>53</code> and UDP port <code>53</code> are distinct transport endpoints because the protocol is part of the endpoint identity.</p>
 <hr />
-<h1 id="practical-labs">Practical Labs</h1>
-<h2 id="lab-1-udp-listener">Lab 1 — UDP Listener</h2>
+<h2 id="practical-labs">Practical Labs</h2>
+<h3 id="lab-1-udp-listener">Lab 1 — UDP Listener</h3>
 <p>On systems where your <code>nc</code> implementation supports it:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>nc<span class="w"> </span>-u<span class="w"> </span>-l<span class="w"> </span><span class="m">9001</span>
 </code></pre></div>
@@ -975,7 +1504,7 @@
 </code></pre></div>
 <p>Observe the received datagram data.</p>
 <hr />
-<h2 id="lab-2-compare-tcp-and-udp">Lab 2 — Compare TCP and UDP</h2>
+<h3 id="lab-2-compare-tcp-and-udp">Lab 2 — Compare TCP and UDP</h3>
 <p>TCP server:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>nc<span class="w"> </span>-l<span class="w"> </span><span class="m">9000</span>
 </code></pre></div>
@@ -990,14 +1519,14 @@
 </code></pre></div>
 <p>The exercise is primarily to understand that the transport protocol can change while using the same general socket abstraction.</p>
 <hr />
-<h2 id="lab-3-inspect-udp-endpoints">Lab 3 — Inspect UDP Endpoints</h2>
+<h3 id="lab-3-inspect-udp-endpoints">Lab 3 — Inspect UDP Endpoints</h3>
 <p>On macOS:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>lsof<span class="w"> </span>-iUDP<span class="w"> </span>-P<span class="w"> </span>-n
 </code></pre></div>
 <p>Observe processes using UDP sockets.</p>
 <hr />
-<h1 id="trade-offs">Trade-Offs</h1>
-<h2 id="advantages">Advantages</h2>
+<h2 id="trade-offs">Trade-Offs</h2>
+<h3 id="advantages">Advantages</h3>
 <p>UDP offers:</p>
 <ul>
 <li>small transport header</li>
@@ -1006,7 +1535,7 @@
 <li>application-controlled communication behavior</li>
 </ul>
 <hr />
-<h2 id="disadvantages">Disadvantages</h2>
+<h3 id="disadvantages">Disadvantages</h3>
 <p>UDP does not directly provide:</p>
 <ul>
 <li>delivery guarantee</li>
@@ -1017,13 +1546,13 @@
 </ul>
 <p>If an application needs those features, it must provide them elsewhere.</p>
 <hr />
-<h1 id="common-misunderstandings">Common Misunderstandings</h1>
-<h2 id="udp-does-not-mean-bad-or-unreliable-application">UDP Does Not Mean Bad or Unreliable Application</h2>
+<h2 id="common-misunderstandings">Common Misunderstandings</h2>
+<h3 id="udp-does-not-mean-bad-or-unreliable-application">UDP Does Not Mean Bad or Unreliable Application</h3>
 <p>UDP itself does not guarantee delivery.</p>
 <p>But applications and protocols built on UDP can implement reliability.</p>
 <p>QUIC is an important example.</p>
 <hr />
-<h2 id="udp-is-not-always-faster">UDP Is Not Always Faster</h2>
+<h3 id="udp-is-not-always-faster">UDP Is Not Always Faster</h3>
 <p>Performance depends on:</p>
 <ul>
 <li>protocol design</li>
@@ -1033,7 +1562,7 @@
 </ul>
 <p>UDP has less built-in transport machinery, but that does not automatically mean every UDP application performs better than every TCP application.</p>
 <hr />
-<h2 id="udp-still-uses-ip-and-ports">UDP Still Uses IP and Ports</h2>
+<h3 id="udp-still-uses-ip-and-ports">UDP Still Uses IP and Ports</h3>
 <p>Conceptually:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>Application
 <a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>   ↓
@@ -1045,13 +1574,13 @@
 </code></pre></div>
 <p>UDP does not replace IP.</p>
 <hr />
-<h1 id="security-considerations">Security Considerations</h1>
+<h2 id="security-considerations">Security Considerations</h2>
 <p>UDP has no built-in encryption.</p>
 <p>Applications must use appropriate security protocols when confidentiality or authenticity is required.</p>
 <p>UDP-based services can also be associated with amplification and spoofing risks when poorly designed.</p>
 <p>Security specifics will be studied later.</p>
 <hr />
-<h1 id="performance-considerations">Performance Considerations</h1>
+<h2 id="performance-considerations">Performance Considerations</h2>
 <p>UDP avoids connection-establishment overhead at the transport layer.</p>
 <p>This can be useful for certain workloads.</p>
 <p>However applications may need additional logic for:</p>
@@ -1064,7 +1593,7 @@
 </ul>
 <p>The total system cost depends on the protocol built above UDP.</p>
 <hr />
-<h1 id="interview-questions">Interview Questions</h1>
+<h2 id="interview-questions">Interview Questions</h2>
 <ol>
 <li>What is UDP?</li>
 <li>Why does UDP exist?</li>
@@ -1088,7 +1617,7 @@
 <li>Where does UDP fit relative to IP?</li>
 </ol>
 <hr />
-<h1 id="quick-revision">Quick Revision</h1>
+<h2 id="quick-revision">Quick Revision</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>UDP
 <a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>│
 <a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>├── Transport Layer
@@ -1109,40 +1638,40 @@
 <a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a>    └── Ports
 </code></pre></div>
 <hr />
-<h1 id="my-understanding">My Understanding</h1>
+<h2 id="my-understanding">My Understanding</h2>
 <p>UDP is a connectionless transport protocol that sends independent datagrams between endpoints.</p>
 <p>Unlike TCP, UDP does not provide built-in reliable delivery, ordering, retransmission, or connection establishment.</p>
 <p>This simpler model can be useful when applications value timeliness, message-oriented communication, or want to implement their own transport behavior.</p>
 <p>UDP is not automatically faster or better than TCP; the correct choice depends on application requirements.</p>
 <hr />
-<h1 id="completion-checklist">Completion Checklist</h1>
+<h2 id="completion-checklist">Completion Checklist</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand what UDP is</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand connectionless communication</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand datagrams</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand lack of delivery guarantee</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand lack of ordering guarantee</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Explain TCP vs UDP</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand typical UDP use cases</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand DNS can use UDP and TCP</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand QUIC uses UDP</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Experiment with UDP using netcat</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect UDP endpoints</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Answer interview questions without notes</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand what UDP is</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand connectionless communication</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand datagrams</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand lack of delivery guarantee</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand lack of ordering guarantee</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Explain TCP vs UDP</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand typical UDP use cases</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand DNS can use UDP and TCP</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand QUIC uses UDP</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Experiment with UDP using netcat</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Inspect UDP endpoints</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Answer interview questions without notes</li>
 </ul>
 <hr />
-<h1 id="references">References</h1>
-<h2 id="primary">Primary</h2>
+<h2 id="references">References</h2>
+<h3 id="primary">Primary</h3>
 <ul>
 <li><a href="https://www.cloudflare.com/learning/ddos/glossary/user-datagram-protocol-udp/">Cloudflare — What is UDP?</a></li>
 <li><a href="https://www.cloudflare.com/learning/ddos/glossary/tcp-ip/">Cloudflare — TCP vs UDP</a></li>
 </ul>
-<h2 id="deeper-reference">Deeper Reference</h2>
+<h3 id="deeper-reference">Deeper Reference</h3>
 <ul>
 <li><a href="https://www.rfc-editor.org/rfc/rfc768">RFC 768 — User Datagram Protocol</a></li>
 </ul>
 <hr />
-<h1 id="related-topics">Related Topics</h1>
+<h2 id="related-topics">Related Topics</h2>
 <ul>
 <li><a href="../tcp/">TCP</a></li>
 <li><a href="../ip-addresses-and-ports/">IP Addresses and Ports</a></li>
@@ -1250,7 +1779,7 @@
     
       <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
-        <script src="../../../assets/javascripts/copyright.js"></script>
+        <script src="../../../assets/javascripts/site.js"></script>
       
     
   </body>

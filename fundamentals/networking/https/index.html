@@ -9,12 +9,16 @@
         <meta name="description" content="Practical, interconnected notes for engineering foundations.">
       
       
+        <meta name="author" content="Mahesh Pawar">
+      
       
         <link rel="canonical" href="https://pawar-mahesh.github.io/engineering-notes/fundamentals/networking/https/">
       
       
         <link rel="prev" href="../certificates/">
       
+      
+        <link rel="next" href="../../../guides/notes-guide/">
       
       
         
@@ -124,7 +128,8 @@
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         </label>
-        <div class="md-search" data-md-component="search" role="dialog">
+        
+<div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -136,7 +141,6 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
-        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -641,6 +645,204 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#what-does-https-provide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Does HTTPS Provide?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-vs-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP vs HTTPS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-https-fits-in-the-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where HTTPS Fits in the Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-https-request-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete HTTPS Request Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#https-and-port-443" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTPS and Port 443
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-https-does-not-guarantee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What HTTPS Does Not Guarantee
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mern-mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MERN Mental Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Labs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Problems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misunderstandings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misunderstandings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Revision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completion-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Topics
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -653,6 +855,93 @@
           </ul>
         </nav>
       
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/notes-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes Preparation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
     </li>
   
 
@@ -707,6 +996,204 @@
     <span class="md-ellipsis">
       
         Why Does HTTPS Exist?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-does-https-provide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Does HTTPS Provide?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-vs-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP vs HTTPS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-https-fits-in-the-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where HTTPS Fits in the Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-https-request-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complete HTTPS Request Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#https-and-port-443" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTPS and Port 443
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-https-does-not-guarantee" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What HTTPS Does Not Guarantee
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mern-mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MERN Mental Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Labs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Problems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-misunderstandings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Misunderstandings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Revision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completion-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Topics
       
     </span>
   </a>
@@ -789,14 +1276,14 @@
 <a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>Server
 </code></pre></div>
 <hr />
-<h1 id="what-does-https-provide">What Does HTTPS Provide?</h1>
+<h2 id="what-does-https-provide">What Does HTTPS Provide?</h2>
 <p>HTTPS primarily provides three security properties:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Confidentiality
 <a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Integrity
 <a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Authentication
 </code></pre></div>
 <hr />
-<h2 id="confidentiality">Confidentiality</h2>
+<h3 id="confidentiality">Confidentiality</h3>
 <p>Confidentiality means unauthorized parties should not be able to read the application data being transmitted.</p>
 <p>Without protection:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>username=mahesh
@@ -818,7 +1305,7 @@
 <a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>Plaintext
 </code></pre></div>
 <hr />
-<h2 id="integrity">Integrity</h2>
+<h3 id="integrity">Integrity</h3>
 <p>Integrity means transmitted data should not be modified without detection.</p>
 <p>Suppose an application sends:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>amount=100
@@ -828,7 +1315,7 @@
 </code></pre></div>
 <p>TLS provides integrity protection so unauthorized modification of protected traffic is detected.</p>
 <hr />
-<h2 id="authentication">Authentication</h2>
+<h3 id="authentication">Authentication</h3>
 <p>Authentication helps the client verify that it is communicating with the intended server.</p>
 <p>For example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Browser requests:
@@ -840,7 +1327,7 @@
 <p>is authorized to use that identity.</p>
 <p>TLS certificates provide this server-authentication mechanism.</p>
 <hr />
-<h1 id="http-vs-https">HTTP vs HTTPS</h1>
+<h2 id="http-vs-https">HTTP vs HTTPS</h2>
 <table>
 <thead>
 <tr>
@@ -872,7 +1359,7 @@
 </tbody>
 </table>
 <hr />
-<h1 id="where-https-fits-in-the-stack">Where HTTPS Fits in the Stack</h1>
+<h2 id="where-https-fits-in-the-stack">Where HTTPS Fits in the Stack</h2>
 <p>For plain HTTP:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Application
 <a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   ↓
@@ -899,7 +1386,7 @@
 <p>HTTP still defines the request-response semantics.</p>
 </blockquote>
 <hr />
-<h1 id="complete-https-request-flow">Complete HTTPS Request Flow</h1>
+<h2 id="complete-https-request-flow">Complete HTTPS Request Flow</h2>
 <p>Suppose the user enters:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>https://example.com/users
 </code></pre></div>
@@ -930,7 +1417,7 @@
 </code></pre></div>
 <p>This combines the networking topics learned so far.</p>
 <hr />
-<h1 id="https-and-port-443">HTTPS and Port 443</h1>
+<h2 id="https-and-port-443">HTTPS and Port 443</h2>
 <p>HTTPS commonly uses:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>443
 </code></pre></div>
@@ -944,7 +1431,7 @@
 <p>The port does not itself provide security.</p>
 <p>Security comes from TLS.</p>
 <hr />
-<h1 id="what-https-does-not-guarantee">What HTTPS Does Not Guarantee</h1>
+<h2 id="what-https-does-not-guarantee">What HTTPS Does Not Guarantee</h2>
 <p>HTTPS does not mean:</p>
 <blockquote>
 <p>The website is safe, honest, or trustworthy.</p>
@@ -961,7 +1448,7 @@
 <a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>→ Secure communication with the authenticated TLS endpoint
 </code></pre></div>
 <hr />
-<h1 id="mern-mental-model">MERN Mental Model</h1>
+<h2 id="mern-mental-model">MERN Mental Model</h2>
 <p>Suppose React sends:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://api.example.com/users"</span><span class="p">);</span>
 </code></pre></div>
@@ -992,8 +1479,8 @@
 </code></pre></div>
 <p>TLS protects those HTTP messages during transport.</p>
 <hr />
-<h1 id="practical-labs">Practical Labs</h1>
-<h2 id="lab-1-inspect-https-with-curl">Lab 1 — Inspect HTTPS with curl</h2>
+<h2 id="practical-labs">Practical Labs</h2>
+<h3 id="lab-1-inspect-https-with-curl">Lab 1 — Inspect HTTPS with curl</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>curl<span class="w"> </span>-v<span class="w"> </span>https://example.com
 </code></pre></div>
@@ -1013,7 +1500,7 @@
 <a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>HTTP
 </code></pre></div>
 <hr />
-<h2 id="lab-2-compare-http-and-https">Lab 2 — Compare HTTP and HTTPS</h2>
+<h3 id="lab-2-compare-http-and-https">Lab 2 — Compare HTTP and HTTPS</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>curl<span class="w"> </span>-v<span class="w"> </span>http://example.com
 </code></pre></div>
@@ -1022,7 +1509,7 @@
 </code></pre></div>
 <p>Observe that HTTPS introduces TLS negotiation before HTTP communication.</p>
 <hr />
-<h2 id="lab-3-browser-devtools">Lab 3 — Browser DevTools</h2>
+<h3 id="lab-3-browser-devtools">Lab 3 — Browser DevTools</h3>
 <p>Open:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>https://example.com
 </code></pre></div>
@@ -1043,7 +1530,7 @@
 </ul>
 <p>The browser hides most TLS complexity from application code.</p>
 <hr />
-<h1 id="common-problems">Common Problems</h1>
+<h2 id="common-problems">Common Problems</h2>
 <p>HTTPS-related issues can include:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>Certificate expired
 <a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>Hostname mismatch
@@ -1054,8 +1541,8 @@
 </code></pre></div>
 <p>These will be easier to diagnose after understanding TLS and certificates.</p>
 <hr />
-<h1 id="common-misunderstandings">Common Misunderstandings</h1>
-<h2 id="https-is-not-a-new-http-method">HTTPS Is Not a New HTTP Method</h2>
+<h2 id="common-misunderstandings">Common Misunderstandings</h2>
+<h3 id="https-is-not-a-new-http-method">HTTPS Is Not a New HTTP Method</h3>
 <p>HTTPS does not replace:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>GET
 <a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>POST
@@ -1066,11 +1553,11 @@
 <p>Those remain HTTP concepts.</p>
 <p>HTTPS changes how HTTP data is securely transported.</p>
 <hr />
-<h2 id="https-does-not-encrypt-the-destination-ip">HTTPS Does Not Encrypt the Destination IP</h2>
+<h3 id="https-does-not-encrypt-the-destination-ip">HTTPS Does Not Encrypt the Destination IP</h3>
 <p>TLS protects application data, but the networking layers still need information required to route traffic.</p>
 <p>Do not assume every piece of network metadata becomes invisible simply because HTTPS is used.</p>
 <hr />
-<h2 id="https-does-not-contain-business-logic">HTTPS Does Not Contain Business Logic</h2>
+<h3 id="https-does-not-contain-business-logic">HTTPS Does Not Contain Business Logic</h3>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>HTTPS
 <a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>→ secure communication
 <a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
@@ -1078,7 +1565,7 @@
 <a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>→ application logic
 </code></pre></div>
 <hr />
-<h1 id="security-considerations">Security Considerations</h1>
+<h2 id="security-considerations">Security Considerations</h2>
 <p>Use HTTPS whenever sensitive or authenticated web communication is involved.</p>
 <p>Important principles:</p>
 <ul>
@@ -1092,7 +1579,7 @@
 </ul>
 <p>Detailed application security will be covered separately.</p>
 <hr />
-<h1 id="performance-considerations">Performance Considerations</h1>
+<h2 id="performance-considerations">Performance Considerations</h2>
 <p>HTTPS adds cryptographic setup and processing.</p>
 <p>However, modern TLS is highly optimized.</p>
 <p>Performance is influenced by:</p>
@@ -1107,7 +1594,7 @@
 <p>Do not avoid HTTPS for performance reasons.</p>
 <p>Security is mandatory for modern production web applications.</p>
 <hr />
-<h1 id="interview-questions">Interview Questions</h1>
+<h2 id="interview-questions">Interview Questions</h2>
 <p>Try answering without notes.</p>
 <ol>
 <li>What is HTTPS?</li>
@@ -1127,7 +1614,7 @@
 <li>What is the role of TLS in HTTPS?</li>
 </ol>
 <hr />
-<h1 id="quick-revision">Quick Revision</h1>
+<h2 id="quick-revision">Quick Revision</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>HTTPS
 <a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>│
 <a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>├── HTTP
@@ -1156,37 +1643,37 @@
 <a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a>Application
 </code></pre></div>
 <hr />
-<h1 id="my-understanding">My Understanding</h1>
+<h2 id="my-understanding">My Understanding</h2>
 <p>HTTPS is HTTP communication protected using TLS.</p>
 <p>HTTP still defines the request-response semantics, while TLS provides confidentiality, integrity, and authentication for the communication.</p>
 <p>Before an HTTPS request is exchanged, the client establishes a connection, performs a TLS handshake, validates the server certificate, and derives shared session keys.</p>
 <p>The resulting HTTP communication can then be protected while travelling between the client and server.</p>
 <hr />
-<h1 id="completion-checklist">Completion Checklist</h1>
+<h2 id="completion-checklist">Completion Checklist</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand what HTTPS is</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand HTTP vs HTTPS</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand where TLS fits</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand confidentiality</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand integrity</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand authentication</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Know the default HTTPS port</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand the complete HTTPS request flow</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Run <code>curl -v</code> against an HTTPS site</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Compare HTTP and HTTPS</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Explain why HTTPS does not guarantee a website is trustworthy</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Answer interview questions without notes</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand what HTTPS is</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand HTTP vs HTTPS</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand where TLS fits</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand confidentiality</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand integrity</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand authentication</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Know the default HTTPS port</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand the complete HTTPS request flow</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Run <code>curl -v</code> against an HTTPS site</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Compare HTTP and HTTPS</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Explain why HTTPS does not guarantee a website is trustworthy</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Answer interview questions without notes</li>
 </ul>
 <hr />
-<h1 id="references">References</h1>
-<h2 id="primary">Primary</h2>
+<h2 id="references">References</h2>
+<h3 id="primary">Primary</h3>
 <ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Glossary/HTTPS">MDN — HTTPS</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/Security/Transport_Layer_Security">MDN — Transport Layer Security</a></li>
 <li><a href="https://www.cloudflare.com/learning/ssl/what-is-https/">Cloudflare — What is HTTPS?</a></li>
 </ul>
 <hr />
-<h1 id="related-topics">Related Topics</h1>
+<h2 id="related-topics">Related Topics</h2>
 <ul>
 <li><a href="../http/">HTTP</a></li>
 <li><a href="../tls/">TLS</a></li>
@@ -1249,6 +1736,22 @@
           </a>
         
         
+          
+          <a href="../../../guides/notes-guide/" class="md-footer__link md-footer__link--next" aria-label="Next: Notes Preparation Guide">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Notes Preparation Guide
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
       </nav>
     
   
@@ -1281,7 +1784,7 @@
     
       <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
-        <script src="../../../assets/javascripts/copyright.js"></script>
+        <script src="../../../assets/javascripts/site.js"></script>
       
     
   </body>

@@ -9,6 +9,8 @@
         <meta name="description" content="Practical, interconnected notes for engineering foundations.">
       
       
+        <meta name="author" content="Mahesh Pawar">
+      
       
         <link rel="canonical" href="https://pawar-mahesh.github.io/engineering-notes/fundamentals/networking/dns/">
       
@@ -126,7 +128,8 @@
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         </label>
-        <div class="md-search" data-md-component="search" role="dialog">
+        
+<div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
@@ -138,7 +141,6 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
       <nav class="md-search__options" aria-label="Search">
-        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -608,6 +610,171 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#dns-records" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS Records
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS Caching
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-in-a-web-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS in a Web Request
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mern-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MERN Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Labs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Problems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Revision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completion-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Topics
+      
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -744,6 +911,93 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/notes-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes Preparation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -863,6 +1117,171 @@
     <span class="md-ellipsis">
       
         Authoritative DNS Server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-records" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS Records
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS Caching
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-in-a-web-request" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS in a Web Request
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mern-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MERN Example
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#practical-labs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practical Labs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Problems
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging Commands
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Considerations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interview-questions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interview Questions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-revision" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Revision
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-understanding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        My Understanding
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#completion-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completion Checklist
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#related-topics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related Topics
       
     </span>
   </a>
@@ -1064,7 +1483,7 @@
 </code></pre></div>
 <p>The authoritative server provides the actual DNS record configured for the domain.</p>
 <hr />
-<h1 id="dns-records">DNS Records</h1>
+<h2 id="dns-records">DNS Records</h2>
 <p>DNS supports different record types for different purposes.</p>
 <p>For Day 2, understand these records:</p>
 <table>
@@ -1102,7 +1521,7 @@
 </tbody>
 </table>
 <hr />
-<h2 id="a-record">A Record</h2>
+<h3 id="a-record">A Record</h3>
 <p>An <code>A</code> record maps a domain name to an IPv4 address.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>api.example.com
@@ -1115,7 +1534,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>api.example.com.   A   203.0.113.10
 </code></pre></div>
 <hr />
-<h2 id="aaaa-record">AAAA Record</h2>
+<h3 id="aaaa-record">AAAA Record</h3>
 <p>An <code>AAAA</code> record maps a domain name to an IPv6 address.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>example.com
@@ -1125,7 +1544,7 @@
 <a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>2001:db8::1
 </code></pre></div>
 <hr />
-<h2 id="cname-record">CNAME Record</h2>
+<h3 id="cname-record">CNAME Record</h3>
 <p>A <code>CNAME</code> record makes one hostname an alias of another hostname.</p>
 <p>Example:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>www.example.com
@@ -1143,7 +1562,7 @@
 <a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>IP Address
 </code></pre></div>
 <hr />
-<h2 id="mx-record">MX Record</h2>
+<h3 id="mx-record">MX Record</h3>
 <p>An <code>MX</code> record specifies mail servers for a domain.</p>
 <p>Example conceptually:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>example.com
@@ -1154,7 +1573,7 @@
 </code></pre></div>
 <p>It is mainly related to email delivery.</p>
 <hr />
-<h2 id="txt-record">TXT Record</h2>
+<h3 id="txt-record">TXT Record</h3>
 <p>A <code>TXT</code> record stores text associated with a domain.</p>
 <p>Common uses include:</p>
 <ul>
@@ -1164,7 +1583,7 @@
 <li>metadata required by external services</li>
 </ul>
 <hr />
-<h2 id="ns-record">NS Record</h2>
+<h3 id="ns-record">NS Record</h3>
 <p>An <code>NS</code> record identifies the nameservers responsible for a DNS zone/domain.</p>
 <p>Conceptually:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>example.com
@@ -1174,7 +1593,7 @@
 <a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>ns1.provider.com
 </code></pre></div>
 <hr />
-<h1 id="dns-caching">DNS Caching</h1>
+<h2 id="dns-caching">DNS Caching</h2>
 <p>DNS lookups are cached because repeating the entire lookup process for every request would be inefficient.</p>
 <p>Caching can occur at multiple levels:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>Browser
@@ -1194,7 +1613,7 @@
 </code></pre></div>
 <p>This improves performance and reduces DNS traffic.</p>
 <hr />
-<h2 id="ttl">TTL</h2>
+<h3 id="ttl">TTL</h3>
 <p>TTL stands for <strong>Time To Live</strong>.</p>
 <p>It indicates how long a DNS answer may be cached before it should be considered stale.</p>
 <p>Example:</p>
@@ -1208,7 +1627,7 @@
 </code></pre></div>
 <p>After the TTL expires, the resolver may need to refresh the record.</p>
 <hr />
-<h2 id="why-dns-changes-may-not-appear-immediately">Why DNS Changes May Not Appear Immediately</h2>
+<h3 id="why-dns-changes-may-not-appear-immediately">Why DNS Changes May Not Appear Immediately</h3>
 <p>Suppose:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>Old record:
 <a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>api.example.com → 203.0.113.10
@@ -1229,7 +1648,7 @@
 </code></pre></div>
 <p>Eventually the old cached records expire.</p>
 <hr />
-<h2 id="advantages-of-dns-caching">Advantages of DNS Caching</h2>
+<h3 id="advantages-of-dns-caching">Advantages of DNS Caching</h3>
 <p>DNS caching provides:</p>
 <ul>
 <li>faster lookups</li>
@@ -1238,7 +1657,7 @@
 <li>reduced load on authoritative DNS servers</li>
 </ul>
 <hr />
-<h2 id="trade-offs-of-dns-caching">Trade-Offs of DNS Caching</h2>
+<h3 id="trade-offs-of-dns-caching">Trade-Offs of DNS Caching</h3>
 <p>Caching can also cause:</p>
 <ul>
 <li>temporary use of old records</li>
@@ -1251,7 +1670,7 @@
 <a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>Freshness
 </code></pre></div>
 <hr />
-<h1 id="dns-in-a-web-request">DNS in a Web Request</h1>
+<h2 id="dns-in-a-web-request">DNS in a Web Request</h2>
 <p>Suppose the user enters:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>https://api.example.com/users
 </code></pre></div>
@@ -1272,7 +1691,7 @@
 </code></pre></div>
 <p>DNS happens before the browser can normally send the HTTP request to the destination server.</p>
 <hr />
-<h1 id="mern-example">MERN Example</h1>
+<h2 id="mern-example">MERN Example</h2>
 <p>Suppose a React application calls:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://api.myapp.com/users"</span><span class="p">);</span>
 </code></pre></div>
@@ -1294,8 +1713,8 @@
 <p>The React application normally does not need to know the server IP directly.</p>
 <p>It only needs the hostname.</p>
 <hr />
-<h1 id="practical-labs">Practical Labs</h1>
-<h2 id="lab-1-resolve-a-domain">Lab 1 — Resolve a Domain</h2>
+<h2 id="practical-labs">Practical Labs</h2>
+<h3 id="lab-1-resolve-a-domain">Lab 1 — Resolve a Domain</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>nslookup<span class="w"> </span>google.com
 </code></pre></div>
@@ -1310,7 +1729,7 @@
 </code></pre></div>
 <p>Compare the results.</p>
 <hr />
-<h2 id="lab-2-use-dig">Lab 2 — Use dig</h2>
+<h3 id="lab-2-use-dig">Lab 2 — Use dig</h3>
 <p>On macOS/Linux:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>dig<span class="w"> </span>google.com
 </code></pre></div>
@@ -1325,31 +1744,31 @@
 <li>returned value</li>
 </ul>
 <hr />
-<h2 id="lab-3-query-an-a-record">Lab 3 — Query an A Record</h2>
+<h3 id="lab-3-query-an-a-record">Lab 3 — Query an A Record</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>dig<span class="w"> </span>A<span class="w"> </span>github.com
 </code></pre></div>
 <p>Look for IPv4 addresses.</p>
 <hr />
-<h2 id="lab-4-query-an-aaaa-record">Lab 4 — Query an AAAA Record</h2>
+<h3 id="lab-4-query-an-aaaa-record">Lab 4 — Query an AAAA Record</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>dig<span class="w"> </span>AAAA<span class="w"> </span>google.com
 </code></pre></div>
 <p>Look for IPv6 addresses.</p>
 <hr />
-<h2 id="lab-5-query-nameservers">Lab 5 — Query Nameservers</h2>
+<h3 id="lab-5-query-nameservers">Lab 5 — Query Nameservers</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>dig<span class="w"> </span>NS<span class="w"> </span>github.com
 </code></pre></div>
 <p>Observe which nameservers are responsible for the domain.</p>
 <hr />
-<h2 id="lab-6-query-mail-records">Lab 6 — Query Mail Records</h2>
+<h3 id="lab-6-query-mail-records">Lab 6 — Query Mail Records</h3>
 <p>Run:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>dig<span class="w"> </span>MX<span class="w"> </span>google.com
 </code></pre></div>
 <p>Observe the configured mail servers.</p>
 <hr />
-<h1 id="common-problems">Common Problems</h1>
+<h2 id="common-problems">Common Problems</h2>
 <p>DNS problems commonly appear as:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>domain not resolving
 <a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>wrong IP returned
@@ -1372,7 +1791,7 @@
 <a id="__codelineno-49-11" name="__codelineno-49-11" href="#__codelineno-49-11"></a>Check TTL/cache
 </code></pre></div>
 <hr />
-<h1 id="debugging-commands">Debugging Commands</h1>
+<h2 id="debugging-commands">Debugging Commands</h2>
 <p>Useful commands:</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>nslookup<span class="w"> </span>example.com
 </code></pre></div>
@@ -1389,7 +1808,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>dig<span class="w"> </span>MX<span class="w"> </span>example.com
 </code></pre></div>
 <hr />
-<h1 id="security-considerations">Security Considerations</h1>
+<h2 id="security-considerations">Security Considerations</h2>
 <p>DNS is an important part of application security.</p>
 <p>Potential risks include:</p>
 <ul>
@@ -1402,7 +1821,7 @@
 </ul>
 <p>Later topics will cover secure DNS concepts in more depth.</p>
 <hr />
-<h1 id="performance-considerations">Performance Considerations</h1>
+<h2 id="performance-considerations">Performance Considerations</h2>
 <p>DNS performance can affect application startup and request latency.</p>
 <p>Important factors include:</p>
 <ul>
@@ -1414,7 +1833,7 @@
 </ul>
 <p>For most applications, DNS caching greatly reduces repeated lookup cost.</p>
 <hr />
-<h1 id="interview-questions">Interview Questions</h1>
+<h2 id="interview-questions">Interview Questions</h2>
 <p>Try answering without reading the notes.</p>
 <ol>
 <li>What is DNS?</li>
@@ -1439,7 +1858,7 @@
 <li>How would you troubleshoot a domain that is not resolving?</li>
 </ol>
 <hr />
-<h1 id="quick-revision">Quick Revision</h1>
+<h2 id="quick-revision">Quick Revision</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>DNS
 <a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>│
 <a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>├── Domain → Network Address
@@ -1464,46 +1883,46 @@
 <a id="__codelineno-57-22" name="__codelineno-57-22" href="#__codelineno-57-22"></a>    └── TTL
 </code></pre></div>
 <hr />
-<h1 id="my-understanding">My Understanding</h1>
+<h2 id="my-understanding">My Understanding</h2>
 <p>DNS provides a distributed naming system that allows applications to use human-readable domain names instead of directly using IP addresses.</p>
 <p>When a client wants to communicate with a hostname, a DNS resolver obtains the appropriate DNS record, often using cached information.</p>
 <p>The returned network address allows the client to continue establishing a connection to the target service.</p>
 <p>DNS does not execute the HTTP request itself. It helps the client determine where the target service can be reached.</p>
 <hr />
-<h1 id="completion-checklist">Completion Checklist</h1>
+<h2 id="completion-checklist">Completion Checklist</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand what DNS is</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand why DNS exists</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand DNS resolution at a high level</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand resolver, root, TLD and authoritative DNS</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand A records</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand AAAA records</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand CNAME records</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand MX, TXT and NS records</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand DNS caching</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand TTL</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Run <code>nslookup</code></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Run <code>dig</code></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect an A record</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect an AAAA record</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect NS records</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Explain where DNS fits before HTTP</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Answer interview questions without notes</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand what DNS is</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand why DNS exists</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand DNS resolution at a high level</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand resolver, root, TLD and authoritative DNS</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand A records</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand AAAA records</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand CNAME records</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand MX, TXT and NS records</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand DNS caching</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Understand TTL</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Run <code>nslookup</code></li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Run <code>dig</code></li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Inspect an A record</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Inspect an AAAA record</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Inspect NS records</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Explain where DNS fits before HTTP</li>
+<li class="task-list-item"><label class="task-list-control" aria-hidden="true"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label><span class="md-sr-only">Not completed: </span> Answer interview questions without notes</li>
 </ul>
 <hr />
-<h1 id="references">References</h1>
-<h2 id="primary">Primary</h2>
+<h2 id="references">References</h2>
+<h3 id="primary">Primary</h3>
 <ul>
 <li><a href="https://www.cloudflare.com/learning/dns/what-is-dns/">Cloudflare Learning Center — What is DNS?</a></li>
 <li><a href="https://www.cloudflare.com/learning/dns/dns-records/">Cloudflare Learning Center — DNS Records</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works">MDN — How the Web Works</a></li>
 </ul>
-<h2 id="deeper-reference">Deeper Reference</h2>
+<h3 id="deeper-reference">Deeper Reference</h3>
 <ul>
 <li><a href="https://www.icann.org/resources/pages/dns-2012-02-25-en">ICANN — DNS</a></li>
 </ul>
 <hr />
-<h1 id="related-topics">Related Topics</h1>
+<h2 id="related-topics">Related Topics</h2>
 <ul>
 <li><a href="../ip-addresses-and-ports/">IP Addresses and Ports</a></li>
 <li><a href="../tcp/">TCP</a></li>
@@ -1613,7 +2032,7 @@
     
       <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
       
-        <script src="../../../assets/javascripts/copyright.js"></script>
+        <script src="../../../assets/javascripts/site.js"></script>
       
     
   </body>
