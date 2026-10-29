@@ -53,6 +53,8 @@
       
     
     
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -92,7 +94,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Engineering Notes" class="md-header__button md-logo" aria-label="Engineering Notes" data-md-component="logo">
       
@@ -171,6 +173,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -195,15 +202,109 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/pawar-mahesh/engineering-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    engineering-notes
+  </div>
+</a>
+      </div>
+    
   </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ip-addresses-and-ports/" class="md-tabs__link">
+          
+  
+  
+  Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../guides/notes-guide/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
   
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -217,8 +318,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Engineering Notes" class="md-nav__button md-logo" aria-label="Engineering Notes" data-md-component="logo">
       
@@ -228,6 +331,18 @@
     </a>
     Engineering Notes
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pawar-mahesh/engineering-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    engineering-notes
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -272,6 +387,9 @@
     
       
         
+        
+      
+      
         
       
     
@@ -325,16 +443,22 @@
     
     
       
+      
+        
+          
+          
+        
+      
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
             
   
   
@@ -699,19 +823,21 @@
     
     
       
-        
+      
         
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -823,10 +949,87 @@
           
             <div class="md-content" data-md-component="content">
               
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../ip-addresses-and-ports/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Fundamentals
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../ip-addresses-and-ports/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Networking
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
+  
+  
 
 
 <h1 id="http-fundamentals">HTTP Fundamentals</h1>
@@ -847,35 +1050,35 @@
 <li>any application capable of sending HTTP requests</li>
 </ul>
 <p>The basic communication model is:</p>
-<pre><code class="language-text">Client
-   ↓
-HTTP Request
-   ↓
-Server
-   ↓
-HTTP Response
-   ↓
-Client
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Client
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>   ↓
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>HTTP Request
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>   ↓
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Server
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>   ↓
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>HTTP Response
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>   ↓
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Client
+</code></pre></div>
 <p>The client initiates the communication by sending a request.</p>
 <p>The server receives the request, performs the required processing, and sends back a response.</p>
 <p>In a MERN application:</p>
-<pre><code class="language-text">React
-   ↓
-GET /api/users
-   ↓
-Node / Express
-   ↓
-Business Logic
-   ↓
-MongoDB
-   ↓
-Result
-   ↓
-200 OK + JSON
-   ↓
-React
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>React
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>   ↓
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>GET /api/users
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>   ↓
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Node / Express
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>   ↓
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>Business Logic
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>   ↓
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>MongoDB
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>   ↓
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>Result
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>   ↓
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>200 OK + JSON
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>   ↓
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>React
+</code></pre></div>
 <blockquote>
 <p><strong>Important</strong></p>
 <p>HTTP does not contain your application business logic.</p>
@@ -886,20 +1089,20 @@ React
 <h1 id="http-request">HTTP Request</h1>
 <p>An HTTP request represents something that a client wants the server to do.</p>
 <p>Example:</p>
-<pre><code class="language-http">GET /api/users/123 HTTP/1.1
-Host: api.example.com
-Accept: application/json
-Authorization: Bearer &lt;token&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">GET</span> <span class="nn">/api/users/123</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">api.example.com</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="na">Accept</span><span class="o">:</span> <span class="l">application/json</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="na">Authorization</span><span class="o">:</span> <span class="l">Bearer &lt;token&gt;</span>
+</code></pre></div>
 <p>Conceptually, an HTTP request can contain:</p>
-<pre><code class="language-text">HTTP Request
-│
-├── Method
-├── Path / URL
-├── Headers
-├── Query Parameters
-└── Optional Body
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>HTTP Request
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>│
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├── Method
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>├── Path / URL
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>├── Headers
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>├── Query Parameters
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>└── Optional Body
+</code></pre></div>
 <p>A request generally consists of:</p>
 <ol>
 <li>Request method</li>
@@ -907,22 +1110,22 @@ Authorization: Bearer &lt;token&gt;
 <li>Optional body</li>
 </ol>
 <p>Example:</p>
-<pre><code class="language-http">POST /api/users HTTP/1.1
-Host: api.example.com
-Content-Type: application/json
-
-{
-  &quot;name&quot;: &quot;Mahesh&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nf">POST</span> <span class="nn">/api/users</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="na">Host</span><span class="o">:</span> <span class="l">api.example.com</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="p">{</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mahesh"</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="p">}</span>
+</code></pre></div>
 <p>Here:</p>
-<pre><code class="language-text">POST                    → HTTP method
-/api/users              → Resource path
-HTTP/1.1                → HTTP version
-Host                    → Request header
-Content-Type            → Request header
-JSON                    → Request body
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>POST                    → HTTP method
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>/api/users              → Resource path
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>HTTP/1.1                → HTTP version
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Host                    → Request header
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Content-Type            → Request header
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>JSON                    → Request body
+</code></pre></div>
 <hr />
 <h1 id="http-methods">HTTP Methods</h1>
 <p>HTTP methods communicate the <strong>intention of the request</strong>.</p>
@@ -957,35 +1160,35 @@ JSON                    → Request body
 </tbody>
 </table>
 <p>Examples:</p>
-<pre><code class="language-http">GET /users/123
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="err">GET /users/123</span>
+</code></pre></div>
 <p>Retrieve user <code>123</code>.</p>
-<pre><code class="language-http">POST /users
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="err">POST /users</span>
+</code></pre></div>
 <p>Create a new user.</p>
-<pre><code class="language-http">PUT /users/123
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="err">PUT /users/123</span>
+</code></pre></div>
 <p>Replace the representation of user <code>123</code>.</p>
-<pre><code class="language-http">PATCH /users/123
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="err">PATCH /users/123</span>
+</code></pre></div>
 <p>Modify part of user <code>123</code>.</p>
-<pre><code class="language-http">DELETE /users/123
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="err">DELETE /users/123</span>
+</code></pre></div>
 <p>Delete user <code>123</code>.</p>
 <hr />
 <h2 id="put-vs-patch">PUT vs PATCH</h2>
 <p>Consider this resource:</p>
-<pre><code class="language-json">{
-  &quot;name&quot;: &quot;Mahesh&quot;,
-  &quot;city&quot;: &quot;Pune&quot;,
-  &quot;role&quot;: &quot;Engineer&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">{</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mahesh"</span><span class="p">,</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pune"</span><span class="p">,</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Engineer"</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">}</span>
+</code></pre></div>
 <p>A <code>PATCH</code> request may send:</p>
-<pre><code class="language-json">{
-  &quot;city&quot;: &quot;Mumbai&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">  </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mumbai"</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="p">}</span>
+</code></pre></div>
 <p>Meaning:</p>
 <blockquote>
 <p>Update only the <code>city</code> field.</p>
@@ -999,29 +1202,29 @@ JSON                    → Request body
 <h1 id="http-response">HTTP Response</h1>
 <p>After processing a request, the server sends an HTTP response.</p>
 <p>Example:</p>
-<pre><code class="language-http">HTTP/1.1 200 OK
-Content-Type: application/json
-
-{
-  &quot;id&quot;: 123,
-  &quot;name&quot;: &quot;Mahesh&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">{</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="w">  </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Mahesh"</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">}</span>
+</code></pre></div>
 <p>Conceptually:</p>
-<pre><code class="language-text">HTTP Response
-│
-├── HTTP Version
-├── Status Code
-├── Headers
-└── Optional Body
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>HTTP Response
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>│
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>├── HTTP Version
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>├── Status Code
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>├── Headers
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>└── Optional Body
+</code></pre></div>
 <p>Here:</p>
-<pre><code class="language-text">HTTP/1.1                       → HTTP version
-200                            → Status code
-OK                             → Reason phrase
-Content-Type                   → Response header
-JSON                           → Response body
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>HTTP/1.1                       → HTTP version
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>200                            → Status code
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>OK                             → Reason phrase
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>Content-Type                   → Response header
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>JSON                           → Response body
+</code></pre></div>
 <p>The status code tells the client the outcome of the request.</p>
 <hr />
 <h1 id="http-status-codes">HTTP Status Codes</h1>
@@ -1161,34 +1364,34 @@ JSON                           → Response body
 <hr />
 <h2 id="401-vs-403">401 vs 403</h2>
 <p>This distinction is important.</p>
-<pre><code class="language-text">401 Unauthorized
-        ↓
-Authentication problem
-
-Who are you?
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>401 Unauthorized
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>        ↓
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>Authentication problem
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>Who are you?
+</code></pre></div>
 <p>Examples:</p>
 <ul>
 <li>token missing</li>
 <li>token expired</li>
 <li>invalid credentials</li>
 </ul>
-<pre><code class="language-text">403 Forbidden
-        ↓
-Authorization problem
-
-I know who you are,
-but you cannot perform this action.
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>403 Forbidden
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>        ↓
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>Authorization problem
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>I know who you are,
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>but you cannot perform this action.
+</code></pre></div>
 <p>Example:</p>
-<pre><code class="language-text">User has valid token
-        ↓
-User requests /admin
-        ↓
-User does not have ADMIN role
-        ↓
-403 Forbidden
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>User has valid token
+<a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>        ↓
+<a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>User requests /admin
+<a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>        ↓
+<a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>User does not have ADMIN role
+<a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>        ↓
+<a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a>403 Forbidden
+</code></pre></div>
 <blockquote>
 <p><strong>TIP</strong>
 Think:</p>
@@ -1199,89 +1402,89 @@ Think:</p>
 <h1 id="http-headers">HTTP Headers</h1>
 <p>HTTP headers contain <strong>metadata about the HTTP message</strong>.</p>
 <p>Examples:</p>
-<pre><code class="language-http">Content-Type: application/json
-Accept: application/json
-Authorization: Bearer &lt;token&gt;
-Cache-Control: no-cache
-User-Agent: Chrome
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="err">Content-Type: application/json</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="err">Accept: application/json</span>
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="err">Authorization: Bearer &lt;token&gt;</span>
+<a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="err">Cache-Control: no-cache</span>
+<a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="err">User-Agent: Chrome</span>
+</code></pre></div>
 <p>Useful mental model:</p>
-<pre><code class="language-text">Headers
-   ↓
-Information about the message
-
-Body
-   ↓
-The actual data being transferred
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Headers
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>   ↓
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>Information about the message
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>Body
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>   ↓
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>The actual data being transferred
+</code></pre></div>
 <hr />
 <h2 id="common-headers">Common Headers</h2>
 <h3 id="content-type">Content-Type</h3>
 <p>Describes the format of the request or response body.</p>
 <p>Example:</p>
-<pre><code class="language-http">Content-Type: application/json
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="err">Content-Type: application/json</span>
+</code></pre></div>
 <hr />
 <h3 id="accept">Accept</h3>
 <p>Tells the server which response formats the client can understand.</p>
-<pre><code class="language-http">Accept: application/json
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="err">Accept: application/json</span>
+</code></pre></div>
 <hr />
 <h3 id="authorization">Authorization</h3>
 <p>Provides authentication credentials.</p>
-<pre><code class="language-http">Authorization: Bearer &lt;token&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="err">Authorization: Bearer &lt;token&gt;</span>
+</code></pre></div>
 <hr />
 <h3 id="user-agent">User-Agent</h3>
 <p>Provides information about the client.</p>
-<pre><code class="language-http">User-Agent: Mozilla/5.0
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="err">User-Agent: Mozilla/5.0</span>
+</code></pre></div>
 <hr />
 <h3 id="cache-control">Cache-Control</h3>
 <p>Defines caching behavior.</p>
-<pre><code class="language-http">Cache-Control: no-cache
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="err">Cache-Control: no-cache</span>
+</code></pre></div>
 <p>Caching will be studied separately later.</p>
 <hr />
 <h1 id="path-parameters-vs-query-parameters">Path Parameters vs Query Parameters</h1>
 <p>Consider:</p>
-<pre><code class="language-http">GET /users/123
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="err">GET /users/123</span>
+</code></pre></div>
 <p>Here:</p>
-<pre><code class="language-text">123
- ↓
-Identifies a particular resource
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>123
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a> ↓
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>Identifies a particular resource
+</code></pre></div>
 <p>This is commonly treated as a <strong>path parameter</strong>.</p>
 <p>Compare:</p>
-<pre><code class="language-http">GET /users?page=2&amp;limit=20
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="err">GET /users?page=2&amp;limit=20</span>
+</code></pre></div>
 <p>Here:</p>
-<pre><code class="language-text">page=2
-limit=20
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>page=2
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>limit=20
+</code></pre></div>
 <p>are query parameters.</p>
 <p>They modify how the resource collection is requested.</p>
 <p>Useful mental model:</p>
-<pre><code class="language-text">Path Parameter
-      ↓
-Which resource?
-
-Query Parameter
-      ↓
-How should it be searched,
-filtered, sorted, or presented?
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>Path Parameter
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>      ↓
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>Which resource?
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>Query Parameter
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>      ↓
+<a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a>How should it be searched,
+<a id="__codelineno-30-8" name="__codelineno-30-8" href="#__codelineno-30-8"></a>filtered, sorted, or presented?
+</code></pre></div>
 <h3 id="example">Example</h3>
-<pre><code class="language-http">GET /products/123
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="err">GET /products/123</span>
+</code></pre></div>
 <p>Meaning:</p>
 <blockquote>
 <p>Give me product <code>123</code>.</p>
 </blockquote>
 <p>Compare:</p>
-<pre><code class="language-http">GET /products?category=phone&amp;limit=20
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="err">GET /products?category=phone&amp;limit=20</span>
+</code></pre></div>
 <p>Meaning:</p>
 <blockquote>
 <p>Give me up to 20 products belonging to the phone category.</p>
@@ -1291,33 +1494,33 @@ filtered, sorted, or presented?
 <p>HTTP is fundamentally a <strong>stateless protocol</strong>.</p>
 <p>This means HTTP itself does not automatically remember previous requests.</p>
 <p>Consider:</p>
-<pre><code class="language-text">Request 1
-User logs in
-
-        ↓
-
-Request 2
-User asks for profile
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>Request 1
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>User logs in
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>        ↓
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>Request 2
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>User asks for profile
+</code></pre></div>
 <p>HTTP itself does not automatically know:</p>
 <blockquote>
 <p>Request 2 came from the same user as Request 1.</p>
 </blockquote>
 <p>Each HTTP request can be processed independently.</p>
 <p>Applications therefore introduce state using mechanisms such as:</p>
-<pre><code class="language-text">Cookies
-Sessions
-Tokens
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>Cookies
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a>Sessions
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>Tokens
+</code></pre></div>
 <p>Conceptually:</p>
-<pre><code class="language-text">HTTP
-  ↓
-Stateless
-
-Application
-  ↓
-Can maintain state using additional mechanisms
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>HTTP
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>  ↓
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>Stateless
+<a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a>
+<a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a>Application
+<a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>  ↓
+<a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>Can maintain state using additional mechanisms
+</code></pre></div>
 <blockquote>
 <p><strong>!IMPORTANT</strong></p>
 <p>Stateless HTTP does not mean web applications cannot remember users.</p>
@@ -1327,16 +1530,16 @@ Can maintain state using additional mechanisms
 <hr />
 <h1 id="http-connections">HTTP Connections</h1>
 <p>A simplified HTTP interaction looks like:</p>
-<pre><code class="language-text">Establish Connection
-        ↓
-Send HTTP Request
-        ↓
-Server Processes Request
-        ↓
-Receive HTTP Response
-        ↓
-Reuse or Close Connection
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>Establish Connection
+<a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a>        ↓
+<a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a>Send HTTP Request
+<a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a>        ↓
+<a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a>Server Processes Request
+<a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a>        ↓
+<a id="__codelineno-36-7" name="__codelineno-36-7" href="#__codelineno-36-7"></a>Receive HTTP Response
+<a id="__codelineno-36-8" name="__codelineno-36-8" href="#__codelineno-36-8"></a>        ↓
+<a id="__codelineno-36-9" name="__codelineno-36-9" href="#__codelineno-36-9"></a>Reuse or Close Connection
+</code></pre></div>
 <p>Repeatedly establishing connections can be expensive.</p>
 <p>Modern HTTP versions therefore include mechanisms for improving connection efficiency.</p>
 <hr />
@@ -1368,154 +1571,154 @@ Reuse or Close Connection
 <h2 id="http11">HTTP/1.1</h2>
 <p>HTTP/1.1 commonly allows a TCP connection to remain open and be reused for multiple requests.</p>
 <p>Conceptually:</p>
-<pre><code class="language-text">Without connection reuse
-
-Request
- ↓
-Connection
- ↓
-Close
-
-Request
- ↓
-New Connection
- ↓
-Close
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>Without connection reuse
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>Request
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a> ↓
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>Connection
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a> ↓
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>Close
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>Request
+<a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a> ↓
+<a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>New Connection
+<a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a> ↓
+<a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a>Close
+</code></pre></div>
 <p>Compared with:</p>
-<pre><code class="language-text">Persistent Connection
-
-Connection
-   ↓
-Request 1
-   ↓
-Response 1
-   ↓
-Request 2
-   ↓
-Response 2
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>Persistent Connection
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>Connection
+<a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a>   ↓
+<a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a>Request 1
+<a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>   ↓
+<a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a>Response 1
+<a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a>   ↓
+<a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a>Request 2
+<a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a>   ↓
+<a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a>Response 2
+</code></pre></div>
 <hr />
 <h2 id="http2">HTTP/2</h2>
 <p>HTTP/2 introduced improvements including <strong>multiplexing</strong>.</p>
 <p>Multiple streams can share a single connection.</p>
 <p>Simplified mental model:</p>
-<pre><code class="language-text">Single Connection
-│
-├── Request A
-├── Request B
-├── Request C
-│
-├── Response A
-├── Response B
-└── Response C
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>Single Connection
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>│
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>├── Request A
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>├── Request B
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>├── Request C
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>│
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>├── Response A
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a>├── Response B
+<a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>└── Response C
+</code></pre></div>
 <p>Do not go deep into HTTP/2 internals yet.</p>
 <hr />
 <h2 id="http3">HTTP/3</h2>
 <p>HTTP/3 uses <strong>QUIC</strong> rather than TCP as its transport foundation.</p>
 <p>For now, remember only:</p>
-<pre><code class="language-text">HTTP/1.1
-   ↓
-TCP
-
-HTTP/2
-   ↓
-TCP
-
-HTTP/3
-   ↓
-QUIC / UDP
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>HTTP/1.1
+<a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a>   ↓
+<a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a>TCP
+<a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a>
+<a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a>HTTP/2
+<a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>   ↓
+<a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a>TCP
+<a id="__codelineno-40-8" name="__codelineno-40-8" href="#__codelineno-40-8"></a>
+<a id="__codelineno-40-9" name="__codelineno-40-9" href="#__codelineno-40-9"></a>HTTP/3
+<a id="__codelineno-40-10" name="__codelineno-40-10" href="#__codelineno-40-10"></a>   ↓
+<a id="__codelineno-40-11" name="__codelineno-40-11" href="#__codelineno-40-11"></a>QUIC / UDP
+</code></pre></div>
 <p>TCP, TLS, QUIC, and transport internals will be studied separately.</p>
 <hr />
 <h1 id="mern-request-lifecycle">MERN Request Lifecycle</h1>
 <p>Consider:</p>
-<pre><code class="language-javascript">fetch(&quot;/api/users&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="nx">fetch</span><span class="p">(</span><span class="s2">"/api/users"</span><span class="p">);</span>
+</code></pre></div>
 <p>A useful mental model is:</p>
-<pre><code class="language-text">React
-   ↓
-fetch(&quot;/api/users&quot;)
-   ↓
-HTTP Request
-   ↓
-GET /api/users
-Headers
-   ↓
-Network
-   ↓
-Node / Express
-   ↓
-Route Matching
-   ↓
-Controller
-   ↓
-Service / Business Logic
-   ↓
-MongoDB
-   ↓
-Query Result
-   ↓
-Express
-   ↓
-HTTP Response
-   ↓
-200 OK
-Content-Type: application/json
-JSON Body
-   ↓
-Network
-   ↓
-React
-   ↓
-Response Parsed
-   ↓
-State Updated
-   ↓
-UI Re-rendered
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>React
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>   ↓
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>fetch("/api/users")
+<a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a>   ↓
+<a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a>HTTP Request
+<a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a>   ↓
+<a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a>GET /api/users
+<a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a>Headers
+<a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a>   ↓
+<a id="__codelineno-42-10" name="__codelineno-42-10" href="#__codelineno-42-10"></a>Network
+<a id="__codelineno-42-11" name="__codelineno-42-11" href="#__codelineno-42-11"></a>   ↓
+<a id="__codelineno-42-12" name="__codelineno-42-12" href="#__codelineno-42-12"></a>Node / Express
+<a id="__codelineno-42-13" name="__codelineno-42-13" href="#__codelineno-42-13"></a>   ↓
+<a id="__codelineno-42-14" name="__codelineno-42-14" href="#__codelineno-42-14"></a>Route Matching
+<a id="__codelineno-42-15" name="__codelineno-42-15" href="#__codelineno-42-15"></a>   ↓
+<a id="__codelineno-42-16" name="__codelineno-42-16" href="#__codelineno-42-16"></a>Controller
+<a id="__codelineno-42-17" name="__codelineno-42-17" href="#__codelineno-42-17"></a>   ↓
+<a id="__codelineno-42-18" name="__codelineno-42-18" href="#__codelineno-42-18"></a>Service / Business Logic
+<a id="__codelineno-42-19" name="__codelineno-42-19" href="#__codelineno-42-19"></a>   ↓
+<a id="__codelineno-42-20" name="__codelineno-42-20" href="#__codelineno-42-20"></a>MongoDB
+<a id="__codelineno-42-21" name="__codelineno-42-21" href="#__codelineno-42-21"></a>   ↓
+<a id="__codelineno-42-22" name="__codelineno-42-22" href="#__codelineno-42-22"></a>Query Result
+<a id="__codelineno-42-23" name="__codelineno-42-23" href="#__codelineno-42-23"></a>   ↓
+<a id="__codelineno-42-24" name="__codelineno-42-24" href="#__codelineno-42-24"></a>Express
+<a id="__codelineno-42-25" name="__codelineno-42-25" href="#__codelineno-42-25"></a>   ↓
+<a id="__codelineno-42-26" name="__codelineno-42-26" href="#__codelineno-42-26"></a>HTTP Response
+<a id="__codelineno-42-27" name="__codelineno-42-27" href="#__codelineno-42-27"></a>   ↓
+<a id="__codelineno-42-28" name="__codelineno-42-28" href="#__codelineno-42-28"></a>200 OK
+<a id="__codelineno-42-29" name="__codelineno-42-29" href="#__codelineno-42-29"></a>Content-Type: application/json
+<a id="__codelineno-42-30" name="__codelineno-42-30" href="#__codelineno-42-30"></a>JSON Body
+<a id="__codelineno-42-31" name="__codelineno-42-31" href="#__codelineno-42-31"></a>   ↓
+<a id="__codelineno-42-32" name="__codelineno-42-32" href="#__codelineno-42-32"></a>Network
+<a id="__codelineno-42-33" name="__codelineno-42-33" href="#__codelineno-42-33"></a>   ↓
+<a id="__codelineno-42-34" name="__codelineno-42-34" href="#__codelineno-42-34"></a>React
+<a id="__codelineno-42-35" name="__codelineno-42-35" href="#__codelineno-42-35"></a>   ↓
+<a id="__codelineno-42-36" name="__codelineno-42-36" href="#__codelineno-42-36"></a>Response Parsed
+<a id="__codelineno-42-37" name="__codelineno-42-37" href="#__codelineno-42-37"></a>   ↓
+<a id="__codelineno-42-38" name="__codelineno-42-38" href="#__codelineno-42-38"></a>State Updated
+<a id="__codelineno-42-39" name="__codelineno-42-39" href="#__codelineno-42-39"></a>   ↓
+<a id="__codelineno-42-40" name="__codelineno-42-40" href="#__codelineno-42-40"></a>UI Re-rendered
+</code></pre></div>
 <p>This is the key connection between HTTP fundamentals and practical MERN development.</p>
 <hr />
 <h1 id="practical-labs">Practical Labs</h1>
 <h2 id="lab-1-inspect-response-headers">Lab 1 — Inspect Response Headers</h2>
 <p>Run:</p>
-<pre><code class="language-bash">curl -I https://example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>curl<span class="w"> </span>-I<span class="w"> </span>https://example.com
+</code></pre></div>
 <p><code>-I</code> retrieves response headers.</p>
 <p>Observe:</p>
-<pre><code class="language-text">HTTP status
-content-type
-cache-related headers
-server-related headers
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>HTTP status
+<a id="__codelineno-44-2" name="__codelineno-44-2" href="#__codelineno-44-2"></a>content-type
+<a id="__codelineno-44-3" name="__codelineno-44-3" href="#__codelineno-44-3"></a>cache-related headers
+<a id="__codelineno-44-4" name="__codelineno-44-4" href="#__codelineno-44-4"></a>server-related headers
+</code></pre></div>
 <p>Do not worry if the exact output differs.</p>
 <hr />
 <h2 id="lab-2-inspect-full-http-communication">Lab 2 — Inspect Full HTTP Communication</h2>
 <p>Run:</p>
-<pre><code class="language-bash">curl -v https://example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>curl<span class="w"> </span>-v<span class="w"> </span>https://example.com
+</code></pre></div>
 <p>Look for lines beginning with:</p>
-<pre><code class="language-text">&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>&gt;
+</code></pre></div>
 <p>These generally represent information sent by the client.</p>
 <p>Example:</p>
-<pre><code class="language-text">&gt; GET / HTTP/1.1
-&gt; Host: example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>&gt; GET / HTTP/1.1
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>&gt; Host: example.com
+</code></pre></div>
 <p>Look for:</p>
-<pre><code class="language-text">&lt;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>&lt;
+</code></pre></div>
 <p>These generally represent information received from the server.</p>
 <p>Example:</p>
-<pre><code class="language-text">&lt; HTTP/1.1 200 OK
-&lt; Content-Type: text/html
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>&lt; HTTP/1.1 200 OK
+<a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>&lt; Content-Type: text/html
+</code></pre></div>
 <hr />
 <h2 id="lab-3-send-a-get-request">Lab 3 — Send a GET Request</h2>
 <p>Run:</p>
-<pre><code class="language-bash">curl https://httpbin.org/get
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>curl<span class="w"> </span>https://httpbin.org/get
+</code></pre></div>
 <p>Inspect the returned information.</p>
 <p>Identify:</p>
 <ul>
@@ -1527,84 +1730,84 @@ server-related headers
 <hr />
 <h2 id="lab-4-send-a-post-request">Lab 4 — Send a POST Request</h2>
 <p>Run:</p>
-<pre><code class="language-bash">curl -X POST https://httpbin.org/post \
-  -H &quot;Content-Type: application/json&quot; \
-  -d '{&quot;name&quot;:&quot;Mahesh&quot;}'
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>https://httpbin.org/post<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">"Content-Type: application/json"</span><span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">'{"name":"Mahesh"}'</span>
+</code></pre></div>
 <p>Observe how the JSON body is reflected in the response.</p>
 <p>Identify:</p>
-<pre><code class="language-text">HTTP Method
-Headers
-Request Body
-Response Body
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>HTTP Method
+<a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>Headers
+<a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>Request Body
+<a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a>Response Body
+</code></pre></div>
 <hr />
 <h2 id="lab-5-send-a-custom-header">Lab 5 — Send a Custom Header</h2>
 <p>Run:</p>
-<pre><code class="language-bash">curl https://httpbin.org/headers \
-  -H &quot;X-Learning: HTTP-Day-1&quot;
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>curl<span class="w"> </span>https://httpbin.org/headers<span class="w"> </span><span class="se">\</span>
+<a id="__codelineno-53-2" name="__codelineno-53-2" href="#__codelineno-53-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">"X-Learning: HTTP-Day-1"</span>
+</code></pre></div>
 <p>Verify that the server received:</p>
-<pre><code class="language-text">X-Learning: HTTP-Day-1
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>X-Learning: HTTP-Day-1
+</code></pre></div>
 <p>This demonstrates that headers travel as part of the HTTP request.</p>
 <hr />
 <h1 id="browser-devtools-practice">Browser DevTools Practice</h1>
 <p>Open Chrome Developer Tools.</p>
-<pre><code class="language-text">Developer Tools
-      ↓
-Network
-      ↓
-Reload Page
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>Developer Tools
+<a id="__codelineno-55-2" name="__codelineno-55-2" href="#__codelineno-55-2"></a>      ↓
+<a id="__codelineno-55-3" name="__codelineno-55-3" href="#__codelineno-55-3"></a>Network
+<a id="__codelineno-55-4" name="__codelineno-55-4" href="#__codelineno-55-4"></a>      ↓
+<a id="__codelineno-55-5" name="__codelineno-55-5" href="#__codelineno-55-5"></a>Reload Page
+</code></pre></div>
 <p>Select any network request.</p>
 <p>Inspect:</p>
-<pre><code class="language-text">Headers
-Payload
-Response
-Timing
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>Headers
+<a id="__codelineno-56-2" name="__codelineno-56-2" href="#__codelineno-56-2"></a>Payload
+<a id="__codelineno-56-3" name="__codelineno-56-3" href="#__codelineno-56-3"></a>Response
+<a id="__codelineno-56-4" name="__codelineno-56-4" href="#__codelineno-56-4"></a>Timing
+</code></pre></div>
 <p>Pay attention to:</p>
-<pre><code class="language-text">Request URL
-Request Method
-Status Code
-
-Request Headers
-Response Headers
-
-Query String Parameters
-Request Payload
-Response Body
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>Request URL
+<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>Request Method
+<a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>Status Code
+<a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a>
+<a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a>Request Headers
+<a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a>Response Headers
+<a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a>
+<a id="__codelineno-57-8" name="__codelineno-57-8" href="#__codelineno-57-8"></a>Query String Parameters
+<a id="__codelineno-57-9" name="__codelineno-57-9" href="#__codelineno-57-9"></a>Request Payload
+<a id="__codelineno-57-10" name="__codelineno-57-10" href="#__codelineno-57-10"></a>Response Body
+</code></pre></div>
 <p>Ask yourself:</p>
-<pre><code class="language-text">Which information came from the browser?
-
-Which information was sent to the server?
-
-Which information came from the server?
-
-Where is the HTTP method?
-
-Where is the status code?
-
-Where are the headers?
-
-Where is the request body?
-
-Where is the response body?
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a>Which information came from the browser?
+<a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>
+<a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a>Which information was sent to the server?
+<a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a>
+<a id="__codelineno-58-5" name="__codelineno-58-5" href="#__codelineno-58-5"></a>Which information came from the server?
+<a id="__codelineno-58-6" name="__codelineno-58-6" href="#__codelineno-58-6"></a>
+<a id="__codelineno-58-7" name="__codelineno-58-7" href="#__codelineno-58-7"></a>Where is the HTTP method?
+<a id="__codelineno-58-8" name="__codelineno-58-8" href="#__codelineno-58-8"></a>
+<a id="__codelineno-58-9" name="__codelineno-58-9" href="#__codelineno-58-9"></a>Where is the status code?
+<a id="__codelineno-58-10" name="__codelineno-58-10" href="#__codelineno-58-10"></a>
+<a id="__codelineno-58-11" name="__codelineno-58-11" href="#__codelineno-58-11"></a>Where are the headers?
+<a id="__codelineno-58-12" name="__codelineno-58-12" href="#__codelineno-58-12"></a>
+<a id="__codelineno-58-13" name="__codelineno-58-13" href="#__codelineno-58-13"></a>Where is the request body?
+<a id="__codelineno-58-14" name="__codelineno-58-14" href="#__codelineno-58-14"></a>
+<a id="__codelineno-58-15" name="__codelineno-58-15" href="#__codelineno-58-15"></a>Where is the response body?
+</code></pre></div>
 <hr />
 <h1 id="mern-application-practice">MERN Application Practice</h1>
 <p>Open any existing React + Node application.</p>
 <p>Use:</p>
-<pre><code class="language-text">Chrome DevTools
-   ↓
-Network
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>Chrome DevTools
+<a id="__codelineno-59-2" name="__codelineno-59-2" href="#__codelineno-59-2"></a>   ↓
+<a id="__codelineno-59-3" name="__codelineno-59-3" href="#__codelineno-59-3"></a>Network
+</code></pre></div>
 <p>Trigger one API call.</p>
 <p>For example:</p>
-<pre><code class="language-http">GET /api/music/123
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-60-1" name="__codelineno-60-1" href="#__codelineno-60-1"></a><span class="err">GET /api/music/123</span>
+</code></pre></div>
 <p>Identify:</p>
 <ul>
 <li>HTTP method</li>
@@ -1620,53 +1823,53 @@ Network
 </ul>
 <p>Then identify the corresponding backend route.</p>
 <p>Example:</p>
-<pre><code class="language-javascript">app.get(&quot;/api/music/:id&quot;, handler);
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-61-1" name="__codelineno-61-1" href="#__codelineno-61-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s2">"/api/music/:id"</span><span class="p">,</span><span class="w"> </span><span class="nx">handler</span><span class="p">);</span>
+</code></pre></div>
 <p>Connect:</p>
-<pre><code class="language-text">Browser Network Request
-        ↕
-Express Route
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-62-1" name="__codelineno-62-1" href="#__codelineno-62-1"></a>Browser Network Request
+<a id="__codelineno-62-2" name="__codelineno-62-2" href="#__codelineno-62-2"></a>        ↕
+<a id="__codelineno-62-3" name="__codelineno-62-3" href="#__codelineno-62-3"></a>Express Route
+</code></pre></div>
 <p>This is one of the best exercises for connecting theory with existing development experience.</p>
 <hr />
 <h1 id="common-misunderstandings">Common Misunderstandings</h1>
 <h2 id="http-and-rest-are-not-the-same-thing">HTTP and REST Are Not the Same Thing</h2>
 <p>HTTP is a communication protocol.</p>
 <p>REST is an architectural style that commonly uses HTTP.</p>
-<pre><code class="language-text">HTTP
-    → protocol
-
-REST
-    → architectural style
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-63-1" name="__codelineno-63-1" href="#__codelineno-63-1"></a>HTTP
+<a id="__codelineno-63-2" name="__codelineno-63-2" href="#__codelineno-63-2"></a>    → protocol
+<a id="__codelineno-63-3" name="__codelineno-63-3" href="#__codelineno-63-3"></a>
+<a id="__codelineno-63-4" name="__codelineno-63-4" href="#__codelineno-63-4"></a>REST
+<a id="__codelineno-63-5" name="__codelineno-63-5" href="#__codelineno-63-5"></a>    → architectural style
+</code></pre></div>
 <p>REST will be studied separately.</p>
 <hr />
 <h2 id="http-does-not-mean-json">HTTP Does Not Mean JSON</h2>
 <p>HTTP can transport many types of content.</p>
 <p>Examples:</p>
-<pre><code class="language-text">JSON
-HTML
-XML
-plain text
-images
-video
-binary files
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a>JSON
+<a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a>HTML
+<a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a>XML
+<a id="__codelineno-64-4" name="__codelineno-64-4" href="#__codelineno-64-4"></a>plain text
+<a id="__codelineno-64-5" name="__codelineno-64-5" href="#__codelineno-64-5"></a>images
+<a id="__codelineno-64-6" name="__codelineno-64-6" href="#__codelineno-64-6"></a>video
+<a id="__codelineno-64-7" name="__codelineno-64-7" href="#__codelineno-64-7"></a>binary files
+</code></pre></div>
 <p>The format is usually communicated using headers such as:</p>
-<pre><code class="language-http">Content-Type: application/json
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-65-1" name="__codelineno-65-1" href="#__codelineno-65-1"></a><span class="err">Content-Type: application/json</span>
+</code></pre></div>
 <hr />
 <h2 id="http-does-not-execute-business-logic">HTTP Does Not Execute Business Logic</h2>
 <p>HTTP transports messages.</p>
 <p>Your application performs the actual processing.</p>
-<pre><code class="language-text">HTTP Request
-     ↓
-Node / Express
-     ↓
-Business Logic
-     ↓
-Database
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-66-1" name="__codelineno-66-1" href="#__codelineno-66-1"></a>HTTP Request
+<a id="__codelineno-66-2" name="__codelineno-66-2" href="#__codelineno-66-2"></a>     ↓
+<a id="__codelineno-66-3" name="__codelineno-66-3" href="#__codelineno-66-3"></a>Node / Express
+<a id="__codelineno-66-4" name="__codelineno-66-4" href="#__codelineno-66-4"></a>     ↓
+<a id="__codelineno-66-5" name="__codelineno-66-5" href="#__codelineno-66-5"></a>Business Logic
+<a id="__codelineno-66-6" name="__codelineno-66-6" href="#__codelineno-66-6"></a>     ↓
+<a id="__codelineno-66-7" name="__codelineno-66-7" href="#__codelineno-66-7"></a>Database
+</code></pre></div>
 <hr />
 <h1 id="security-considerations">Security Considerations</h1>
 <p>At this stage, remember:</p>
@@ -1735,42 +1938,42 @@ Database
 </ol>
 <hr />
 <h1 id="quick-revision">Quick Revision</h1>
-<pre><code class="language-text">HTTP
-│
-├── Application-layer protocol
-├── Client → Request
-├── Server → Response
-├── Stateless
-│
-├── Request
-│   ├── Method
-│   ├── URL
-│   ├── Headers
-│   └── Optional Body
-│
-├── Response
-│   ├── Status Code
-│   ├── Headers
-│   └── Optional Body
-│
-├── Methods
-│   ├── GET
-│   ├── POST
-│   ├── PUT
-│   ├── PATCH
-│   └── DELETE
-│
-├── Status
-│   ├── 2xx Success
-│   ├── 3xx Redirect
-│   ├── 4xx Client Problem
-│   └── 5xx Server Problem
-│
-└── Versions
-    ├── HTTP/1.1
-    ├── HTTP/2
-    └── HTTP/3
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-67-1" name="__codelineno-67-1" href="#__codelineno-67-1"></a>HTTP
+<a id="__codelineno-67-2" name="__codelineno-67-2" href="#__codelineno-67-2"></a>│
+<a id="__codelineno-67-3" name="__codelineno-67-3" href="#__codelineno-67-3"></a>├── Application-layer protocol
+<a id="__codelineno-67-4" name="__codelineno-67-4" href="#__codelineno-67-4"></a>├── Client → Request
+<a id="__codelineno-67-5" name="__codelineno-67-5" href="#__codelineno-67-5"></a>├── Server → Response
+<a id="__codelineno-67-6" name="__codelineno-67-6" href="#__codelineno-67-6"></a>├── Stateless
+<a id="__codelineno-67-7" name="__codelineno-67-7" href="#__codelineno-67-7"></a>│
+<a id="__codelineno-67-8" name="__codelineno-67-8" href="#__codelineno-67-8"></a>├── Request
+<a id="__codelineno-67-9" name="__codelineno-67-9" href="#__codelineno-67-9"></a>│   ├── Method
+<a id="__codelineno-67-10" name="__codelineno-67-10" href="#__codelineno-67-10"></a>│   ├── URL
+<a id="__codelineno-67-11" name="__codelineno-67-11" href="#__codelineno-67-11"></a>│   ├── Headers
+<a id="__codelineno-67-12" name="__codelineno-67-12" href="#__codelineno-67-12"></a>│   └── Optional Body
+<a id="__codelineno-67-13" name="__codelineno-67-13" href="#__codelineno-67-13"></a>│
+<a id="__codelineno-67-14" name="__codelineno-67-14" href="#__codelineno-67-14"></a>├── Response
+<a id="__codelineno-67-15" name="__codelineno-67-15" href="#__codelineno-67-15"></a>│   ├── Status Code
+<a id="__codelineno-67-16" name="__codelineno-67-16" href="#__codelineno-67-16"></a>│   ├── Headers
+<a id="__codelineno-67-17" name="__codelineno-67-17" href="#__codelineno-67-17"></a>│   └── Optional Body
+<a id="__codelineno-67-18" name="__codelineno-67-18" href="#__codelineno-67-18"></a>│
+<a id="__codelineno-67-19" name="__codelineno-67-19" href="#__codelineno-67-19"></a>├── Methods
+<a id="__codelineno-67-20" name="__codelineno-67-20" href="#__codelineno-67-20"></a>│   ├── GET
+<a id="__codelineno-67-21" name="__codelineno-67-21" href="#__codelineno-67-21"></a>│   ├── POST
+<a id="__codelineno-67-22" name="__codelineno-67-22" href="#__codelineno-67-22"></a>│   ├── PUT
+<a id="__codelineno-67-23" name="__codelineno-67-23" href="#__codelineno-67-23"></a>│   ├── PATCH
+<a id="__codelineno-67-24" name="__codelineno-67-24" href="#__codelineno-67-24"></a>│   └── DELETE
+<a id="__codelineno-67-25" name="__codelineno-67-25" href="#__codelineno-67-25"></a>│
+<a id="__codelineno-67-26" name="__codelineno-67-26" href="#__codelineno-67-26"></a>├── Status
+<a id="__codelineno-67-27" name="__codelineno-67-27" href="#__codelineno-67-27"></a>│   ├── 2xx Success
+<a id="__codelineno-67-28" name="__codelineno-67-28" href="#__codelineno-67-28"></a>│   ├── 3xx Redirect
+<a id="__codelineno-67-29" name="__codelineno-67-29" href="#__codelineno-67-29"></a>│   ├── 4xx Client Problem
+<a id="__codelineno-67-30" name="__codelineno-67-30" href="#__codelineno-67-30"></a>│   └── 5xx Server Problem
+<a id="__codelineno-67-31" name="__codelineno-67-31" href="#__codelineno-67-31"></a>│
+<a id="__codelineno-67-32" name="__codelineno-67-32" href="#__codelineno-67-32"></a>└── Versions
+<a id="__codelineno-67-33" name="__codelineno-67-33" href="#__codelineno-67-33"></a>    ├── HTTP/1.1
+<a id="__codelineno-67-34" name="__codelineno-67-34" href="#__codelineno-67-34"></a>    ├── HTTP/2
+<a id="__codelineno-67-35" name="__codelineno-67-35" href="#__codelineno-67-35"></a>    └── HTTP/3
+</code></pre></div>
 <hr />
 <h1 id="my-understanding">My Understanding</h1>
 <p>HTTP is an application-layer protocol that provides a standard request-response communication model between clients and servers.</p>
@@ -1781,23 +1984,23 @@ Database
 <hr />
 <h1 id="day-1-completion-checklist">Day 1 Completion Checklist</h1>
 <p>Before marking this topic complete:</p>
-<ul>
-<li>[ ] Understand the client-server request-response model</li>
-<li>[ ] Understand HTTP request structure</li>
-<li>[ ] Understand HTTP response structure</li>
-<li>[ ] Understand GET, POST, PUT, PATCH, DELETE</li>
-<li>[ ] Understand status-code categories</li>
-<li>[ ] Explain <code>401</code> vs <code>403</code></li>
-<li>[ ] Understand headers vs body</li>
-<li>[ ] Understand path vs query parameters</li>
-<li>[ ] Explain why HTTP is stateless</li>
-<li>[ ] Understand HTTP/1.1, HTTP/2, HTTP/3 at a high level</li>
-<li>[ ] Run <code>curl -I</code></li>
-<li>[ ] Run <code>curl -v</code></li>
-<li>[ ] Perform GET and POST using <code>httpbin</code></li>
-<li>[ ] Inspect an HTTP request using Chrome DevTools</li>
-<li>[ ] Inspect one request in an existing MERN application</li>
-<li>[ ] Answer the interview questions without notes</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand the client-server request-response model</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand HTTP request structure</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand HTTP response structure</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand GET, POST, PUT, PATCH, DELETE</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand status-code categories</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Explain <code>401</code> vs <code>403</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand headers vs body</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand path vs query parameters</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Explain why HTTP is stateless</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand HTTP/1.1, HTTP/2, HTTP/3 at a high level</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Run <code>curl -I</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Run <code>curl -v</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Perform GET and POST using <code>httpbin</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect an HTTP request using Chrome DevTools</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect one request in an existing MERN application</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Answer the interview questions without notes</li>
 </ul>
 <hr />
 <h1 id="references">References</h1>
@@ -1819,24 +2022,24 @@ The RFC is primarily a reference. It does not need to be read end-to-end while l
 <hr />
 <h1 id="related-topics">Related Topics</h1>
 <p>Study these separately after completing HTTP fundamentals:</p>
-<ul>
-<li>[ ] <a href="../dns/">DNS</a></li>
-<li>[ ] <a href="../ip-addresses-and-ports/">IP addresses and ports</a></li>
-<li>[ ] <a href="../tcp/">TCP</a></li>
-<li>[ ] <a href="../udp/">UDP</a></li>
-<li>[ ] <a href="../sockets/">Network sockets</a></li>
-<li>[ ] <a href="../tls/">TLS</a></li>
-<li>[ ] <a href="../certificates/">TLS Certificates</a></li>
-<li>[ ] <a href="../https/">HTTPS</a></li>
-<li>[ ] Cookies</li>
-<li>[ ] Sessions</li>
-<li>[ ] Authentication</li>
-<li>[ ] CORS</li>
-<li>[ ] HTTP caching</li>
-<li>[ ] Reverse proxies</li>
-<li>[ ] Load balancing</li>
-<li>[ ] CDN</li>
-<li>[ ] WebSockets</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../dns/">DNS</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../ip-addresses-and-ports/">IP addresses and ports</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../tcp/">TCP</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../udp/">UDP</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../sockets/">Network sockets</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../tls/">TLS</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../certificates/">TLS Certificates</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> <a href="../https/">HTTPS</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Cookies</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Sessions</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Authentication</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> CORS</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> HTTP caching</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Reverse proxies</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Load balancing</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> CDN</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> WebSockets</li>
 </ul>
 <hr />
 <h2 id="not-required-yet">Not Required Yet</h2>
@@ -1885,15 +2088,54 @@ The RFC is primarily a reference. It does not need to be read end-to-end while l
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../dns/" class="md-footer__link md-footer__link--prev" aria-label="Previous: DNS">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                DNS
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../tls/" class="md-footer__link md-footer__link--next" aria-label="Next: TLS">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                TLS
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Mahesh Pawar
+    </div>
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
   
 </div>
       
@@ -1910,7 +2152,7 @@ The RFC is primarily a reference. It does not need to be read end-to-end while l
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.instant", "navigation.instant.prefetch", "navigation.tracking", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>

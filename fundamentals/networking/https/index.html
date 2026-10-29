@@ -53,6 +53,8 @@
       
     
     
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -92,7 +94,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Engineering Notes" class="md-header__button md-logo" aria-label="Engineering Notes" data-md-component="logo">
       
@@ -171,6 +173,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -195,15 +202,109 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/pawar-mahesh/engineering-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    engineering-notes
+  </div>
+</a>
+      </div>
+    
   </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ip-addresses-and-ports/" class="md-tabs__link">
+          
+  
+  
+  Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../guides/notes-guide/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
   
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -217,8 +318,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Engineering Notes" class="md-nav__button md-logo" aria-label="Engineering Notes" data-md-component="logo">
       
@@ -228,6 +331,18 @@
     </a>
     Engineering Notes
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pawar-mahesh/engineering-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    engineering-notes
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -272,6 +387,9 @@
     
       
         
+        
+      
+      
         
       
     
@@ -325,16 +443,22 @@
     
     
       
+      
+        
+          
+          
+        
+      
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
             
   
   
@@ -710,19 +834,21 @@
     
     
       
-        
+      
         
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -845,10 +971,87 @@
           
             <div class="md-content" data-md-component="content">
               
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../ip-addresses-and-ports/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Fundamentals
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../ip-addresses-and-ports/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Networking
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
+  
+  
 
 
 <h1 id="https">HTTPS</h1>
@@ -862,102 +1065,102 @@
 <p>HTTPS is not a completely different application protocol from HTTP.</p>
 <p>It is HTTP communication protected using <strong>TLS</strong>.</p>
 <p>Conceptually:</p>
-<pre><code class="language-text">HTTP
- ↓
-TLS
- ↓
-TCP
- ↓
-IP
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>HTTP
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a> ↓
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>TLS
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a> ↓
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>TCP
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a> ↓
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>IP
+</code></pre></div>
 <p>So:</p>
-<pre><code class="language-text">HTTPS = HTTP over TLS
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>HTTPS = HTTP over TLS
+</code></pre></div>
 <hr />
 <h2 id="why-does-https-exist">Why Does HTTPS Exist?</h2>
 <p>Plain HTTP does not encrypt application data.</p>
 <p>Suppose a client sends:</p>
-<pre><code class="language-http">POST /login HTTP/1.1
-Content-Type: application/json
-
-{
-  &quot;username&quot;: &quot;mahesh&quot;,
-  &quot;password&quot;: &quot;secret123&quot;
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">POST</span> <span class="nn">/login</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">{</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mahesh"</span><span class="p">,</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">"password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"secret123"</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="p">}</span>
+</code></pre></div>
 <p>With plain HTTP, the request itself is not encrypted by HTTP.</p>
 <p>Conceptually:</p>
-<pre><code class="language-text">Browser
-   ↓
-HTTP
-   ↓
-Network
-   ↓
-Server
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Browser
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>   ↓
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>HTTP
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>   ↓
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Network
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>   ↓
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>Server
+</code></pre></div>
 <p>A party capable of observing traffic somewhere along the network path could potentially inspect the transmitted data.</p>
 <p>HTTPS adds TLS protection:</p>
-<pre><code class="language-text">Browser
-   ↓
-HTTP
-   ↓
-TLS Protection
-   ↓
-Network
-   ↓
-TLS Processing
-   ↓
-Server
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Browser
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>   ↓
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>HTTP
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>   ↓
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>TLS Protection
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>   ↓
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>Network
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>   ↓
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>TLS Processing
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>   ↓
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>Server
+</code></pre></div>
 <hr />
 <h1 id="what-does-https-provide">What Does HTTPS Provide?</h1>
 <p>HTTPS primarily provides three security properties:</p>
-<pre><code class="language-text">Confidentiality
-Integrity
-Authentication
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Confidentiality
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Integrity
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Authentication
+</code></pre></div>
 <hr />
 <h2 id="confidentiality">Confidentiality</h2>
 <p>Confidentiality means unauthorized parties should not be able to read the application data being transmitted.</p>
 <p>Without protection:</p>
-<pre><code class="language-text">username=mahesh
-password=secret123
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>username=mahesh
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>password=secret123
+</code></pre></div>
 <p>could potentially be visible to someone observing the traffic.</p>
 <p>With TLS, application data is encrypted before transmission.</p>
 <p>Conceptually:</p>
-<pre><code class="language-text">Plaintext
-   ↓
-Encryption
-   ↓
-Ciphertext
-   ↓
-Network
-   ↓
-Decryption
-   ↓
-Plaintext
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Plaintext
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>   ↓
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Encryption
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>   ↓
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Ciphertext
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>   ↓
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>Network
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>   ↓
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a>Decryption
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a>   ↓
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a>Plaintext
+</code></pre></div>
 <hr />
 <h2 id="integrity">Integrity</h2>
 <p>Integrity means transmitted data should not be modified without detection.</p>
 <p>Suppose an application sends:</p>
-<pre><code class="language-text">amount=100
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>amount=100
+</code></pre></div>
 <p>An attacker should not be able to silently change it to:</p>
-<pre><code class="language-text">amount=100000
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>amount=100000
+</code></pre></div>
 <p>TLS provides integrity protection so unauthorized modification of protected traffic is detected.</p>
 <hr />
 <h2 id="authentication">Authentication</h2>
 <p>Authentication helps the client verify that it is communicating with the intended server.</p>
 <p>For example:</p>
-<pre><code class="language-text">Browser requests:
-example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Browser requests:
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>example.com
+</code></pre></div>
 <p>The browser needs evidence that the server presenting itself as:</p>
-<pre><code class="language-text">example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>example.com
+</code></pre></div>
 <p>is authorized to use that identity.</p>
 <p>TLS certificates provide this server-authentication mechanism.</p>
 <hr />
@@ -995,25 +1198,25 @@ example.com
 <hr />
 <h1 id="where-https-fits-in-the-stack">Where HTTPS Fits in the Stack</h1>
 <p>For plain HTTP:</p>
-<pre><code class="language-text">Application
-   ↓
-HTTP
-   ↓
-TCP
-   ↓
-IP
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Application
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>   ↓
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>HTTP
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>   ↓
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>TCP
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>   ↓
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>IP
+</code></pre></div>
 <p>For HTTPS:</p>
-<pre><code class="language-text">Application
-   ↓
-HTTP
-   ↓
-TLS
-   ↓
-TCP
-   ↓
-IP
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Application
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   ↓
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>HTTP
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>   ↓
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>TLS
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>   ↓
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>TCP
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>   ↓
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>IP
+</code></pre></div>
 <blockquote>
 <p><strong>Important</strong></p>
 <p>TLS protects the HTTP communication.</p>
@@ -1022,46 +1225,46 @@ IP
 <hr />
 <h1 id="complete-https-request-flow">Complete HTTPS Request Flow</h1>
 <p>Suppose the user enters:</p>
-<pre><code class="language-text">https://example.com/users
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>https://example.com/users
+</code></pre></div>
 <p>A simplified flow is:</p>
-<pre><code class="language-text">Browser
-   ↓
-Parse URL
-   ↓
-DNS Lookup
-   ↓
-Get IP Address
-   ↓
-Target Port 443
-   ↓
-TCP Connection
-   ↓
-TLS Handshake
-   ↓
-Validate Server Certificate
-   ↓
-Establish Shared Session Keys
-   ↓
-Encrypted HTTP Request
-   ↓
-Server
-   ↓
-Encrypted HTTP Response
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>Browser
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>   ↓
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>Parse URL
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>   ↓
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>DNS Lookup
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>   ↓
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>Get IP Address
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>   ↓
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>Target Port 443
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>   ↓
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>TCP Connection
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>   ↓
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>TLS Handshake
+<a id="__codelineno-15-14" name="__codelineno-15-14" href="#__codelineno-15-14"></a>   ↓
+<a id="__codelineno-15-15" name="__codelineno-15-15" href="#__codelineno-15-15"></a>Validate Server Certificate
+<a id="__codelineno-15-16" name="__codelineno-15-16" href="#__codelineno-15-16"></a>   ↓
+<a id="__codelineno-15-17" name="__codelineno-15-17" href="#__codelineno-15-17"></a>Establish Shared Session Keys
+<a id="__codelineno-15-18" name="__codelineno-15-18" href="#__codelineno-15-18"></a>   ↓
+<a id="__codelineno-15-19" name="__codelineno-15-19" href="#__codelineno-15-19"></a>Encrypted HTTP Request
+<a id="__codelineno-15-20" name="__codelineno-15-20" href="#__codelineno-15-20"></a>   ↓
+<a id="__codelineno-15-21" name="__codelineno-15-21" href="#__codelineno-15-21"></a>Server
+<a id="__codelineno-15-22" name="__codelineno-15-22" href="#__codelineno-15-22"></a>   ↓
+<a id="__codelineno-15-23" name="__codelineno-15-23" href="#__codelineno-15-23"></a>Encrypted HTTP Response
+</code></pre></div>
 <p>This combines the networking topics learned so far.</p>
 <hr />
 <h1 id="https-and-port-443">HTTPS and Port 443</h1>
 <p>HTTPS commonly uses:</p>
-<pre><code class="language-text">443
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>443
+</code></pre></div>
 <p>as its default port.</p>
 <p>Therefore:</p>
-<pre><code class="language-text">https://example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>https://example.com
+</code></pre></div>
 <p>usually implies:</p>
-<pre><code class="language-text">https://example.com:443
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>https://example.com:443
+</code></pre></div>
 <p>The port does not itself provide security.</p>
 <p>Security comes from TLS.</p>
 <hr />
@@ -1073,51 +1276,51 @@ Encrypted HTTP Response
 <p>HTTPS tells us that communication is protected and the certificate validation process succeeded for the requested identity.</p>
 <p>A malicious website can still use HTTPS.</p>
 <p>So:</p>
-<pre><code class="language-text">HTTPS
-≠
-Website is trustworthy
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>HTTPS
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>≠
+<a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>Website is trustworthy
+</code></pre></div>
 <p>Better mental model:</p>
-<pre><code class="language-text">HTTPS
-→ Secure communication with the authenticated TLS endpoint
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>HTTPS
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>→ Secure communication with the authenticated TLS endpoint
+</code></pre></div>
 <hr />
 <h1 id="mern-mental-model">MERN Mental Model</h1>
 <p>Suppose React sends:</p>
-<pre><code class="language-javascript">fetch(&quot;https://api.example.com/users&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://api.example.com/users"</span><span class="p">);</span>
+</code></pre></div>
 <p>Conceptually:</p>
-<pre><code class="language-text">React
-   ↓
-DNS
-   ↓
-Server IP
-   ↓
-TCP :443
-   ↓
-TLS Handshake
-   ↓
-Encrypted HTTP Request
-   ↓
-Node / Express
-   ↓
-Application Logic
-   ↓
-MongoDB
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>React
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>   ↓
+<a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a>DNS
+<a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a>   ↓
+<a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>Server IP
+<a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>   ↓
+<a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a>TCP :443
+<a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>   ↓
+<a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>TLS Handshake
+<a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>   ↓
+<a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>Encrypted HTTP Request
+<a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>   ↓
+<a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a>Node / Express
+<a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>   ↓
+<a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>Application Logic
+<a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>   ↓
+<a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a>MongoDB
+</code></pre></div>
 <p>HTTP still defines:</p>
-<pre><code class="language-text">GET /users
-Headers
-Body
-Status Code
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>GET /users
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>Headers
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>Body
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>Status Code
+</code></pre></div>
 <p>TLS protects those HTTP messages during transport.</p>
 <hr />
 <h1 id="practical-labs">Practical Labs</h1>
 <h2 id="lab-1-inspect-https-with-curl">Lab 1 — Inspect HTTPS with curl</h2>
 <p>Run:</p>
-<pre><code class="language-bash">curl -v https://example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>curl<span class="w"> </span>-v<span class="w"> </span>https://example.com
+</code></pre></div>
 <p>Look for:</p>
 <ul>
 <li>connection establishment</li>
@@ -1127,33 +1330,33 @@ Status Code
 <li>HTTP response</li>
 </ul>
 <p>Try to identify this sequence:</p>
-<pre><code class="language-text">Connection
-   ↓
-TLS
-   ↓
-HTTP
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Connection
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>   ↓
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>TLS
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>   ↓
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>HTTP
+</code></pre></div>
 <hr />
 <h2 id="lab-2-compare-http-and-https">Lab 2 — Compare HTTP and HTTPS</h2>
 <p>Run:</p>
-<pre><code class="language-bash">curl -v http://example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>curl<span class="w"> </span>-v<span class="w"> </span>http://example.com
+</code></pre></div>
 <p>Then:</p>
-<pre><code class="language-bash">curl -v https://example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>curl<span class="w"> </span>-v<span class="w"> </span>https://example.com
+</code></pre></div>
 <p>Observe that HTTPS introduces TLS negotiation before HTTP communication.</p>
 <hr />
 <h2 id="lab-3-browser-devtools">Lab 3 — Browser DevTools</h2>
 <p>Open:</p>
-<pre><code class="language-text">https://example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>https://example.com
+</code></pre></div>
 <p>In browser Developer Tools:</p>
-<pre><code class="language-text">Network
-   ↓
-Select Request
-   ↓
-Headers
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>Network
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>   ↓
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>Select Request
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>   ↓
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>Headers
+</code></pre></div>
 <p>Identify:</p>
 <ul>
 <li>Request URL</li>
@@ -1166,24 +1369,24 @@ Headers
 <hr />
 <h1 id="common-problems">Common Problems</h1>
 <p>HTTPS-related issues can include:</p>
-<pre><code class="language-text">Certificate expired
-Hostname mismatch
-Untrusted certificate chain
-TLS version mismatch
-Certificate configuration error
-Proxy/load-balancer TLS configuration issue
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>Certificate expired
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>Hostname mismatch
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>Untrusted certificate chain
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>TLS version mismatch
+<a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>Certificate configuration error
+<a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a>Proxy/load-balancer TLS configuration issue
+</code></pre></div>
 <p>These will be easier to diagnose after understanding TLS and certificates.</p>
 <hr />
 <h1 id="common-misunderstandings">Common Misunderstandings</h1>
 <h2 id="https-is-not-a-new-http-method">HTTPS Is Not a New HTTP Method</h2>
 <p>HTTPS does not replace:</p>
-<pre><code class="language-text">GET
-POST
-PUT
-PATCH
-DELETE
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>GET
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>POST
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>PUT
+<a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a>PATCH
+<a id="__codelineno-31-5" name="__codelineno-31-5" href="#__codelineno-31-5"></a>DELETE
+</code></pre></div>
 <p>Those remain HTTP concepts.</p>
 <p>HTTPS changes how HTTP data is securely transported.</p>
 <hr />
@@ -1192,12 +1395,12 @@ DELETE
 <p>Do not assume every piece of network metadata becomes invisible simply because HTTPS is used.</p>
 <hr />
 <h2 id="https-does-not-contain-business-logic">HTTPS Does Not Contain Business Logic</h2>
-<pre><code class="language-text">HTTPS
-→ secure communication
-
-Node / Express
-→ application logic
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>HTTPS
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>→ secure communication
+<a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a>
+<a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a>Node / Express
+<a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>→ application logic
+</code></pre></div>
 <hr />
 <h1 id="security-considerations">Security Considerations</h1>
 <p>Use HTTPS whenever sensitive or authenticated web communication is involved.</p>
@@ -1249,33 +1452,33 @@ Node / Express
 </ol>
 <hr />
 <h1 id="quick-revision">Quick Revision</h1>
-<pre><code class="language-text">HTTPS
-│
-├── HTTP
-├── TLS
-│
-├── Confidentiality
-├── Integrity
-├── Authentication
-│
-└── Default Port
-    └── 443
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>HTTPS
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>│
+<a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a>├── HTTP
+<a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a>├── TLS
+<a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>│
+<a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a>├── Confidentiality
+<a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>├── Integrity
+<a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a>├── Authentication
+<a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a>│
+<a id="__codelineno-33-10" name="__codelineno-33-10" href="#__codelineno-33-10"></a>└── Default Port
+<a id="__codelineno-33-11" name="__codelineno-33-11" href="#__codelineno-33-11"></a>    └── 443
+</code></pre></div>
 <p>Complete flow:</p>
-<pre><code class="language-text">DNS
- ↓
-IP
- ↓
-Port 443
- ↓
-TCP
- ↓
-TLS
- ↓
-HTTP
- ↓
-Application
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>DNS
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a> ↓
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>IP
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a> ↓
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>Port 443
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a> ↓
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>TCP
+<a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a> ↓
+<a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a>TLS
+<a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a> ↓
+<a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a>HTTP
+<a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a> ↓
+<a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a>Application
+</code></pre></div>
 <hr />
 <h1 id="my-understanding">My Understanding</h1>
 <p>HTTPS is HTTP communication protected using TLS.</p>
@@ -1284,19 +1487,19 @@ Application
 <p>The resulting HTTP communication can then be protected while travelling between the client and server.</p>
 <hr />
 <h1 id="completion-checklist">Completion Checklist</h1>
-<ul>
-<li>[ ] Understand what HTTPS is</li>
-<li>[ ] Understand HTTP vs HTTPS</li>
-<li>[ ] Understand where TLS fits</li>
-<li>[ ] Understand confidentiality</li>
-<li>[ ] Understand integrity</li>
-<li>[ ] Understand authentication</li>
-<li>[ ] Know the default HTTPS port</li>
-<li>[ ] Understand the complete HTTPS request flow</li>
-<li>[ ] Run <code>curl -v</code> against an HTTPS site</li>
-<li>[ ] Compare HTTP and HTTPS</li>
-<li>[ ] Explain why HTTPS does not guarantee a website is trustworthy</li>
-<li>[ ] Answer interview questions without notes</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand what HTTPS is</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand HTTP vs HTTPS</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand where TLS fits</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand confidentiality</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand integrity</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand authentication</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Know the default HTTPS port</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand the complete HTTPS request flow</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Run <code>curl -v</code> against an HTTPS site</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Compare HTTP and HTTPS</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Explain why HTTPS does not guarantee a website is trustworthy</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Answer interview questions without notes</li>
 </ul>
 <hr />
 <h1 id="references">References</h1>
@@ -1351,15 +1554,54 @@ Application
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../certificates/" class="md-footer__link md-footer__link--prev" aria-label="Previous: TLS Certificates">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                TLS Certificates
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../../guides/notes-guide/" class="md-footer__link md-footer__link--next" aria-label="Next: Notes Preparation Guide">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Notes Preparation Guide
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Mahesh Pawar
+    </div>
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
   
 </div>
       
@@ -1376,7 +1618,7 @@ Application
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.instant", "navigation.instant.prefetch", "navigation.tracking", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>

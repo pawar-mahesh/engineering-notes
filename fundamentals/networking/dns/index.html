@@ -53,6 +53,8 @@
       
     
     
+      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+    
     <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
@@ -92,7 +94,7 @@
 
   
 
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href="../../.." title="Engineering Notes" class="md-header__button md-logo" aria-label="Engineering Notes" data-md-component="logo">
       
@@ -171,6 +173,11 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
@@ -195,15 +202,109 @@
       
     
     
+      <div class="md-header__source">
+        <a href="https://github.com/pawar-mahesh/engineering-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    engineering-notes
+  </div>
+</a>
+      </div>
+    
   </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../ip-addresses-and-ports/" class="md-tabs__link">
+          
+  
+  
+  Fundamentals
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../guides/notes-guide/" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
   
 </header>
     
     <div class="md-container" data-md-component="container">
       
       
-        
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -217,8 +318,10 @@
                     
 
 
+  
 
-<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../.." title="Engineering Notes" class="md-nav__button md-logo" aria-label="Engineering Notes" data-md-component="logo">
       
@@ -228,6 +331,18 @@
     </a>
     Engineering Notes
   </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pawar-mahesh/engineering-notes" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    engineering-notes
+  </div>
+</a>
+    </div>
   
   <ul class="md-nav__list" data-md-scrollfix>
     
@@ -272,6 +387,9 @@
     
       
         
+        
+      
+      
         
       
     
@@ -325,16 +443,22 @@
     
     
       
+      
+        
+          
+          
+        
+      
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
         
           
-          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="">
             
   
   
@@ -787,19 +911,21 @@
     
     
       
-        
+      
         
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
   
   
@@ -999,10 +1125,87 @@
           
             <div class="md-content" data-md-component="content">
               
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../ip-addresses-and-ports/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Fundamentals
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../ip-addresses-and-ports/" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    Networking
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
               <article class="md-content__inner md-typeset">
                 
                   
 
+
+  
+  
 
 
 <h1 id="dns">DNS</h1>
@@ -1013,132 +1216,132 @@
 <h2 id="what-is-dns">What Is DNS?</h2>
 <p>DNS stands for <strong>Domain Name System</strong>.</p>
 <p>Humans prefer names such as:</p>
-<pre><code class="language-text">google.com
-github.com
-api.example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>google.com
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>github.com
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>api.example.com
+</code></pre></div>
 <p>Computers communicate using network addresses such as:</p>
-<pre><code class="language-text">142.250.183.14
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>142.250.183.14
+</code></pre></div>
 <p>DNS allows applications to translate:</p>
-<pre><code class="language-text">Domain Name
-     ↓
-DNS
-     ↓
-IP Address
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Domain Name
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>     ↓
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>DNS
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>     ↓
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>IP Address
+</code></pre></div>
 <p>Example:</p>
-<pre><code class="language-text">example.com
-     ↓
-93.184.216.34
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>example.com
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>     ↓
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>93.184.216.34
+</code></pre></div>
 <p>DNS therefore separates a human-friendly application name from the network address where the service is reachable.</p>
 <hr />
 <h2 id="why-does-dns-exist">Why Does DNS Exist?</h2>
 <p>Without DNS, users would need to remember IP addresses for every service.</p>
 <p>Instead of:</p>
-<pre><code class="language-text">https://142.250.x.x
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>https://142.250.x.x
+</code></pre></div>
 <p>we can use:</p>
-<pre><code class="language-text">https://google.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>https://google.com
+</code></pre></div>
 <p>DNS also allows infrastructure behind a domain to change without requiring users to learn a new address.</p>
 <p>For example:</p>
-<pre><code class="language-text">api.example.com
-       ↓
-Old Server IP
-
-Later:
-
-api.example.com
-       ↓
-New Server IP
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>api.example.com
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>       ↓
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Old Server IP
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Later:
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>api.example.com
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>       ↓
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>New Server IP
+</code></pre></div>
 <p>The application name can remain the same even when infrastructure changes.</p>
 <hr />
 <h2 id="mental-model">Mental Model</h2>
 <p>Think of DNS as a directory:</p>
-<pre><code class="language-text">Name
- ↓
-Lookup
- ↓
-Network Address
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Name
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a> ↓
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Lookup
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a> ↓
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>Network Address
+</code></pre></div>
 <p>A simplified analogy:</p>
-<pre><code class="language-text">Contact Name
-     ↓
-Phone Contacts
-     ↓
-Phone Number
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Contact Name
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>     ↓
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>Phone Contacts
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>     ↓
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>Phone Number
+</code></pre></div>
 <p>DNS works similarly:</p>
-<pre><code class="language-text">Domain Name
-     ↓
-DNS
-     ↓
-IP Address
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Domain Name
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>     ↓
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>DNS
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>     ↓
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>IP Address
+</code></pre></div>
 <hr />
 <h2 id="high-level-dns-resolution">High-Level DNS Resolution</h2>
 <p>Suppose a browser wants to access:</p>
-<pre><code class="language-text">https://example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>https://example.com
+</code></pre></div>
 <p>Before connecting to the server, it needs an IP address.</p>
 <p>A simplified lookup may look like:</p>
-<pre><code class="language-text">Browser
-   ↓
-Browser DNS Cache
-   ↓
-Operating System Cache
-   ↓
-DNS Resolver
-   ↓
-DNS Infrastructure
-   ↓
-IP Address Returned
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>Browser
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>   ↓
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>Browser DNS Cache
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>   ↓
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>Operating System Cache
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>   ↓
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>DNS Resolver
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>   ↓
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a>DNS Infrastructure
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a>   ↓
+<a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a>IP Address Returned
+</code></pre></div>
 <p>The browser can then use the returned address to continue connecting to the server.</p>
 <hr />
 <h2 id="dns-resolver">DNS Resolver</h2>
 <p>A <strong>DNS resolver</strong> is responsible for finding the DNS answer on behalf of the client.</p>
 <p>The application normally does not manually query every DNS server.</p>
 <p>Instead:</p>
-<pre><code class="language-text">Application
-    ↓
-Resolver
-    ↓
-DNS lookup process
-    ↓
-Answer
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>Application
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    ↓
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>Resolver
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    ↓
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>DNS lookup process
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    ↓
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>Answer
+</code></pre></div>
 <p>The resolver may already have the answer cached.</p>
 <p>If not, it may query other DNS servers.</p>
 <hr />
 <h2 id="dns-hierarchy">DNS Hierarchy</h2>
 <p>At a high level, DNS is hierarchical.</p>
 <p>A simplified lookup can involve:</p>
-<pre><code class="language-text">Resolver
-   ↓
-Root DNS
-   ↓
-Top-Level Domain DNS
-   ↓
-Authoritative DNS
-   ↓
-DNS Record
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Resolver
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>   ↓
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>Root DNS
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>   ↓
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>Top-Level Domain DNS
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>   ↓
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>Authoritative DNS
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>   ↓
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>DNS Record
+</code></pre></div>
 <p>For:</p>
-<pre><code class="language-text">www.example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>www.example.com
+</code></pre></div>
 <p>the hierarchy conceptually includes:</p>
-<pre><code class="language-text">.
-↓
-.com
-↓
-example.com
-↓
-www.example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>.
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>↓
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>.com
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>↓
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>example.com
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>↓
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>www.example.com
+</code></pre></div>
 <p>Do not memorize the complete DNS resolution algorithm yet.</p>
 <p>The important idea is:</p>
 <blockquote>
@@ -1148,39 +1351,39 @@ www.example.com
 <h2 id="root-dns">Root DNS</h2>
 <p>Root DNS servers help direct a resolver toward the correct top-level domain servers.</p>
 <p>For example:</p>
-<pre><code class="language-text">example.com
-    ↓
-Root
-    ↓
-.com nameservers
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>example.com
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    ↓
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>Root
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    ↓
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>.com nameservers
+</code></pre></div>
 <p>The root does not normally provide the final application IP directly.</p>
 <hr />
 <h2 id="top-level-domain">Top-Level Domain</h2>
 <p>A Top-Level Domain, or <strong>TLD</strong>, is the final part of a domain.</p>
 <p>Examples:</p>
-<pre><code class="language-text">.com
-.org
-.in
-.net
-.dev
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>.com
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>.org
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>.in
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>.net
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a>.dev
+</code></pre></div>
 <p>For:</p>
-<pre><code class="language-text">example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>example.com
+</code></pre></div>
 <p>the TLD is:</p>
-<pre><code class="language-text">.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>.com
+</code></pre></div>
 <hr />
 <h2 id="authoritative-dns-server">Authoritative DNS Server</h2>
 <p>The authoritative DNS server contains authoritative DNS records for a domain.</p>
 <p>Conceptually:</p>
-<pre><code class="language-text">Where is api.example.com?
-           ↓
-Authoritative DNS
-           ↓
-203.0.113.10
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>Where is api.example.com?
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>           ↓
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>Authoritative DNS
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>           ↓
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a>203.0.113.10
+</code></pre></div>
 <p>The authoritative server provides the actual DNS record configured for the domain.</p>
 <hr />
 <h1 id="dns-records">DNS Records</h1>
@@ -1224,53 +1427,53 @@ Authoritative DNS
 <h2 id="a-record">A Record</h2>
 <p>An <code>A</code> record maps a domain name to an IPv4 address.</p>
 <p>Example:</p>
-<pre><code class="language-text">api.example.com
-        ↓
-A Record
-        ↓
-203.0.113.10
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>api.example.com
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>        ↓
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>A Record
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>        ↓
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>203.0.113.10
+</code></pre></div>
 <p>Conceptually:</p>
-<pre><code class="language-text">api.example.com.   A   203.0.113.10
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>api.example.com.   A   203.0.113.10
+</code></pre></div>
 <hr />
 <h2 id="aaaa-record">AAAA Record</h2>
 <p>An <code>AAAA</code> record maps a domain name to an IPv6 address.</p>
 <p>Example:</p>
-<pre><code class="language-text">example.com
-    ↓
-AAAA
-    ↓
-2001:db8::1
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>example.com
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>    ↓
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>AAAA
+<a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a>    ↓
+<a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a>2001:db8::1
+</code></pre></div>
 <hr />
 <h2 id="cname-record">CNAME Record</h2>
 <p>A <code>CNAME</code> record makes one hostname an alias of another hostname.</p>
 <p>Example:</p>
-<pre><code class="language-text">www.example.com
-       ↓
-CNAME
-       ↓
-example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>www.example.com
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>       ↓
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>CNAME
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a>       ↓
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a>example.com
+</code></pre></div>
 <p>The target name can then resolve to its own address records.</p>
 <p>Useful mental model:</p>
-<pre><code class="language-text">Alias
-  ↓
-Real DNS Name
-  ↓
-IP Address
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>Alias
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a>  ↓
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a>Real DNS Name
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a>  ↓
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a>IP Address
+</code></pre></div>
 <hr />
 <h2 id="mx-record">MX Record</h2>
 <p>An <code>MX</code> record specifies mail servers for a domain.</p>
 <p>Example conceptually:</p>
-<pre><code class="language-text">example.com
-    ↓
-MX
-    ↓
-mail.example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>example.com
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>    ↓
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a>MX
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a>    ↓
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a>mail.example.com
+</code></pre></div>
 <p>It is mainly related to email delivery.</p>
 <hr />
 <h2 id="txt-record">TXT Record</h2>
@@ -1286,66 +1489,66 @@ mail.example.com
 <h2 id="ns-record">NS Record</h2>
 <p>An <code>NS</code> record identifies the nameservers responsible for a DNS zone/domain.</p>
 <p>Conceptually:</p>
-<pre><code class="language-text">example.com
-    ↓
-NS
-    ↓
-ns1.provider.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>example.com
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>    ↓
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>NS
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a>    ↓
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>ns1.provider.com
+</code></pre></div>
 <hr />
 <h1 id="dns-caching">DNS Caching</h1>
 <p>DNS lookups are cached because repeating the entire lookup process for every request would be inefficient.</p>
 <p>Caching can occur at multiple levels:</p>
-<pre><code class="language-text">Browser
-   ↓
-Operating System
-   ↓
-DNS Resolver
-   ↓
-Other DNS infrastructure
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>Browser
+<a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a>   ↓
+<a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a>Operating System
+<a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a>   ↓
+<a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a>DNS Resolver
+<a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a>   ↓
+<a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a>Other DNS infrastructure
+</code></pre></div>
 <p>If the answer is already cached:</p>
-<pre><code class="language-text">Domain
-   ↓
-Cache Hit
-   ↓
-IP Returned Quickly
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>Domain
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>   ↓
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>Cache Hit
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a>   ↓
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>IP Returned Quickly
+</code></pre></div>
 <p>This improves performance and reduces DNS traffic.</p>
 <hr />
 <h2 id="ttl">TTL</h2>
 <p>TTL stands for <strong>Time To Live</strong>.</p>
 <p>It indicates how long a DNS answer may be cached before it should be considered stale.</p>
 <p>Example:</p>
-<pre><code class="language-text">api.example.com
-A
-203.0.113.10
-TTL = 300
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>api.example.com
+<a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>A
+<a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a>203.0.113.10
+<a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a>TTL = 300
+</code></pre></div>
 <p>This means the answer may be cached for approximately:</p>
-<pre><code class="language-text">300 seconds
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>300 seconds
+</code></pre></div>
 <p>After the TTL expires, the resolver may need to refresh the record.</p>
 <hr />
 <h2 id="why-dns-changes-may-not-appear-immediately">Why DNS Changes May Not Appear Immediately</h2>
 <p>Suppose:</p>
-<pre><code class="language-text">Old record:
-api.example.com → 203.0.113.10
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>Old record:
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>api.example.com → 203.0.113.10
+</code></pre></div>
 <p>You change it to:</p>
-<pre><code class="language-text">New record:
-api.example.com → 203.0.113.20
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>New record:
+<a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>api.example.com → 203.0.113.20
+</code></pre></div>
 <p>Some resolvers may still have the old value cached.</p>
 <p>So temporarily:</p>
-<pre><code class="language-text">User A
- ↓
-Old cached IP
-
-User B
- ↓
-New IP
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>User A
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a> ↓
+<a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>Old cached IP
+<a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>
+<a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a>User B
+<a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a> ↓
+<a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>New IP
+</code></pre></div>
 <p>Eventually the old cached records expire.</p>
 <hr />
 <h2 id="advantages-of-dns-caching">Advantages of DNS Caching</h2>
@@ -1365,59 +1568,59 @@ New IP
 <li>harder debugging during DNS migrations</li>
 </ul>
 <p>This is a common example of a system-design trade-off:</p>
-<pre><code class="language-text">Performance
-   vs
-Freshness
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>Performance
+<a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a>   vs
+<a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>Freshness
+</code></pre></div>
 <hr />
 <h1 id="dns-in-a-web-request">DNS in a Web Request</h1>
 <p>Suppose the user enters:</p>
-<pre><code class="language-text">https://api.example.com/users
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>https://api.example.com/users
+</code></pre></div>
 <p>The high-level flow is:</p>
-<pre><code class="language-text">Browser
-   ↓
-Parse hostname
-   ↓
-api.example.com
-   ↓
-DNS lookup
-   ↓
-203.0.113.10
-   ↓
-Connect to server
-   ↓
-Send HTTP request
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>Browser
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a>   ↓
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a>Parse hostname
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a>   ↓
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a>api.example.com
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a>   ↓
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a>DNS lookup
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a>   ↓
+<a id="__codelineno-37-9" name="__codelineno-37-9" href="#__codelineno-37-9"></a>203.0.113.10
+<a id="__codelineno-37-10" name="__codelineno-37-10" href="#__codelineno-37-10"></a>   ↓
+<a id="__codelineno-37-11" name="__codelineno-37-11" href="#__codelineno-37-11"></a>Connect to server
+<a id="__codelineno-37-12" name="__codelineno-37-12" href="#__codelineno-37-12"></a>   ↓
+<a id="__codelineno-37-13" name="__codelineno-37-13" href="#__codelineno-37-13"></a>Send HTTP request
+</code></pre></div>
 <p>DNS happens before the browser can normally send the HTTP request to the destination server.</p>
 <hr />
 <h1 id="mern-example">MERN Example</h1>
 <p>Suppose a React application calls:</p>
-<pre><code class="language-javascript">fetch(&quot;https://api.myapp.com/users&quot;);
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nx">fetch</span><span class="p">(</span><span class="s2">"https://api.myapp.com/users"</span><span class="p">);</span>
+</code></pre></div>
 <p>Conceptually:</p>
-<pre><code class="language-text">React
-  ↓
-api.myapp.com
-  ↓
-DNS Lookup
-  ↓
-Server IP
-  ↓
-Connection
-  ↓
-HTTP Request
-  ↓
-Node / Express
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>React
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>  ↓
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>api.myapp.com
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>  ↓
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>DNS Lookup
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>  ↓
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>Server IP
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a>  ↓
+<a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>Connection
+<a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a>  ↓
+<a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a>HTTP Request
+<a id="__codelineno-39-12" name="__codelineno-39-12" href="#__codelineno-39-12"></a>  ↓
+<a id="__codelineno-39-13" name="__codelineno-39-13" href="#__codelineno-39-13"></a>Node / Express
+</code></pre></div>
 <p>The React application normally does not need to know the server IP directly.</p>
 <p>It only needs the hostname.</p>
 <hr />
 <h1 id="practical-labs">Practical Labs</h1>
 <h2 id="lab-1-resolve-a-domain">Lab 1 — Resolve a Domain</h2>
 <p>Run:</p>
-<pre><code class="language-bash">nslookup google.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>nslookup<span class="w"> </span>google.com
+</code></pre></div>
 <p>Observe:</p>
 <ul>
 <li>requested domain</li>
@@ -1425,17 +1628,17 @@ Node / Express
 <li>returned IP address</li>
 </ul>
 <p>Then:</p>
-<pre><code class="language-bash">nslookup github.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>nslookup<span class="w"> </span>github.com
+</code></pre></div>
 <p>Compare the results.</p>
 <hr />
 <h2 id="lab-2-use-dig">Lab 2 — Use dig</h2>
 <p>On macOS/Linux:</p>
-<pre><code class="language-bash">dig google.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>dig<span class="w"> </span>google.com
+</code></pre></div>
 <p>Look for the:</p>
-<pre><code class="language-text">ANSWER SECTION
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>ANSWER SECTION
+</code></pre></div>
 <p>Do not try to understand every field today.</p>
 <p>Identify:</p>
 <ul>
@@ -1446,67 +1649,67 @@ Node / Express
 <hr />
 <h2 id="lab-3-query-an-a-record">Lab 3 — Query an A Record</h2>
 <p>Run:</p>
-<pre><code class="language-bash">dig A github.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>dig<span class="w"> </span>A<span class="w"> </span>github.com
+</code></pre></div>
 <p>Look for IPv4 addresses.</p>
 <hr />
 <h2 id="lab-4-query-an-aaaa-record">Lab 4 — Query an AAAA Record</h2>
 <p>Run:</p>
-<pre><code class="language-bash">dig AAAA google.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>dig<span class="w"> </span>AAAA<span class="w"> </span>google.com
+</code></pre></div>
 <p>Look for IPv6 addresses.</p>
 <hr />
 <h2 id="lab-5-query-nameservers">Lab 5 — Query Nameservers</h2>
 <p>Run:</p>
-<pre><code class="language-bash">dig NS github.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>dig<span class="w"> </span>NS<span class="w"> </span>github.com
+</code></pre></div>
 <p>Observe which nameservers are responsible for the domain.</p>
 <hr />
 <h2 id="lab-6-query-mail-records">Lab 6 — Query Mail Records</h2>
 <p>Run:</p>
-<pre><code class="language-bash">dig MX google.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>dig<span class="w"> </span>MX<span class="w"> </span>google.com
+</code></pre></div>
 <p>Observe the configured mail servers.</p>
 <hr />
 <h1 id="common-problems">Common Problems</h1>
 <p>DNS problems commonly appear as:</p>
-<pre><code class="language-text">domain not resolving
-wrong IP returned
-old IP still cached
-incorrect record type
-missing record
-DNS server unavailable
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>domain not resolving
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>wrong IP returned
+<a id="__codelineno-48-3" name="__codelineno-48-3" href="#__codelineno-48-3"></a>old IP still cached
+<a id="__codelineno-48-4" name="__codelineno-48-4" href="#__codelineno-48-4"></a>incorrect record type
+<a id="__codelineno-48-5" name="__codelineno-48-5" href="#__codelineno-48-5"></a>missing record
+<a id="__codelineno-48-6" name="__codelineno-48-6" href="#__codelineno-48-6"></a>DNS server unavailable
+</code></pre></div>
 <p>A useful debugging flow:</p>
-<pre><code class="language-text">Application cannot reach domain
-        ↓
-Does domain resolve?
-        ↓
-Check dig / nslookup
-        ↓
-Correct IP?
-        ↓
-Check DNS record
-        ↓
-Check TTL/cache
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>Application cannot reach domain
+<a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>        ↓
+<a id="__codelineno-49-3" name="__codelineno-49-3" href="#__codelineno-49-3"></a>Does domain resolve?
+<a id="__codelineno-49-4" name="__codelineno-49-4" href="#__codelineno-49-4"></a>        ↓
+<a id="__codelineno-49-5" name="__codelineno-49-5" href="#__codelineno-49-5"></a>Check dig / nslookup
+<a id="__codelineno-49-6" name="__codelineno-49-6" href="#__codelineno-49-6"></a>        ↓
+<a id="__codelineno-49-7" name="__codelineno-49-7" href="#__codelineno-49-7"></a>Correct IP?
+<a id="__codelineno-49-8" name="__codelineno-49-8" href="#__codelineno-49-8"></a>        ↓
+<a id="__codelineno-49-9" name="__codelineno-49-9" href="#__codelineno-49-9"></a>Check DNS record
+<a id="__codelineno-49-10" name="__codelineno-49-10" href="#__codelineno-49-10"></a>        ↓
+<a id="__codelineno-49-11" name="__codelineno-49-11" href="#__codelineno-49-11"></a>Check TTL/cache
+</code></pre></div>
 <hr />
 <h1 id="debugging-commands">Debugging Commands</h1>
 <p>Useful commands:</p>
-<pre><code class="language-bash">nslookup example.com
-</code></pre>
-<pre><code class="language-bash">dig example.com
-</code></pre>
-<pre><code class="language-bash">dig A example.com
-</code></pre>
-<pre><code class="language-bash">dig AAAA example.com
-</code></pre>
-<pre><code class="language-bash">dig CNAME www.example.com
-</code></pre>
-<pre><code class="language-bash">dig NS example.com
-</code></pre>
-<pre><code class="language-bash">dig MX example.com
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>nslookup<span class="w"> </span>example.com
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>dig<span class="w"> </span>example.com
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>dig<span class="w"> </span>A<span class="w"> </span>example.com
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>dig<span class="w"> </span>AAAA<span class="w"> </span>example.com
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>dig<span class="w"> </span>CNAME<span class="w"> </span>www.example.com
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>dig<span class="w"> </span>NS<span class="w"> </span>example.com
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>dig<span class="w"> </span>MX<span class="w"> </span>example.com
+</code></pre></div>
 <hr />
 <h1 id="security-considerations">Security Considerations</h1>
 <p>DNS is an important part of application security.</p>
@@ -1559,29 +1762,29 @@ Check TTL/cache
 </ol>
 <hr />
 <h1 id="quick-revision">Quick Revision</h1>
-<pre><code class="language-text">DNS
-│
-├── Domain → Network Address
-│
-├── Resolver
-│
-├── Root
-│
-├── TLD
-│
-├── Authoritative DNS
-│
-├── Records
-│   ├── A
-│   ├── AAAA
-│   ├── CNAME
-│   ├── MX
-│   ├── TXT
-│   └── NS
-│
-└── Caching
-    └── TTL
-</code></pre>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>DNS
+<a id="__codelineno-57-2" name="__codelineno-57-2" href="#__codelineno-57-2"></a>│
+<a id="__codelineno-57-3" name="__codelineno-57-3" href="#__codelineno-57-3"></a>├── Domain → Network Address
+<a id="__codelineno-57-4" name="__codelineno-57-4" href="#__codelineno-57-4"></a>│
+<a id="__codelineno-57-5" name="__codelineno-57-5" href="#__codelineno-57-5"></a>├── Resolver
+<a id="__codelineno-57-6" name="__codelineno-57-6" href="#__codelineno-57-6"></a>│
+<a id="__codelineno-57-7" name="__codelineno-57-7" href="#__codelineno-57-7"></a>├── Root
+<a id="__codelineno-57-8" name="__codelineno-57-8" href="#__codelineno-57-8"></a>│
+<a id="__codelineno-57-9" name="__codelineno-57-9" href="#__codelineno-57-9"></a>├── TLD
+<a id="__codelineno-57-10" name="__codelineno-57-10" href="#__codelineno-57-10"></a>│
+<a id="__codelineno-57-11" name="__codelineno-57-11" href="#__codelineno-57-11"></a>├── Authoritative DNS
+<a id="__codelineno-57-12" name="__codelineno-57-12" href="#__codelineno-57-12"></a>│
+<a id="__codelineno-57-13" name="__codelineno-57-13" href="#__codelineno-57-13"></a>├── Records
+<a id="__codelineno-57-14" name="__codelineno-57-14" href="#__codelineno-57-14"></a>│   ├── A
+<a id="__codelineno-57-15" name="__codelineno-57-15" href="#__codelineno-57-15"></a>│   ├── AAAA
+<a id="__codelineno-57-16" name="__codelineno-57-16" href="#__codelineno-57-16"></a>│   ├── CNAME
+<a id="__codelineno-57-17" name="__codelineno-57-17" href="#__codelineno-57-17"></a>│   ├── MX
+<a id="__codelineno-57-18" name="__codelineno-57-18" href="#__codelineno-57-18"></a>│   ├── TXT
+<a id="__codelineno-57-19" name="__codelineno-57-19" href="#__codelineno-57-19"></a>│   └── NS
+<a id="__codelineno-57-20" name="__codelineno-57-20" href="#__codelineno-57-20"></a>│
+<a id="__codelineno-57-21" name="__codelineno-57-21" href="#__codelineno-57-21"></a>└── Caching
+<a id="__codelineno-57-22" name="__codelineno-57-22" href="#__codelineno-57-22"></a>    └── TTL
+</code></pre></div>
 <hr />
 <h1 id="my-understanding">My Understanding</h1>
 <p>DNS provides a distributed naming system that allows applications to use human-readable domain names instead of directly using IP addresses.</p>
@@ -1590,24 +1793,24 @@ Check TTL/cache
 <p>DNS does not execute the HTTP request itself. It helps the client determine where the target service can be reached.</p>
 <hr />
 <h1 id="completion-checklist">Completion Checklist</h1>
-<ul>
-<li>[ ] Understand what DNS is</li>
-<li>[ ] Understand why DNS exists</li>
-<li>[ ] Understand DNS resolution at a high level</li>
-<li>[ ] Understand resolver, root, TLD and authoritative DNS</li>
-<li>[ ] Understand A records</li>
-<li>[ ] Understand AAAA records</li>
-<li>[ ] Understand CNAME records</li>
-<li>[ ] Understand MX, TXT and NS records</li>
-<li>[ ] Understand DNS caching</li>
-<li>[ ] Understand TTL</li>
-<li>[ ] Run <code>nslookup</code></li>
-<li>[ ] Run <code>dig</code></li>
-<li>[ ] Inspect an A record</li>
-<li>[ ] Inspect an AAAA record</li>
-<li>[ ] Inspect NS records</li>
-<li>[ ] Explain where DNS fits before HTTP</li>
-<li>[ ] Answer interview questions without notes</li>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand what DNS is</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand why DNS exists</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand DNS resolution at a high level</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand resolver, root, TLD and authoritative DNS</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand A records</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand AAAA records</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand CNAME records</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand MX, TXT and NS records</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand DNS caching</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Understand TTL</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Run <code>nslookup</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Run <code>dig</code></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect an A record</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect an AAAA record</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Inspect NS records</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Explain where DNS fits before HTTP</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Answer interview questions without notes</li>
 </ul>
 <hr />
 <h1 id="references">References</h1>
@@ -1665,15 +1868,54 @@ Check TTL/cache
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../sockets/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Network Sockets">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Network Sockets
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../http/" class="md-footer__link md-footer__link--next" aria-label="Next: HTTP">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                HTTP
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
       <div class="md-copyright">
   
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Mahesh Pawar
+    </div>
   
-    Made with
-    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
-      Material for MkDocs
-    </a>
   
 </div>
       
@@ -1690,7 +1932,7 @@ Check TTL/cache
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.path", "navigation.instant", "navigation.instant.prefetch", "navigation.tracking", "navigation.top", "navigation.footer", "toc.follow", "search.highlight", "search.suggest", "search.share", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
