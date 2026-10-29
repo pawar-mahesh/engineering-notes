@@ -62,6 +62,10 @@ body[data-md-color-scheme="slate"][data-md-color-primary="black"]
   box-shadow: none;
 }
 
+[dir="ltr"] .md-header__title {
+  margin-left: 0;
+}
+
 /* Preserve Material's shared grid and restore consistent article gutters. */
 .md-main__inner {
   margin-top: 0.75rem;
@@ -328,10 +332,6 @@ body[data-md-color-scheme="slate"][data-md-color-primary="black"]
 
 /* Keep mobile navigation in one drawer and expand sections in place. */
 @media screen and (max-width: 76.234375em) {
-  [dir="ltr"] .md-header__title {
-    margin-left: 0;
-  }
-
   .md-nav--primary > .md-nav__title {
     opacity: 1;
     transform: none;
