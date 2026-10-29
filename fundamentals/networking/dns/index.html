@@ -1,0 +1,1700 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Practical, interconnected notes for engineering foundations.">
+      
+      
+      
+        <link rel="canonical" href="https://pawar-mahesh.github.io/engineering-notes/fundamentals/networking/dns/">
+      
+      
+        <link rel="prev" href="../sockets/">
+      
+      
+        <link rel="next" href="../http/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>DNS - Engineering Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dns" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Engineering Notes" class="md-header__button md-logo" aria-label="Engineering Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Engineering Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              DNS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Engineering Notes" class="md-nav__button md-logo" aria-label="Engineering Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Engineering Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ip-addresses-and-ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP Addresses and Ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UDP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sockets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Sockets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is DNS?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-dns-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Does DNS Exist?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mental Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-dns-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Level DNS Resolution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-resolver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS Resolver
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root DNS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-level-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-Level Domain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authoritative-dns-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authoritative DNS Server
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TLS Certificates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../https/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/notes-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes Preparation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is DNS?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-dns-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Does DNS Exist?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mental-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mental Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-dns-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Level DNS Resolution
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-resolver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS Resolver
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dns-hierarchy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DNS Hierarchy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#root-dns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Root DNS
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-level-domain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Top-Level Domain
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authoritative-dns-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authoritative DNS Server
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="dns">DNS</h1>
+<blockquote>
+<p>DNS is the naming system of the internet that translates human-readable domain names into IP addresses.</p>
+</blockquote>
+<hr />
+<h2 id="what-is-dns">What Is DNS?</h2>
+<p>DNS stands for <strong>Domain Name System</strong>.</p>
+<p>Humans prefer names such as:</p>
+<pre><code class="language-text">google.com
+github.com
+api.example.com
+</code></pre>
+<p>Computers communicate using network addresses such as:</p>
+<pre><code class="language-text">142.250.183.14
+</code></pre>
+<p>DNS allows applications to translate:</p>
+<pre><code class="language-text">Domain Name
+     ↓
+DNS
+     ↓
+IP Address
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">example.com
+     ↓
+93.184.216.34
+</code></pre>
+<p>DNS therefore separates a human-friendly application name from the network address where the service is reachable.</p>
+<hr />
+<h2 id="why-does-dns-exist">Why Does DNS Exist?</h2>
+<p>Without DNS, users would need to remember IP addresses for every service.</p>
+<p>Instead of:</p>
+<pre><code class="language-text">https://142.250.x.x
+</code></pre>
+<p>we can use:</p>
+<pre><code class="language-text">https://google.com
+</code></pre>
+<p>DNS also allows infrastructure behind a domain to change without requiring users to learn a new address.</p>
+<p>For example:</p>
+<pre><code class="language-text">api.example.com
+       ↓
+Old Server IP
+
+Later:
+
+api.example.com
+       ↓
+New Server IP
+</code></pre>
+<p>The application name can remain the same even when infrastructure changes.</p>
+<hr />
+<h2 id="mental-model">Mental Model</h2>
+<p>Think of DNS as a directory:</p>
+<pre><code class="language-text">Name
+ ↓
+Lookup
+ ↓
+Network Address
+</code></pre>
+<p>A simplified analogy:</p>
+<pre><code class="language-text">Contact Name
+     ↓
+Phone Contacts
+     ↓
+Phone Number
+</code></pre>
+<p>DNS works similarly:</p>
+<pre><code class="language-text">Domain Name
+     ↓
+DNS
+     ↓
+IP Address
+</code></pre>
+<hr />
+<h2 id="high-level-dns-resolution">High-Level DNS Resolution</h2>
+<p>Suppose a browser wants to access:</p>
+<pre><code class="language-text">https://example.com
+</code></pre>
+<p>Before connecting to the server, it needs an IP address.</p>
+<p>A simplified lookup may look like:</p>
+<pre><code class="language-text">Browser
+   ↓
+Browser DNS Cache
+   ↓
+Operating System Cache
+   ↓
+DNS Resolver
+   ↓
+DNS Infrastructure
+   ↓
+IP Address Returned
+</code></pre>
+<p>The browser can then use the returned address to continue connecting to the server.</p>
+<hr />
+<h2 id="dns-resolver">DNS Resolver</h2>
+<p>A <strong>DNS resolver</strong> is responsible for finding the DNS answer on behalf of the client.</p>
+<p>The application normally does not manually query every DNS server.</p>
+<p>Instead:</p>
+<pre><code class="language-text">Application
+    ↓
+Resolver
+    ↓
+DNS lookup process
+    ↓
+Answer
+</code></pre>
+<p>The resolver may already have the answer cached.</p>
+<p>If not, it may query other DNS servers.</p>
+<hr />
+<h2 id="dns-hierarchy">DNS Hierarchy</h2>
+<p>At a high level, DNS is hierarchical.</p>
+<p>A simplified lookup can involve:</p>
+<pre><code class="language-text">Resolver
+   ↓
+Root DNS
+   ↓
+Top-Level Domain DNS
+   ↓
+Authoritative DNS
+   ↓
+DNS Record
+</code></pre>
+<p>For:</p>
+<pre><code class="language-text">www.example.com
+</code></pre>
+<p>the hierarchy conceptually includes:</p>
+<pre><code class="language-text">.
+↓
+.com
+↓
+example.com
+↓
+www.example.com
+</code></pre>
+<p>Do not memorize the complete DNS resolution algorithm yet.</p>
+<p>The important idea is:</p>
+<blockquote>
+<p>DNS is distributed rather than being controlled by one global server.</p>
+</blockquote>
+<hr />
+<h2 id="root-dns">Root DNS</h2>
+<p>Root DNS servers help direct a resolver toward the correct top-level domain servers.</p>
+<p>For example:</p>
+<pre><code class="language-text">example.com
+    ↓
+Root
+    ↓
+.com nameservers
+</code></pre>
+<p>The root does not normally provide the final application IP directly.</p>
+<hr />
+<h2 id="top-level-domain">Top-Level Domain</h2>
+<p>A Top-Level Domain, or <strong>TLD</strong>, is the final part of a domain.</p>
+<p>Examples:</p>
+<pre><code class="language-text">.com
+.org
+.in
+.net
+.dev
+</code></pre>
+<p>For:</p>
+<pre><code class="language-text">example.com
+</code></pre>
+<p>the TLD is:</p>
+<pre><code class="language-text">.com
+</code></pre>
+<hr />
+<h2 id="authoritative-dns-server">Authoritative DNS Server</h2>
+<p>The authoritative DNS server contains authoritative DNS records for a domain.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">Where is api.example.com?
+           ↓
+Authoritative DNS
+           ↓
+203.0.113.10
+</code></pre>
+<p>The authoritative server provides the actual DNS record configured for the domain.</p>
+<hr />
+<h1 id="dns-records">DNS Records</h1>
+<p>DNS supports different record types for different purposes.</p>
+<p>For Day 2, understand these records:</p>
+<table>
+<thead>
+<tr>
+<th>Record</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A</code></td>
+<td>Name → IPv4 address</td>
+</tr>
+<tr>
+<td><code>AAAA</code></td>
+<td>Name → IPv6 address</td>
+</tr>
+<tr>
+<td><code>CNAME</code></td>
+<td>Alias → another domain name</td>
+</tr>
+<tr>
+<td><code>MX</code></td>
+<td>Mail server information</td>
+</tr>
+<tr>
+<td><code>TXT</code></td>
+<td>Arbitrary text/configuration information</td>
+</tr>
+<tr>
+<td><code>NS</code></td>
+<td>Nameserver responsible for a domain</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="a-record">A Record</h2>
+<p>An <code>A</code> record maps a domain name to an IPv4 address.</p>
+<p>Example:</p>
+<pre><code class="language-text">api.example.com
+        ↓
+A Record
+        ↓
+203.0.113.10
+</code></pre>
+<p>Conceptually:</p>
+<pre><code class="language-text">api.example.com.   A   203.0.113.10
+</code></pre>
+<hr />
+<h2 id="aaaa-record">AAAA Record</h2>
+<p>An <code>AAAA</code> record maps a domain name to an IPv6 address.</p>
+<p>Example:</p>
+<pre><code class="language-text">example.com
+    ↓
+AAAA
+    ↓
+2001:db8::1
+</code></pre>
+<hr />
+<h2 id="cname-record">CNAME Record</h2>
+<p>A <code>CNAME</code> record makes one hostname an alias of another hostname.</p>
+<p>Example:</p>
+<pre><code class="language-text">www.example.com
+       ↓
+CNAME
+       ↓
+example.com
+</code></pre>
+<p>The target name can then resolve to its own address records.</p>
+<p>Useful mental model:</p>
+<pre><code class="language-text">Alias
+  ↓
+Real DNS Name
+  ↓
+IP Address
+</code></pre>
+<hr />
+<h2 id="mx-record">MX Record</h2>
+<p>An <code>MX</code> record specifies mail servers for a domain.</p>
+<p>Example conceptually:</p>
+<pre><code class="language-text">example.com
+    ↓
+MX
+    ↓
+mail.example.com
+</code></pre>
+<p>It is mainly related to email delivery.</p>
+<hr />
+<h2 id="txt-record">TXT Record</h2>
+<p>A <code>TXT</code> record stores text associated with a domain.</p>
+<p>Common uses include:</p>
+<ul>
+<li>domain verification</li>
+<li>email-security configuration</li>
+<li>service ownership verification</li>
+<li>metadata required by external services</li>
+</ul>
+<hr />
+<h2 id="ns-record">NS Record</h2>
+<p>An <code>NS</code> record identifies the nameservers responsible for a DNS zone/domain.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">example.com
+    ↓
+NS
+    ↓
+ns1.provider.com
+</code></pre>
+<hr />
+<h1 id="dns-caching">DNS Caching</h1>
+<p>DNS lookups are cached because repeating the entire lookup process for every request would be inefficient.</p>
+<p>Caching can occur at multiple levels:</p>
+<pre><code class="language-text">Browser
+   ↓
+Operating System
+   ↓
+DNS Resolver
+   ↓
+Other DNS infrastructure
+</code></pre>
+<p>If the answer is already cached:</p>
+<pre><code class="language-text">Domain
+   ↓
+Cache Hit
+   ↓
+IP Returned Quickly
+</code></pre>
+<p>This improves performance and reduces DNS traffic.</p>
+<hr />
+<h2 id="ttl">TTL</h2>
+<p>TTL stands for <strong>Time To Live</strong>.</p>
+<p>It indicates how long a DNS answer may be cached before it should be considered stale.</p>
+<p>Example:</p>
+<pre><code class="language-text">api.example.com
+A
+203.0.113.10
+TTL = 300
+</code></pre>
+<p>This means the answer may be cached for approximately:</p>
+<pre><code class="language-text">300 seconds
+</code></pre>
+<p>After the TTL expires, the resolver may need to refresh the record.</p>
+<hr />
+<h2 id="why-dns-changes-may-not-appear-immediately">Why DNS Changes May Not Appear Immediately</h2>
+<p>Suppose:</p>
+<pre><code class="language-text">Old record:
+api.example.com → 203.0.113.10
+</code></pre>
+<p>You change it to:</p>
+<pre><code class="language-text">New record:
+api.example.com → 203.0.113.20
+</code></pre>
+<p>Some resolvers may still have the old value cached.</p>
+<p>So temporarily:</p>
+<pre><code class="language-text">User A
+ ↓
+Old cached IP
+
+User B
+ ↓
+New IP
+</code></pre>
+<p>Eventually the old cached records expire.</p>
+<hr />
+<h2 id="advantages-of-dns-caching">Advantages of DNS Caching</h2>
+<p>DNS caching provides:</p>
+<ul>
+<li>faster lookups</li>
+<li>reduced DNS traffic</li>
+<li>lower latency</li>
+<li>reduced load on authoritative DNS servers</li>
+</ul>
+<hr />
+<h2 id="trade-offs-of-dns-caching">Trade-Offs of DNS Caching</h2>
+<p>Caching can also cause:</p>
+<ul>
+<li>temporary use of old records</li>
+<li>delayed infrastructure changes</li>
+<li>harder debugging during DNS migrations</li>
+</ul>
+<p>This is a common example of a system-design trade-off:</p>
+<pre><code class="language-text">Performance
+   vs
+Freshness
+</code></pre>
+<hr />
+<h1 id="dns-in-a-web-request">DNS in a Web Request</h1>
+<p>Suppose the user enters:</p>
+<pre><code class="language-text">https://api.example.com/users
+</code></pre>
+<p>The high-level flow is:</p>
+<pre><code class="language-text">Browser
+   ↓
+Parse hostname
+   ↓
+api.example.com
+   ↓
+DNS lookup
+   ↓
+203.0.113.10
+   ↓
+Connect to server
+   ↓
+Send HTTP request
+</code></pre>
+<p>DNS happens before the browser can normally send the HTTP request to the destination server.</p>
+<hr />
+<h1 id="mern-example">MERN Example</h1>
+<p>Suppose a React application calls:</p>
+<pre><code class="language-javascript">fetch(&quot;https://api.myapp.com/users&quot;);
+</code></pre>
+<p>Conceptually:</p>
+<pre><code class="language-text">React
+  ↓
+api.myapp.com
+  ↓
+DNS Lookup
+  ↓
+Server IP
+  ↓
+Connection
+  ↓
+HTTP Request
+  ↓
+Node / Express
+</code></pre>
+<p>The React application normally does not need to know the server IP directly.</p>
+<p>It only needs the hostname.</p>
+<hr />
+<h1 id="practical-labs">Practical Labs</h1>
+<h2 id="lab-1-resolve-a-domain">Lab 1 — Resolve a Domain</h2>
+<p>Run:</p>
+<pre><code class="language-bash">nslookup google.com
+</code></pre>
+<p>Observe:</p>
+<ul>
+<li>requested domain</li>
+<li>DNS server</li>
+<li>returned IP address</li>
+</ul>
+<p>Then:</p>
+<pre><code class="language-bash">nslookup github.com
+</code></pre>
+<p>Compare the results.</p>
+<hr />
+<h2 id="lab-2-use-dig">Lab 2 — Use dig</h2>
+<p>On macOS/Linux:</p>
+<pre><code class="language-bash">dig google.com
+</code></pre>
+<p>Look for the:</p>
+<pre><code class="language-text">ANSWER SECTION
+</code></pre>
+<p>Do not try to understand every field today.</p>
+<p>Identify:</p>
+<ul>
+<li>record type</li>
+<li>TTL</li>
+<li>returned value</li>
+</ul>
+<hr />
+<h2 id="lab-3-query-an-a-record">Lab 3 — Query an A Record</h2>
+<p>Run:</p>
+<pre><code class="language-bash">dig A github.com
+</code></pre>
+<p>Look for IPv4 addresses.</p>
+<hr />
+<h2 id="lab-4-query-an-aaaa-record">Lab 4 — Query an AAAA Record</h2>
+<p>Run:</p>
+<pre><code class="language-bash">dig AAAA google.com
+</code></pre>
+<p>Look for IPv6 addresses.</p>
+<hr />
+<h2 id="lab-5-query-nameservers">Lab 5 — Query Nameservers</h2>
+<p>Run:</p>
+<pre><code class="language-bash">dig NS github.com
+</code></pre>
+<p>Observe which nameservers are responsible for the domain.</p>
+<hr />
+<h2 id="lab-6-query-mail-records">Lab 6 — Query Mail Records</h2>
+<p>Run:</p>
+<pre><code class="language-bash">dig MX google.com
+</code></pre>
+<p>Observe the configured mail servers.</p>
+<hr />
+<h1 id="common-problems">Common Problems</h1>
+<p>DNS problems commonly appear as:</p>
+<pre><code class="language-text">domain not resolving
+wrong IP returned
+old IP still cached
+incorrect record type
+missing record
+DNS server unavailable
+</code></pre>
+<p>A useful debugging flow:</p>
+<pre><code class="language-text">Application cannot reach domain
+        ↓
+Does domain resolve?
+        ↓
+Check dig / nslookup
+        ↓
+Correct IP?
+        ↓
+Check DNS record
+        ↓
+Check TTL/cache
+</code></pre>
+<hr />
+<h1 id="debugging-commands">Debugging Commands</h1>
+<p>Useful commands:</p>
+<pre><code class="language-bash">nslookup example.com
+</code></pre>
+<pre><code class="language-bash">dig example.com
+</code></pre>
+<pre><code class="language-bash">dig A example.com
+</code></pre>
+<pre><code class="language-bash">dig AAAA example.com
+</code></pre>
+<pre><code class="language-bash">dig CNAME www.example.com
+</code></pre>
+<pre><code class="language-bash">dig NS example.com
+</code></pre>
+<pre><code class="language-bash">dig MX example.com
+</code></pre>
+<hr />
+<h1 id="security-considerations">Security Considerations</h1>
+<p>DNS is an important part of application security.</p>
+<p>Potential risks include:</p>
+<ul>
+<li>DNS spoofing</li>
+<li>DNS hijacking</li>
+<li>incorrect domain configuration</li>
+<li>malicious DNS records</li>
+<li>expired domains</li>
+<li>incorrect DNS ownership</li>
+</ul>
+<p>Later topics will cover secure DNS concepts in more depth.</p>
+<hr />
+<h1 id="performance-considerations">Performance Considerations</h1>
+<p>DNS performance can affect application startup and request latency.</p>
+<p>Important factors include:</p>
+<ul>
+<li>DNS caching</li>
+<li>TTL configuration</li>
+<li>resolver performance</li>
+<li>number of DNS lookups</li>
+<li>geographic distribution of DNS infrastructure</li>
+</ul>
+<p>For most applications, DNS caching greatly reduces repeated lookup cost.</p>
+<hr />
+<h1 id="interview-questions">Interview Questions</h1>
+<p>Try answering without reading the notes.</p>
+<ol>
+<li>What is DNS?</li>
+<li>Why do we need DNS?</li>
+<li>What problem does DNS solve?</li>
+<li>What happens when a domain needs to be resolved?</li>
+<li>What is a DNS resolver?</li>
+<li>What is an authoritative DNS server?</li>
+<li>What is an <code>A</code> record?</li>
+<li>What is an <code>AAAA</code> record?</li>
+<li>What is a <code>CNAME</code> record?</li>
+<li><code>A</code> vs <code>CNAME</code>?</li>
+<li>What is an <code>MX</code> record?</li>
+<li>What is an <code>NS</code> record?</li>
+<li>What is DNS TTL?</li>
+<li>Why does DNS use caching?</li>
+<li>Why can DNS changes take time to appear?</li>
+<li>Does DNS itself send the HTTP request?</li>
+<li>Where does DNS fit in the browser request lifecycle?</li>
+<li>Can one domain resolve to multiple IP addresses?</li>
+<li>Why is DNS considered distributed?</li>
+<li>How would you troubleshoot a domain that is not resolving?</li>
+</ol>
+<hr />
+<h1 id="quick-revision">Quick Revision</h1>
+<pre><code class="language-text">DNS
+│
+├── Domain → Network Address
+│
+├── Resolver
+│
+├── Root
+│
+├── TLD
+│
+├── Authoritative DNS
+│
+├── Records
+│   ├── A
+│   ├── AAAA
+│   ├── CNAME
+│   ├── MX
+│   ├── TXT
+│   └── NS
+│
+└── Caching
+    └── TTL
+</code></pre>
+<hr />
+<h1 id="my-understanding">My Understanding</h1>
+<p>DNS provides a distributed naming system that allows applications to use human-readable domain names instead of directly using IP addresses.</p>
+<p>When a client wants to communicate with a hostname, a DNS resolver obtains the appropriate DNS record, often using cached information.</p>
+<p>The returned network address allows the client to continue establishing a connection to the target service.</p>
+<p>DNS does not execute the HTTP request itself. It helps the client determine where the target service can be reached.</p>
+<hr />
+<h1 id="completion-checklist">Completion Checklist</h1>
+<ul>
+<li>[ ] Understand what DNS is</li>
+<li>[ ] Understand why DNS exists</li>
+<li>[ ] Understand DNS resolution at a high level</li>
+<li>[ ] Understand resolver, root, TLD and authoritative DNS</li>
+<li>[ ] Understand A records</li>
+<li>[ ] Understand AAAA records</li>
+<li>[ ] Understand CNAME records</li>
+<li>[ ] Understand MX, TXT and NS records</li>
+<li>[ ] Understand DNS caching</li>
+<li>[ ] Understand TTL</li>
+<li>[ ] Run <code>nslookup</code></li>
+<li>[ ] Run <code>dig</code></li>
+<li>[ ] Inspect an A record</li>
+<li>[ ] Inspect an AAAA record</li>
+<li>[ ] Inspect NS records</li>
+<li>[ ] Explain where DNS fits before HTTP</li>
+<li>[ ] Answer interview questions without notes</li>
+</ul>
+<hr />
+<h1 id="references">References</h1>
+<h2 id="primary">Primary</h2>
+<ul>
+<li><a href="https://www.cloudflare.com/learning/dns/what-is-dns/">Cloudflare Learning Center — What is DNS?</a></li>
+<li><a href="https://www.cloudflare.com/learning/dns/dns-records/">Cloudflare Learning Center — DNS Records</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works">MDN — How the Web Works</a></li>
+</ul>
+<h2 id="deeper-reference">Deeper Reference</h2>
+<ul>
+<li><a href="https://www.icann.org/resources/pages/dns-2012-02-25-en">ICANN — DNS</a></li>
+</ul>
+<hr />
+<h1 id="related-topics">Related Topics</h1>
+<ul>
+<li><a href="../ip-addresses-and-ports/">IP Addresses and Ports</a></li>
+<li><a href="../tcp/">TCP</a></li>
+<li><a href="../udp/">UDP</a></li>
+<li><a href="../http/">HTTP</a></li>
+<li>TLS</li>
+<li>CDN</li>
+<li>Load Balancing</li>
+<li>AWS Route 53</li>
+</ul>
+<hr />
+<p><a href="../sockets/">← Previous: Network Sockets</a> · <a href="../http/">Next: HTTP →</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

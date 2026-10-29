@@ -1,0 +1,48 @@
+site_name: Engineering Notes
+site_description: Practical, interconnected notes for engineering foundations.
+site_url: https://pawar-mahesh.github.io/engineering-notes/
+docs_dir: .mkdocs-docs
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+
+plugins:
+  - search
+
+nav:
+  - Home: README.md
+  - Fundamentals:
+      - Networking:
+          - IP Addresses and Ports: fundamentals/networking/ip-addresses-and-ports.md
+          - TCP: fundamentals/networking/tcp.md
+          - UDP: fundamentals/networking/udp.md
+          - Network Sockets: fundamentals/networking/sockets.md
+          - DNS: fundamentals/networking/dns.md
+          - HTTP: fundamentals/networking/http.md
+          - TLS: fundamentals/networking/tls.md
+          - TLS Certificates: fundamentals/networking/certificates.md
+          - HTTPS: fundamentals/networking/https.md
+  - Guides:
+      - Notes Preparation Guide: guides/notes-guide.md

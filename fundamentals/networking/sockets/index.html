@@ -1,0 +1,1529 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Practical, interconnected notes for engineering foundations.">
+      
+      
+      
+        <link rel="canonical" href="https://pawar-mahesh.github.io/engineering-notes/fundamentals/networking/sockets/">
+      
+      
+        <link rel="prev" href="../udp/">
+      
+      
+        <link rel="next" href="../dns/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>Network Sockets - Engineering Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#network-sockets" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Engineering Notes" class="md-header__button md-logo" aria-label="Engineering Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Engineering Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Network Sockets
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Engineering Notes" class="md-nav__button md-logo" aria-label="Engineering Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Engineering Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ip-addresses-and-ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP Addresses and Ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UDP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Sockets
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Sockets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-socket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is a Socket?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-do-sockets-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Do Sockets Exist?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TLS Certificates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../https/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/notes-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes Preparation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-socket" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is a Socket?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-do-sockets-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Do Sockets Exist?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="network-sockets">Network Sockets</h1>
+<blockquote>
+<p>A network socket is an application-facing abstraction used to send and receive data through transport protocols such as TCP or UDP.</p>
+</blockquote>
+<hr />
+<h2 id="what-is-a-socket">What Is a Socket?</h2>
+<p>Applications need an interface for communicating through the operating system's networking stack.</p>
+<p>A <strong>socket</strong> provides that interface.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">Application
+   ↓
+Socket API
+   ↓
+TCP / UDP
+   ↓
+IP
+   ↓
+Network
+</code></pre>
+<p>The socket allows an application to send and receive network data without manually implementing low-level packet transmission.</p>
+<hr />
+<h2 id="why-do-sockets-exist">Why Do Sockets Exist?</h2>
+<p>Imagine writing a Node server.</p>
+<p>Your application needs to:</p>
+<ul>
+<li>listen for incoming network traffic</li>
+<li>accept client connections</li>
+<li>send data</li>
+<li>receive data</li>
+<li>close communication</li>
+</ul>
+<p>Sockets provide operating-system abstractions for these operations.</p>
+<p>Without a socket API, every application would have to interact directly with low-level networking mechanisms.</p>
+<hr />
+<h1 id="endpoint-mental-model">Endpoint Mental Model</h1>
+<p>A network communication endpoint commonly involves:</p>
+<pre><code class="language-text">IP Address
++
+Port
++
+Transport Protocol
+</code></pre>
+<p>A TCP connection can be identified by information such as:</p>
+<pre><code class="language-text">Source IP
+Source Port
+Destination IP
+Destination Port
+Protocol
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">Client
+192.168.1.10:53122
+
+        ↓ TCP
+
+Server
+203.0.113.20:443
+</code></pre>
+<hr />
+<h1 id="client-socket">Client Socket</h1>
+<p>A client creates a socket and uses it to communicate with a remote server.</p>
+<p>Simplified:</p>
+<pre><code class="language-text">Client Application
+      ↓
+Create Socket
+      ↓
+Connect
+      ↓
+Server IP + Port
+      ↓
+Send / Receive Data
+</code></pre>
+<p>Example conceptually:</p>
+<pre><code class="language-text">Browser
+   ↓
+TCP Socket
+   ↓
+example.com:443
+</code></pre>
+<hr />
+<h1 id="server-socket">Server Socket</h1>
+<p>A server typically creates a socket and binds it to a local address and port.</p>
+<p>Simplified:</p>
+<pre><code class="language-text">Server Application
+      ↓
+Create Socket
+      ↓
+Bind to Port
+      ↓
+Listen
+      ↓
+Accept Connections
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">Node Server
+   ↓
+0.0.0.0:3000
+   ↓
+Listening
+</code></pre>
+<p>Clients can then attempt to connect to the service.</p>
+<hr />
+<h1 id="listening">Listening</h1>
+<p>When an application is <strong>listening</strong>, it is waiting for incoming connection attempts on a particular endpoint.</p>
+<p>Example:</p>
+<pre><code class="language-text">Node API
+   ↓
+TCP
+   ↓
+Port 3000
+   ↓
+LISTEN
+</code></pre>
+<p>You can inspect listening processes using:</p>
+<pre><code class="language-bash">lsof -iTCP -sTCP:LISTEN
+</code></pre>
+<hr />
+<h1 id="bind-address">Bind Address</h1>
+<p>A server can bind to different local addresses.</p>
+<p>Examples include:</p>
+<pre><code class="language-text">127.0.0.1:3000
+</code></pre>
+<p>or:</p>
+<pre><code class="language-text">0.0.0.0:3000
+</code></pre>
+<p>These are not the same.</p>
+<hr />
+<h2 id="127001">127.0.0.1</h2>
+<p>Binding to:</p>
+<pre><code class="language-text">127.0.0.1
+</code></pre>
+<p>means the service is generally accessible only through the local loopback interface.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">Same Computer
+     ↓
+127.0.0.1:3000
+</code></pre>
+<hr />
+<h2 id="0000">0.0.0.0</h2>
+<p>Binding to:</p>
+<pre><code class="language-text">0.0.0.0
+</code></pre>
+<p>commonly means:</p>
+<blockquote>
+<p>Listen on all available IPv4 interfaces.</p>
+</blockquote>
+<p>Conceptually:</p>
+<pre><code class="language-text">Machine Interfaces
+├── localhost
+├── Wi-Fi
+├── Ethernet
+└── other IPv4 interfaces
+        ↓
+      :3000
+</code></pre>
+<p>This becomes important in:</p>
+<ul>
+<li>Docker</li>
+<li>cloud VMs</li>
+<li>Kubernetes</li>
+<li>local development</li>
+<li>debugging "works locally but not remotely"</li>
+</ul>
+<hr />
+<h1 id="server-port">Server Port</h1>
+<p>Servers generally listen on predictable or configured ports.</p>
+<p>Examples:</p>
+<pre><code class="language-text">HTTP        80
+HTTPS       443
+Node App    3000
+PostgreSQL  5432
+Redis       6379
+</code></pre>
+<p>A server can choose another port if configured accordingly.</p>
+<hr />
+<h1 id="ephemeral-client-ports">Ephemeral Client Ports</h1>
+<p>Clients usually do not use a fixed source port for every outgoing connection.</p>
+<p>The operating system commonly selects a temporary <strong>ephemeral port</strong>.</p>
+<p>Example:</p>
+<pre><code class="language-text">Client
+10.0.0.5:53122
+
+      ↓ TCP
+
+Server
+203.0.113.10:443
+</code></pre>
+<p>Here:</p>
+<pre><code class="language-text">53122
+</code></pre>
+<p>is a client-side ephemeral port.</p>
+<p>The server remains on:</p>
+<pre><code class="language-text">443
+</code></pre>
+<hr />
+<h1 id="why-can-many-clients-use-port-443">Why Can Many Clients Use Port 443?</h1>
+<p>A server may receive thousands of connections on:</p>
+<pre><code class="language-text">203.0.113.10:443
+</code></pre>
+<p>because each connection has different endpoint information.</p>
+<p>Example:</p>
+<pre><code class="language-text">Client A
+10.0.0.1:51001
+        \
+         \
+          → 203.0.113.10:443
+         /
+Client B
+10.0.0.2:52002
+</code></pre>
+<p>The connections are distinguishable because the full connection identity differs.</p>
+<p>Simplified:</p>
+<pre><code class="language-text">Client A IP + Port
+Server IP + Port
+
+≠
+
+Client B IP + Port
+Server IP + Port
+</code></pre>
+<hr />
+<h1 id="tcp-socket-flow">TCP Socket Flow</h1>
+<p>A simplified server flow:</p>
+<pre><code class="language-text">Create Socket
+    ↓
+Bind
+    ↓
+Listen
+    ↓
+Accept
+    ↓
+Read / Write
+    ↓
+Close
+</code></pre>
+<p>Client:</p>
+<pre><code class="language-text">Create Socket
+    ↓
+Connect
+    ↓
+Read / Write
+    ↓
+Close
+</code></pre>
+<p>Combined:</p>
+<pre><code class="language-text">Client                         Server
+  |                              |
+Create                         Create
+Socket                         Socket
+  |                              |
+  |                            Bind
+  |                              |
+  |                            Listen
+  |                              |
+Connect -----------------------&gt; |
+  |                            Accept
+  |                              |
+Write -------------------------&gt; Read
+Read  &lt;------------------------- Write
+  |                              |
+Close                           Close
+</code></pre>
+<hr />
+<h1 id="udp-socket-flow">UDP Socket Flow</h1>
+<p>UDP does not require a TCP-style connection establishment.</p>
+<p>Simplified:</p>
+<pre><code class="language-text">Sender
+   ↓
+UDP Socket
+   ↓
+sendto()
+   ↓
+Network
+   ↓
+Receiver UDP Socket
+   ↓
+recvfrom()
+</code></pre>
+<p>The exact API differs by language, but the concept is similar.</p>
+<hr />
+<h1 id="nodejs-mental-model">Node.js Mental Model</h1>
+<p>Consider:</p>
+<pre><code class="language-javascript">app.listen(3000);
+</code></pre>
+<p>At a high level, Node ultimately relies on operating-system networking facilities.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">Node.js
+   ↓
+Socket
+   ↓
+Bind / Listen
+   ↓
+TCP Port 3000
+</code></pre>
+<p>Express hides much of the low-level socket handling from application developers.</p>
+<hr />
+<h1 id="socket-vs-port">Socket vs Port</h1>
+<p>These are related but not identical concepts.</p>
+<p>A port is a numeric transport-layer identifier.</p>
+<p>A socket is the application/OS abstraction used to communicate.</p>
+<p>Mental model:</p>
+<pre><code class="language-text">Port
+→ number identifying transport endpoint/service
+
+Socket
+→ programming/OS communication endpoint
+</code></pre>
+<hr />
+<h1 id="socket-vs-connection">Socket vs Connection</h1>
+<p>A listening server socket waits for incoming connections.</p>
+<p>Accepted TCP connections are represented separately.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">Listening Socket
+      ↓
+Port 443
+      ↓
+Incoming Client
+      ↓
+Accepted Connection Socket
+</code></pre>
+<p>This allows a server to continue listening while handling multiple client connections.</p>
+<hr />
+<h1 id="practical-labs">Practical Labs</h1>
+<h2 id="lab-1-start-a-server">Lab 1 — Start a Server</h2>
+<p>Run:</p>
+<pre><code class="language-bash">python3 -m http.server 8000
+</code></pre>
+<p>Now inspect:</p>
+<pre><code class="language-bash">lsof -iTCP:8000 -sTCP:LISTEN
+</code></pre>
+<p>Observe the server process.</p>
+<hr />
+<h2 id="lab-2-connect-to-the-server">Lab 2 — Connect to the Server</h2>
+<p>Run:</p>
+<pre><code class="language-bash">curl http://localhost:8000
+</code></pre>
+<p>Conceptually:</p>
+<pre><code class="language-text">curl
+  ↓
+Client Socket
+  ↓
+TCP
+  ↓
+Server Socket
+  ↓
+Python HTTP Server
+</code></pre>
+<hr />
+<h2 id="lab-3-use-netcat">Lab 3 — Use Netcat</h2>
+<p>Terminal 1:</p>
+<pre><code class="language-bash">nc -l 9000
+</code></pre>
+<p>Terminal 2:</p>
+<pre><code class="language-bash">nc localhost 9000
+</code></pre>
+<p>Send:</p>
+<pre><code class="language-text">hello
+</code></pre>
+<p>Observe that one process listens while another connects.</p>
+<hr />
+<h2 id="lab-4-inspect-established-connections">Lab 4 — Inspect Established Connections</h2>
+<p>Run:</p>
+<pre><code class="language-bash">lsof -iTCP -sTCP:ESTABLISHED
+</code></pre>
+<p>Identify:</p>
+<ul>
+<li>local IP</li>
+<li>local port</li>
+<li>remote IP</li>
+<li>remote port</li>
+</ul>
+<p>Try to identify ephemeral client ports.</p>
+<hr />
+<h2 id="lab-5-observe-bind-behavior">Lab 5 — Observe Bind Behavior</h2>
+<p>If you have a simple Node server, try binding to:</p>
+<pre><code class="language-text">127.0.0.1
+</code></pre>
+<p>and compare with:</p>
+<pre><code class="language-text">0.0.0.0
+</code></pre>
+<p>Observe how service accessibility changes from other network interfaces.</p>
+<p>Do this only on a trusted local network.</p>
+<hr />
+<h1 id="common-problems">Common Problems</h1>
+<h2 id="address-already-in-use">Address Already in Use</h2>
+<p>Example:</p>
+<pre><code class="language-text">EADDRINUSE
+</code></pre>
+<p>Meaning:</p>
+<blockquote>
+<p>Another socket/process is already bound to the requested endpoint in a conflicting way.</p>
+</blockquote>
+<p>Check:</p>
+<pre><code class="language-bash">lsof -i :3000
+</code></pre>
+<hr />
+<h2 id="connection-refused">Connection Refused</h2>
+<p>Possible causes:</p>
+<ul>
+<li>no server listening</li>
+<li>wrong port</li>
+<li>server crashed</li>
+<li>incorrect bind address</li>
+<li>connection rejected</li>
+</ul>
+<hr />
+<h2 id="works-on-localhost-but-not-remotely">Works on localhost but Not Remotely</h2>
+<p>Possible causes:</p>
+<pre><code class="language-text">Service bound only to 127.0.0.1
+Firewall
+Security group
+Wrong IP
+Wrong port
+Container networking
+Routing issue
+</code></pre>
+<p>This becomes a very common Docker/AWS debugging scenario.</p>
+<hr />
+<h1 id="debugging-flow">Debugging Flow</h1>
+<p>When an application cannot connect:</p>
+<pre><code class="language-text">Correct hostname?
+      ↓
+DNS resolving?
+      ↓
+Correct IP?
+      ↓
+Correct port?
+      ↓
+Process running?
+      ↓
+Socket listening?
+      ↓
+Correct bind address?
+      ↓
+Firewall allowing traffic?
+      ↓
+Connection established?
+</code></pre>
+<p>Useful commands:</p>
+<pre><code class="language-bash">lsof -i -P -n
+</code></pre>
+<pre><code class="language-bash">lsof -iTCP:3000 -sTCP:LISTEN
+</code></pre>
+<pre><code class="language-bash">nc -vz localhost 3000
+</code></pre>
+<pre><code class="language-bash">curl -v http://localhost:3000
+</code></pre>
+<hr />
+<h1 id="security-considerations">Security Considerations</h1>
+<p>Be careful what interfaces a service listens on.</p>
+<p>Example:</p>
+<pre><code class="language-text">127.0.0.1
+</code></pre>
+<p>may intentionally restrict access to the local machine.</p>
+<p>Binding to:</p>
+<pre><code class="language-text">0.0.0.0
+</code></pre>
+<p>can expose the service through additional network interfaces if firewall rules allow it.</p>
+<p>Never assume:</p>
+<pre><code class="language-text">service listening
+=
+service should be publicly reachable
+</code></pre>
+<p>Network access should be intentionally controlled.</p>
+<hr />
+<h1 id="performance-considerations">Performance Considerations</h1>
+<p>Servers handling many concurrent clients may need to manage:</p>
+<ul>
+<li>socket limits</li>
+<li>open file descriptors</li>
+<li>connection pooling</li>
+<li>timeouts</li>
+<li>keep-alive behavior</li>
+<li>memory per connection</li>
+<li>slow clients</li>
+</ul>
+<p>These topics will become important later when studying Node.js internals and production systems.</p>
+<hr />
+<h1 id="common-misunderstandings">Common Misunderstandings</h1>
+<h2 id="port-and-socket-are-not-the-same-thing">Port and Socket Are Not the Same Thing</h2>
+<p>A port is a number.</p>
+<p>A socket is a communication abstraction.</p>
+<hr />
+<h2 id="one-listening-port-can-serve-many-connections">One Listening Port Can Serve Many Connections</h2>
+<p>A server listening on <code>443</code> does not mean only one client can connect.</p>
+<p>Multiple connections are distinguished by endpoint information.</p>
+<hr />
+<h2 id="localhost-and-0000-are-different">localhost and 0.0.0.0 Are Different</h2>
+<pre><code class="language-text">127.0.0.1
+→ local loopback only
+</code></pre>
+<pre><code class="language-text">0.0.0.0
+→ commonly listen on all local IPv4 interfaces
+</code></pre>
+<p>This distinction is important in Docker and cloud deployments.</p>
+<hr />
+<h1 id="interview-questions">Interview Questions</h1>
+<ol>
+<li>What is a socket?</li>
+<li>Why do applications need sockets?</li>
+<li>What is a client socket?</li>
+<li>What is a server socket?</li>
+<li>What does bind mean?</li>
+<li>What does listen mean?</li>
+<li>What does accept mean?</li>
+<li>What is an ephemeral port?</li>
+<li>Why does the client need a source port?</li>
+<li>Why can thousands of clients connect to port 443?</li>
+<li>Port vs socket?</li>
+<li>Socket vs TCP connection?</li>
+<li>What does <code>127.0.0.1:3000</code> mean?</li>
+<li>What does <code>0.0.0.0:3000</code> mean?</li>
+<li><code>127.0.0.1</code> vs <code>0.0.0.0</code>?</li>
+<li>What causes <code>EADDRINUSE</code>?</li>
+<li>Why might an app work locally but not from another machine?</li>
+<li>How would you find which process uses port 3000?</li>
+<li>How does Node.js use sockets underneath HTTP?</li>
+<li>How do TCP and UDP sockets differ conceptually?</li>
+</ol>
+<hr />
+<h1 id="quick-revision">Quick Revision</h1>
+<pre><code class="language-text">Application
+   ↓
+Socket
+   ↓
+Transport Protocol
+├── TCP
+└── UDP
+   ↓
+IP
+   ↓
+Network
+</code></pre>
+<p>TCP server:</p>
+<pre><code class="language-text">Create
+ ↓
+Bind
+ ↓
+Listen
+ ↓
+Accept
+ ↓
+Read / Write
+ ↓
+Close
+</code></pre>
+<p>Connection identity:</p>
+<pre><code class="language-text">Source IP
++
+Source Port
++
+Destination IP
++
+Destination Port
++
+Protocol
+</code></pre>
+<hr />
+<h1 id="my-understanding">My Understanding</h1>
+<p>A socket is an operating-system and programming abstraction that allows applications to communicate using networking protocols such as TCP and UDP.</p>
+<p>Servers usually bind a socket to an IP address and port and listen for incoming traffic, while clients create sockets to communicate with remote services.</p>
+<p>Clients commonly use temporary ephemeral source ports, allowing many clients to connect to the same server port simultaneously.</p>
+<p>Understanding sockets explains how application code such as a Node HTTP server ultimately interacts with the underlying network.</p>
+<hr />
+<h1 id="completion-checklist">Completion Checklist</h1>
+<ul>
+<li>[ ] Understand what a socket is</li>
+<li>[ ] Understand why sockets exist</li>
+<li>[ ] Understand client sockets</li>
+<li>[ ] Understand server sockets</li>
+<li>[ ] Understand bind</li>
+<li>[ ] Understand listen</li>
+<li>[ ] Understand accept</li>
+<li>[ ] Understand ephemeral ports</li>
+<li>[ ] Explain why many clients can use server port 443</li>
+<li>[ ] Understand <code>127.0.0.1</code> vs <code>0.0.0.0</code></li>
+<li>[ ] Inspect listening sockets</li>
+<li>[ ] Inspect established connections</li>
+<li>[ ] Experiment with netcat</li>
+<li>[ ] Understand common socket errors</li>
+<li>[ ] Answer interview questions without notes</li>
+</ul>
+<hr />
+<h1 id="references">References</h1>
+<h2 id="primary">Primary</h2>
+<ul>
+<li><a href="https://nodejs.org/en/learn/modules/anatomy-of-an-http-transaction">Node.js — Anatomy of an HTTP Transaction</a></li>
+<li><a href="https://beej.us/guide/bgnet/">Beej's Guide to Network Programming</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side/First_steps/Client-Server_overview">MDN — Client-Server Overview</a></li>
+</ul>
+<h2 id="supporting">Supporting</h2>
+<ul>
+<li><code>man socket</code></li>
+<li><code>man bind</code></li>
+<li><code>man listen</code></li>
+<li><code>man accept</code></li>
+<li><code>man nc</code></li>
+<li><code>man lsof</code></li>
+</ul>
+<hr />
+<h1 id="related-topics">Related Topics</h1>
+<ul>
+<li><a href="../tcp/">TCP</a></li>
+<li><a href="../udp/">UDP</a></li>
+<li><a href="../ip-addresses-and-ports/">IP Addresses and Ports</a></li>
+<li><a href="../http/">HTTP</a></li>
+<li>TLS</li>
+<li>Node.js Networking</li>
+<li>Docker Networking</li>
+<li>Kubernetes Networking</li>
+</ul>
+<hr />
+<p><a href="../udp/">← Previous: UDP</a> · <a href="../dns/">Next: DNS →</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1386 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Practical, interconnected notes for engineering foundations.">
+      
+      
+      
+        <link rel="canonical" href="https://pawar-mahesh.github.io/engineering-notes/fundamentals/networking/https/">
+      
+      
+        <link rel="prev" href="../certificates/">
+      
+      
+        <link rel="next" href="../../../guides/notes-guide/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>HTTPS - Engineering Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#https" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Engineering Notes" class="md-header__button md-logo" aria-label="Engineering Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Engineering Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              HTTPS
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Engineering Notes" class="md-nav__button md-logo" aria-label="Engineering Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Engineering Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ip-addresses-and-ports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP Addresses and Ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UDP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sockets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Sockets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TLS Certificates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTPS
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is HTTPS?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-https-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Does HTTPS Exist?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/notes-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes Preparation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-https" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is HTTPS?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-https-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Does HTTPS Exist?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="https">HTTPS</h1>
+<blockquote>
+<p>HTTPS is HTTP protected by TLS, providing confidentiality, integrity, and server authentication for web communication.</p>
+</blockquote>
+<hr />
+<h2 id="what-is-https">What Is HTTPS?</h2>
+<p>HTTPS stands for:</p>
+<p><strong>Hypertext Transfer Protocol Secure</strong></p>
+<p>HTTPS is not a completely different application protocol from HTTP.</p>
+<p>It is HTTP communication protected using <strong>TLS</strong>.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">HTTP
+ ↓
+TLS
+ ↓
+TCP
+ ↓
+IP
+</code></pre>
+<p>So:</p>
+<pre><code class="language-text">HTTPS = HTTP over TLS
+</code></pre>
+<hr />
+<h2 id="why-does-https-exist">Why Does HTTPS Exist?</h2>
+<p>Plain HTTP does not encrypt application data.</p>
+<p>Suppose a client sends:</p>
+<pre><code class="language-http">POST /login HTTP/1.1
+Content-Type: application/json
+
+{
+  &quot;username&quot;: &quot;mahesh&quot;,
+  &quot;password&quot;: &quot;secret123&quot;
+}
+</code></pre>
+<p>With plain HTTP, the request itself is not encrypted by HTTP.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">Browser
+   ↓
+HTTP
+   ↓
+Network
+   ↓
+Server
+</code></pre>
+<p>A party capable of observing traffic somewhere along the network path could potentially inspect the transmitted data.</p>
+<p>HTTPS adds TLS protection:</p>
+<pre><code class="language-text">Browser
+   ↓
+HTTP
+   ↓
+TLS Protection
+   ↓
+Network
+   ↓
+TLS Processing
+   ↓
+Server
+</code></pre>
+<hr />
+<h1 id="what-does-https-provide">What Does HTTPS Provide?</h1>
+<p>HTTPS primarily provides three security properties:</p>
+<pre><code class="language-text">Confidentiality
+Integrity
+Authentication
+</code></pre>
+<hr />
+<h2 id="confidentiality">Confidentiality</h2>
+<p>Confidentiality means unauthorized parties should not be able to read the application data being transmitted.</p>
+<p>Without protection:</p>
+<pre><code class="language-text">username=mahesh
+password=secret123
+</code></pre>
+<p>could potentially be visible to someone observing the traffic.</p>
+<p>With TLS, application data is encrypted before transmission.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">Plaintext
+   ↓
+Encryption
+   ↓
+Ciphertext
+   ↓
+Network
+   ↓
+Decryption
+   ↓
+Plaintext
+</code></pre>
+<hr />
+<h2 id="integrity">Integrity</h2>
+<p>Integrity means transmitted data should not be modified without detection.</p>
+<p>Suppose an application sends:</p>
+<pre><code class="language-text">amount=100
+</code></pre>
+<p>An attacker should not be able to silently change it to:</p>
+<pre><code class="language-text">amount=100000
+</code></pre>
+<p>TLS provides integrity protection so unauthorized modification of protected traffic is detected.</p>
+<hr />
+<h2 id="authentication">Authentication</h2>
+<p>Authentication helps the client verify that it is communicating with the intended server.</p>
+<p>For example:</p>
+<pre><code class="language-text">Browser requests:
+example.com
+</code></pre>
+<p>The browser needs evidence that the server presenting itself as:</p>
+<pre><code class="language-text">example.com
+</code></pre>
+<p>is authorized to use that identity.</p>
+<p>TLS certificates provide this server-authentication mechanism.</p>
+<hr />
+<h1 id="http-vs-https">HTTP vs HTTPS</h1>
+<table>
+<thead>
+<tr>
+<th>HTTP</th>
+<th>HTTPS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application protocol</td>
+<td>HTTP protected by TLS</td>
+</tr>
+<tr>
+<td>No built-in encryption</td>
+<td>Encrypted communication</td>
+</tr>
+<tr>
+<td>No TLS certificate validation</td>
+<td>Server identity validated using certificates</td>
+</tr>
+<tr>
+<td>Common default port: 80</td>
+<td>Common default port: 443</td>
+</tr>
+<tr>
+<td>Traffic can be visible in transit</td>
+<td>Application traffic is protected</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="where-https-fits-in-the-stack">Where HTTPS Fits in the Stack</h1>
+<p>For plain HTTP:</p>
+<pre><code class="language-text">Application
+   ↓
+HTTP
+   ↓
+TCP
+   ↓
+IP
+</code></pre>
+<p>For HTTPS:</p>
+<pre><code class="language-text">Application
+   ↓
+HTTP
+   ↓
+TLS
+   ↓
+TCP
+   ↓
+IP
+</code></pre>
+<blockquote>
+<p><strong>Important</strong></p>
+<p>TLS protects the HTTP communication.</p>
+<p>HTTP still defines the request-response semantics.</p>
+</blockquote>
+<hr />
+<h1 id="complete-https-request-flow">Complete HTTPS Request Flow</h1>
+<p>Suppose the user enters:</p>
+<pre><code class="language-text">https://example.com/users
+</code></pre>
+<p>A simplified flow is:</p>
+<pre><code class="language-text">Browser
+   ↓
+Parse URL
+   ↓
+DNS Lookup
+   ↓
+Get IP Address
+   ↓
+Target Port 443
+   ↓
+TCP Connection
+   ↓
+TLS Handshake
+   ↓
+Validate Server Certificate
+   ↓
+Establish Shared Session Keys
+   ↓
+Encrypted HTTP Request
+   ↓
+Server
+   ↓
+Encrypted HTTP Response
+</code></pre>
+<p>This combines the networking topics learned so far.</p>
+<hr />
+<h1 id="https-and-port-443">HTTPS and Port 443</h1>
+<p>HTTPS commonly uses:</p>
+<pre><code class="language-text">443
+</code></pre>
+<p>as its default port.</p>
+<p>Therefore:</p>
+<pre><code class="language-text">https://example.com
+</code></pre>
+<p>usually implies:</p>
+<pre><code class="language-text">https://example.com:443
+</code></pre>
+<p>The port does not itself provide security.</p>
+<p>Security comes from TLS.</p>
+<hr />
+<h1 id="what-https-does-not-guarantee">What HTTPS Does Not Guarantee</h1>
+<p>HTTPS does not mean:</p>
+<blockquote>
+<p>The website is safe, honest, or trustworthy.</p>
+</blockquote>
+<p>HTTPS tells us that communication is protected and the certificate validation process succeeded for the requested identity.</p>
+<p>A malicious website can still use HTTPS.</p>
+<p>So:</p>
+<pre><code class="language-text">HTTPS
+≠
+Website is trustworthy
+</code></pre>
+<p>Better mental model:</p>
+<pre><code class="language-text">HTTPS
+→ Secure communication with the authenticated TLS endpoint
+</code></pre>
+<hr />
+<h1 id="mern-mental-model">MERN Mental Model</h1>
+<p>Suppose React sends:</p>
+<pre><code class="language-javascript">fetch(&quot;https://api.example.com/users&quot;);
+</code></pre>
+<p>Conceptually:</p>
+<pre><code class="language-text">React
+   ↓
+DNS
+   ↓
+Server IP
+   ↓
+TCP :443
+   ↓
+TLS Handshake
+   ↓
+Encrypted HTTP Request
+   ↓
+Node / Express
+   ↓
+Application Logic
+   ↓
+MongoDB
+</code></pre>
+<p>HTTP still defines:</p>
+<pre><code class="language-text">GET /users
+Headers
+Body
+Status Code
+</code></pre>
+<p>TLS protects those HTTP messages during transport.</p>
+<hr />
+<h1 id="practical-labs">Practical Labs</h1>
+<h2 id="lab-1-inspect-https-with-curl">Lab 1 — Inspect HTTPS with curl</h2>
+<p>Run:</p>
+<pre><code class="language-bash">curl -v https://example.com
+</code></pre>
+<p>Look for:</p>
+<ul>
+<li>connection establishment</li>
+<li>TLS information</li>
+<li>certificate-related output</li>
+<li>HTTP request</li>
+<li>HTTP response</li>
+</ul>
+<p>Try to identify this sequence:</p>
+<pre><code class="language-text">Connection
+   ↓
+TLS
+   ↓
+HTTP
+</code></pre>
+<hr />
+<h2 id="lab-2-compare-http-and-https">Lab 2 — Compare HTTP and HTTPS</h2>
+<p>Run:</p>
+<pre><code class="language-bash">curl -v http://example.com
+</code></pre>
+<p>Then:</p>
+<pre><code class="language-bash">curl -v https://example.com
+</code></pre>
+<p>Observe that HTTPS introduces TLS negotiation before HTTP communication.</p>
+<hr />
+<h2 id="lab-3-browser-devtools">Lab 3 — Browser DevTools</h2>
+<p>Open:</p>
+<pre><code class="language-text">https://example.com
+</code></pre>
+<p>In browser Developer Tools:</p>
+<pre><code class="language-text">Network
+   ↓
+Select Request
+   ↓
+Headers
+</code></pre>
+<p>Identify:</p>
+<ul>
+<li>Request URL</li>
+<li>HTTPS scheme</li>
+<li>status code</li>
+<li>request headers</li>
+<li>response headers</li>
+</ul>
+<p>The browser hides most TLS complexity from application code.</p>
+<hr />
+<h1 id="common-problems">Common Problems</h1>
+<p>HTTPS-related issues can include:</p>
+<pre><code class="language-text">Certificate expired
+Hostname mismatch
+Untrusted certificate chain
+TLS version mismatch
+Certificate configuration error
+Proxy/load-balancer TLS configuration issue
+</code></pre>
+<p>These will be easier to diagnose after understanding TLS and certificates.</p>
+<hr />
+<h1 id="common-misunderstandings">Common Misunderstandings</h1>
+<h2 id="https-is-not-a-new-http-method">HTTPS Is Not a New HTTP Method</h2>
+<p>HTTPS does not replace:</p>
+<pre><code class="language-text">GET
+POST
+PUT
+PATCH
+DELETE
+</code></pre>
+<p>Those remain HTTP concepts.</p>
+<p>HTTPS changes how HTTP data is securely transported.</p>
+<hr />
+<h2 id="https-does-not-encrypt-the-destination-ip">HTTPS Does Not Encrypt the Destination IP</h2>
+<p>TLS protects application data, but the networking layers still need information required to route traffic.</p>
+<p>Do not assume every piece of network metadata becomes invisible simply because HTTPS is used.</p>
+<hr />
+<h2 id="https-does-not-contain-business-logic">HTTPS Does Not Contain Business Logic</h2>
+<pre><code class="language-text">HTTPS
+→ secure communication
+
+Node / Express
+→ application logic
+</code></pre>
+<hr />
+<h1 id="security-considerations">Security Considerations</h1>
+<p>Use HTTPS whenever sensitive or authenticated web communication is involved.</p>
+<p>Important principles:</p>
+<ul>
+<li>do not send credentials through plain HTTP</li>
+<li>do not ignore certificate warnings</li>
+<li>protect private keys</li>
+<li>renew certificates before expiration</li>
+<li>use modern TLS configurations</li>
+<li>redirect HTTP traffic to HTTPS when appropriate</li>
+<li>secure cookies appropriately when using HTTPS</li>
+</ul>
+<p>Detailed application security will be covered separately.</p>
+<hr />
+<h1 id="performance-considerations">Performance Considerations</h1>
+<p>HTTPS adds cryptographic setup and processing.</p>
+<p>However, modern TLS is highly optimized.</p>
+<p>Performance is influenced by:</p>
+<ul>
+<li>TLS handshake latency</li>
+<li>connection reuse</li>
+<li>session resumption</li>
+<li>geographic latency</li>
+<li>certificate-chain size</li>
+<li>server cryptographic performance</li>
+</ul>
+<p>Do not avoid HTTPS for performance reasons.</p>
+<p>Security is mandatory for modern production web applications.</p>
+<hr />
+<h1 id="interview-questions">Interview Questions</h1>
+<p>Try answering without notes.</p>
+<ol>
+<li>What is HTTPS?</li>
+<li>HTTPS vs HTTP?</li>
+<li>Is HTTPS a completely different protocol from HTTP?</li>
+<li>Where does TLS sit in the networking stack?</li>
+<li>What does confidentiality mean?</li>
+<li>What does integrity mean?</li>
+<li>What does authentication mean?</li>
+<li>Why is HTTPS more secure than HTTP?</li>
+<li>What is the default HTTPS port?</li>
+<li>Does port 443 itself provide encryption?</li>
+<li>Does HTTPS guarantee that a website is trustworthy?</li>
+<li>Does HTTPS contain application business logic?</li>
+<li>What happens before the first HTTPS request is sent?</li>
+<li>Why is certificate validation important?</li>
+<li>What is the role of TLS in HTTPS?</li>
+</ol>
+<hr />
+<h1 id="quick-revision">Quick Revision</h1>
+<pre><code class="language-text">HTTPS
+│
+├── HTTP
+├── TLS
+│
+├── Confidentiality
+├── Integrity
+├── Authentication
+│
+└── Default Port
+    └── 443
+</code></pre>
+<p>Complete flow:</p>
+<pre><code class="language-text">DNS
+ ↓
+IP
+ ↓
+Port 443
+ ↓
+TCP
+ ↓
+TLS
+ ↓
+HTTP
+ ↓
+Application
+</code></pre>
+<hr />
+<h1 id="my-understanding">My Understanding</h1>
+<p>HTTPS is HTTP communication protected using TLS.</p>
+<p>HTTP still defines the request-response semantics, while TLS provides confidentiality, integrity, and authentication for the communication.</p>
+<p>Before an HTTPS request is exchanged, the client establishes a connection, performs a TLS handshake, validates the server certificate, and derives shared session keys.</p>
+<p>The resulting HTTP communication can then be protected while travelling between the client and server.</p>
+<hr />
+<h1 id="completion-checklist">Completion Checklist</h1>
+<ul>
+<li>[ ] Understand what HTTPS is</li>
+<li>[ ] Understand HTTP vs HTTPS</li>
+<li>[ ] Understand where TLS fits</li>
+<li>[ ] Understand confidentiality</li>
+<li>[ ] Understand integrity</li>
+<li>[ ] Understand authentication</li>
+<li>[ ] Know the default HTTPS port</li>
+<li>[ ] Understand the complete HTTPS request flow</li>
+<li>[ ] Run <code>curl -v</code> against an HTTPS site</li>
+<li>[ ] Compare HTTP and HTTPS</li>
+<li>[ ] Explain why HTTPS does not guarantee a website is trustworthy</li>
+<li>[ ] Answer interview questions without notes</li>
+</ul>
+<hr />
+<h1 id="references">References</h1>
+<h2 id="primary">Primary</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Glossary/HTTPS">MDN — HTTPS</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/Security/Transport_Layer_Security">MDN — Transport Layer Security</a></li>
+<li><a href="https://www.cloudflare.com/learning/ssl/what-is-https/">Cloudflare — What is HTTPS?</a></li>
+</ul>
+<hr />
+<h1 id="related-topics">Related Topics</h1>
+<ul>
+<li><a href="../http/">HTTP</a></li>
+<li><a href="../tls/">TLS</a></li>
+<li><a href="../certificates/">TLS Certificates</a></li>
+<li><a href="../tcp/">TCP</a></li>
+<li>SNI</li>
+<li>Authentication</li>
+<li>Cookies</li>
+<li>Reverse Proxy</li>
+<li>Load Balancer</li>
+</ul>
+<hr />
+<p><a href="../certificates/">← Previous: TLS Certificates</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>

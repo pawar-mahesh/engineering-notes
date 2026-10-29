@@ -1,0 +1,1625 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Practical, interconnected notes for engineering foundations.">
+      
+      
+      
+        <link rel="canonical" href="https://pawar-mahesh.github.io/engineering-notes/fundamentals/networking/ip-addresses-and-ports/">
+      
+      
+        <link rel="prev" href="../../..">
+      
+      
+        <link rel="next" href="../tcp/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>IP Addresses and Ports - Engineering Notes</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ip-addresses-and-ports" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Engineering Notes" class="md-header__button md-logo" aria-label="Engineering Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Engineering Notes
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IP Addresses and Ports
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Engineering Notes" class="md-nav__button md-logo" aria-label="Engineering Notes" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Engineering Notes
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP Addresses and Ports
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IP Addresses and Ports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is an IP Address?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-do-we-need-ip-addresses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Do We Need IP Addresses?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TCP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../udp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UDP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sockets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Network Sockets
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    DNS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TLS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../certificates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TLS Certificates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../https/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    HTTPS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Guides
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Guides
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../guides/notes-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notes Preparation Guide
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-an-ip-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is an IP Address?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-do-we-need-ip-addresses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Do We Need IP Addresses?
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ip-addresses-and-ports">IP Addresses and Ports</h1>
+<blockquote>
+<p>An IP address identifies a network endpoint, while a port identifies a particular service communicating through that endpoint.</p>
+</blockquote>
+<hr />
+<h2 id="what-is-an-ip-address">What Is an IP Address?</h2>
+<p>IP stands for <strong>Internet Protocol</strong>.</p>
+<p>An IP address is used to identify an endpoint on an IP network so network traffic can be routed toward the correct destination.</p>
+<p>Example:</p>
+<pre><code class="language-text">203.0.113.10
+</code></pre>
+<p>A simplified mental model:</p>
+<pre><code class="language-text">Domain Name
+    ↓
+DNS
+    ↓
+IP Address
+    ↓
+Network Destination
+</code></pre>
+<hr />
+<h2 id="why-do-we-need-ip-addresses">Why Do We Need IP Addresses?</h2>
+<p>A network needs a way to identify destinations.</p>
+<p>Suppose:</p>
+<pre><code class="language-text">Client
+    ↓
+Send data
+    ↓
+Which destination?
+</code></pre>
+<p>The IP address provides destination information used by the network layer.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">Source IP
+    ↓
+Network
+    ↓
+Destination IP
+</code></pre>
+<hr />
+<h1 id="ipv4">IPv4</h1>
+<p>IPv4 addresses are commonly represented using four decimal numbers.</p>
+<p>Example:</p>
+<pre><code class="language-text">192.168.1.10
+</code></pre>
+<p>Each section is called an octet.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">192 . 168 . 1 . 10
+</code></pre>
+<p>IPv4 provides a 32-bit address space.</p>
+<p>For Day 2, you do not need to study binary representation or subnet calculations deeply.</p>
+<hr />
+<h1 id="ipv6">IPv6</h1>
+<p>IPv6 was introduced partly because the available IPv4 address space is limited.</p>
+<p>Example:</p>
+<pre><code class="language-text">2001:db8::1
+</code></pre>
+<p>IPv6 provides a much larger address space.</p>
+<p>High-level comparison:</p>
+<table>
+<thead>
+<tr>
+<th>IPv4</th>
+<th>IPv6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>32-bit</td>
+<td>128-bit</td>
+</tr>
+<tr>
+<td>Dotted decimal</td>
+<td>Hexadecimal notation</td>
+</tr>
+<tr>
+<td>Smaller address space</td>
+<td>Extremely large address space</td>
+</tr>
+</tbody>
+</table>
+<p>For now, understand the purpose rather than memorizing IPv6 formatting rules.</p>
+<hr />
+<h1 id="public-ip-address">Public IP Address</h1>
+<p>A public IP address is globally routable on the public internet, subject to network and firewall configuration.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">Internet
+   ↓
+Public IP
+   ↓
+Server / Network
+</code></pre>
+<p>Example architecture:</p>
+<pre><code class="language-text">User
+  ↓
+Internet
+  ↓
+203.0.113.10
+  ↓
+Web Server
+</code></pre>
+<hr />
+<h1 id="private-ip-address">Private IP Address</h1>
+<p>Private IP addresses are intended for private networks and are not directly globally routed across the public internet.</p>
+<p>Common IPv4 private ranges include:</p>
+<pre><code class="language-text">10.0.0.0/8
+</code></pre>
+<pre><code class="language-text">172.16.0.0/12
+</code></pre>
+<pre><code class="language-text">192.168.0.0/16
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">192.168.1.20
+</code></pre>
+<p>may represent a laptop inside a home or office network.</p>
+<hr />
+<h2 id="public-vs-private-ip">Public vs Private IP</h2>
+<table>
+<thead>
+<tr>
+<th>Public IP</th>
+<th>Private IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Globally routable</td>
+<td>Used inside private networks</td>
+</tr>
+<tr>
+<td>Internet-facing use</td>
+<td>Internal communication</td>
+</tr>
+<tr>
+<td>Must be globally unique while routed</td>
+<td>May be reused across different private networks</td>
+</tr>
+<tr>
+<td>Common at network boundaries/services</td>
+<td>Common inside LANs, VPCs, containers</td>
+</tr>
+</tbody>
+</table>
+<p>This distinction becomes very important later for:</p>
+<ul>
+<li>AWS VPC</li>
+<li>subnets</li>
+<li>EC2</li>
+<li>load balancers</li>
+<li>Kubernetes</li>
+<li>Docker networking</li>
+</ul>
+<hr />
+<h1 id="localhost">Localhost</h1>
+<p><code>localhost</code> refers to the local computer.</p>
+<p>Common IPv4 loopback address:</p>
+<pre><code class="language-text">127.0.0.1
+</code></pre>
+<p>So:</p>
+<pre><code class="language-text">http://localhost:3000
+</code></pre>
+<p>means:</p>
+<blockquote>
+<p>Connect to a service running on my own machine on port 3000.</p>
+</blockquote>
+<p>Similarly:</p>
+<pre><code class="language-text">http://127.0.0.1:3000
+</code></pre>
+<p>typically refers to the same local machine.</p>
+<hr />
+<h2 id="loopback">Loopback</h2>
+<p>Loopback traffic does not need to leave the machine and travel across the external network.</p>
+<p>Conceptually:</p>
+<pre><code class="language-text">Application
+    ↓
+127.0.0.1
+    ↓
+Same Computer
+</code></pre>
+<p>This is extremely useful during local development.</p>
+<hr />
+<h1 id="what-is-a-port">What Is a Port?</h1>
+<p>A machine can run many network services at the same time.</p>
+<p>An IP address identifies the network endpoint.</p>
+<p>A port helps distinguish the service/process endpoint being addressed for a transport protocol.</p>
+<p>Useful mental model:</p>
+<pre><code class="language-text">IP Address
+    ↓
+Which machine / endpoint?
+
+Port
+    ↓
+Which network service?
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-text">192.168.1.20:3000
+</code></pre>
+<p>Here:</p>
+<pre><code class="language-text">192.168.1.20
+      ↓
+IP Address
+
+3000
+ ↓
+Port
+</code></pre>
+<hr />
+<h1 id="why-are-ports-needed">Why Are Ports Needed?</h1>
+<p>Imagine one server running:</p>
+<pre><code class="language-text">SSH
+HTTP Server
+HTTPS Server
+PostgreSQL
+Redis
+Node API
+</code></pre>
+<p>They can be differentiated using ports.</p>
+<p>Example:</p>
+<pre><code class="language-text">Server
+IP: 10.0.0.5
+│
+├── :22     → SSH
+├── :80     → HTTP
+├── :443    → HTTPS
+├── :3000   → Application
+├── :5432   → PostgreSQL
+└── :6379   → Redis
+</code></pre>
+<p>Without ports, the transport layer would have no standard way to distinguish multiple network services sharing an IP address.</p>
+<hr />
+<h1 id="common-ports">Common Ports</h1>
+<p>Know these common defaults:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Port</th>
+<th>Typical Service</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;"><code>22</code></td>
+<td>SSH</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>53</code></td>
+<td>DNS</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>80</code></td>
+<td>HTTP</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>443</code></td>
+<td>HTTPS</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>3000</code></td>
+<td>Common development server</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>5432</code></td>
+<td>PostgreSQL</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>6379</code></td>
+<td>Redis</td>
+</tr>
+<tr>
+<td style="text-align: right;"><code>27017</code></td>
+<td>MongoDB</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Important</strong></p>
+<p>These are common/default ports, not strict requirements in every environment.</p>
+<p>Many services can be configured to listen on different ports.</p>
+</blockquote>
+<hr />
+<h1 id="ip-port">IP + Port</h1>
+<p>An IP address and port commonly appear together:</p>
+<pre><code class="language-text">203.0.113.10:443
+</code></pre>
+<p>Conceptually:</p>
+<pre><code class="language-text">203.0.113.10
+      ↓
+Destination network endpoint
+
+443
+ ↓
+HTTPS service
+</code></pre>
+<p>Another example:</p>
+<pre><code class="language-text">localhost:3000
+</code></pre>
+<p>means:</p>
+<pre><code class="language-text">localhost
+   ↓
+My computer
+
+3000
+ ↓
+Service listening on port 3000
+</code></pre>
+<hr />
+<h1 id="why-urls-often-do-not-show-ports">Why URLs Often Do Not Show Ports</h1>
+<p>When a URL uses a protocol with a default port, the port can usually be omitted.</p>
+<p>Example:</p>
+<pre><code class="language-text">http://example.com
+</code></pre>
+<p>normally implies:</p>
+<pre><code class="language-text">port 80
+</code></pre>
+<p>And:</p>
+<pre><code class="language-text">https://example.com
+</code></pre>
+<p>normally implies:</p>
+<pre><code class="language-text">port 443
+</code></pre>
+<p>Therefore:</p>
+<pre><code class="language-text">https://example.com
+</code></pre>
+<p>and conceptually:</p>
+<pre><code class="language-text">https://example.com:443
+</code></pre>
+<p>normally refer to the same default HTTPS port.</p>
+<hr />
+<h1 id="development-example">Development Example</h1>
+<p>Suppose locally you run:</p>
+<pre><code class="language-text">React
+localhost:5173
+</code></pre>
+<p>and:</p>
+<pre><code class="language-text">Node API
+localhost:3000
+</code></pre>
+<p>Both applications run on:</p>
+<pre><code class="language-text">same machine
+</code></pre>
+<p>but use:</p>
+<pre><code class="language-text">different ports
+</code></pre>
+<p>Conceptually:</p>
+<pre><code class="language-text">My Laptop
+IP: localhost
+
+├── :5173 → React
+└── :3000 → Node API
+</code></pre>
+<p>This is why the browser can distinguish between the frontend and backend.</p>
+<hr />
+<h1 id="dns-ip-port-http">DNS + IP + Port + HTTP</h1>
+<p>Now combine Day 1 and Day 2.</p>
+<p>Suppose the browser requests:</p>
+<pre><code class="language-text">https://api.example.com/users
+</code></pre>
+<p>The simplified flow is:</p>
+<pre><code class="language-text">Browser
+   ↓
+api.example.com
+   ↓
+DNS Lookup
+   ↓
+203.0.113.10
+   ↓
+Port 443
+   ↓
+Server
+   ↓
+HTTP Request
+   ↓
+GET /users
+</code></pre>
+<p>The roles are different:</p>
+<pre><code class="language-text">DNS
+→ Where is the hostname?
+
+IP
+→ Which network destination?
+
+Port
+→ Which service endpoint?
+
+HTTP
+→ What application request/response message is being exchanged?
+</code></pre>
+<p>This distinction should become automatic.</p>
+<hr />
+<h1 id="mern-mental-model">MERN Mental Model</h1>
+<p>Suppose React calls:</p>
+<pre><code class="language-javascript">fetch(&quot;https://api.myapp.com/users&quot;);
+</code></pre>
+<p>Conceptually:</p>
+<pre><code class="language-text">React
+   ↓
+api.myapp.com
+   ↓
+DNS
+   ↓
+IP Address
+   ↓
+Port 443
+   ↓
+Node / Express
+   ↓
+Application Logic
+   ↓
+MongoDB
+</code></pre>
+<p>Day 1 explained the HTTP layer.</p>
+<p>Day 2 explains how the client locates and reaches the service.</p>
+<hr />
+<h1 id="can-multiple-applications-use-the-same-port">Can Multiple Applications Use the Same Port?</h1>
+<p>Normally, two processes cannot bind to the exact same combination of:</p>
+<pre><code class="language-text">IP address
++
+port
++
+transport protocol
+</code></pre>
+<p>at the same time without special operating-system/socket behavior.</p>
+<p>For example:</p>
+<pre><code class="language-text">Process A
+localhost:3000
+</code></pre>
+<p>If another application tries to use:</p>
+<pre><code class="language-text">localhost:3000
+</code></pre>
+<p>you may see an error such as:</p>
+<pre><code class="language-text">Address already in use
+</code></pre>
+<p>This is a common development issue.</p>
+<hr />
+<h1 id="practical-labs">Practical Labs</h1>
+<h2 id="lab-1-start-a-local-server">Lab 1 — Start a Local Server</h2>
+<p>Run:</p>
+<pre><code class="language-bash">python3 -m http.server 8000
+</code></pre>
+<p>This starts a local HTTP server on:</p>
+<pre><code class="language-text">localhost:8000
+</code></pre>
+<p>Open:</p>
+<pre><code class="language-text">http://localhost:8000
+</code></pre>
+<p>or:</p>
+<pre><code class="language-bash">curl http://localhost:8000
+</code></pre>
+<hr />
+<h2 id="lab-2-identify-the-listening-process">Lab 2 — Identify the Listening Process</h2>
+<p>Run:</p>
+<pre><code class="language-bash">lsof -i :8000
+</code></pre>
+<p>You should see the process listening on port <code>8000</code>.</p>
+<p>This demonstrates:</p>
+<pre><code class="language-text">Port
+ ↓
+Listening Process
+</code></pre>
+<hr />
+<h2 id="lab-3-try-the-wrong-port">Lab 3 — Try the Wrong Port</h2>
+<p>While the server is running on:</p>
+<pre><code class="language-text">8000
+</code></pre>
+<p>try:</p>
+<pre><code class="language-bash">curl http://localhost:8001
+</code></pre>
+<p>If no application is listening on <code>8001</code>, the connection should fail.</p>
+<p>This demonstrates that:</p>
+<pre><code class="language-text">Correct machine
++
+Wrong port
+=
+Wrong service endpoint
+</code></pre>
+<hr />
+<h2 id="lab-4-run-two-services">Lab 4 — Run Two Services</h2>
+<p>Start one service on:</p>
+<pre><code class="language-text">8000
+</code></pre>
+<p>and another on:</p>
+<pre><code class="language-text">8001
+</code></pre>
+<p>For example, in two terminals:</p>
+<pre><code class="language-bash">python3 -m http.server 8000
+</code></pre>
+<pre><code class="language-bash">python3 -m http.server 8001
+</code></pre>
+<p>Now:</p>
+<pre><code class="language-text">localhost:8000
+</code></pre>
+<p>and:</p>
+<pre><code class="language-text">localhost:8001
+</code></pre>
+<p>represent different server processes/services.</p>
+<hr />
+<h1 id="debugging-commands">Debugging Commands</h1>
+<h2 id="find-a-process-using-a-port">Find a Process Using a Port</h2>
+<pre><code class="language-bash">lsof -i :3000
+</code></pre>
+<p>Useful when you see:</p>
+<pre><code class="language-text">Address already in use
+</code></pre>
+<hr />
+<h2 id="show-network-connections">Show Network Connections</h2>
+<p>On macOS/Linux:</p>
+<pre><code class="language-bash">lsof -i -P -n
+</code></pre>
+<p>Depending on the operating system, <code>ss</code> or <code>netstat</code> may also be useful.</p>
+<hr />
+<h2 id="test-a-local-service">Test a Local Service</h2>
+<pre><code class="language-bash">curl http://localhost:3000
+</code></pre>
+<p>This helps answer:</p>
+<blockquote>
+<p>Is something actually listening and responding on this port?</p>
+</blockquote>
+<hr />
+<h1 id="common-problems">Common Problems</h1>
+<h2 id="connection-refused">Connection Refused</h2>
+<p>Possible reasons:</p>
+<pre><code class="language-text">No service running
+Wrong port
+Service crashed
+Wrong IP
+Service bound only to another interface
+Firewall/network rule
+</code></pre>
+<p>Debug:</p>
+<pre><code class="language-text">Is process running?
+       ↓
+Is correct port listening?
+       ↓
+Is address correct?
+       ↓
+Can curl reach it?
+</code></pre>
+<hr />
+<h2 id="port-already-in-use">Port Already in Use</h2>
+<p>Example:</p>
+<pre><code class="language-text">EADDRINUSE
+</code></pre>
+<p>Possible cause:</p>
+<pre><code class="language-text">Another process already owns the port.
+</code></pre>
+<p>Check:</p>
+<pre><code class="language-bash">lsof -i :3000
+</code></pre>
+<p>Then identify the process before deciding whether it should be stopped.</p>
+<hr />
+<h1 id="common-misunderstandings">Common Misunderstandings</h1>
+<h2 id="ip-address-and-port-are-not-the-same">IP Address and Port Are Not the Same</h2>
+<pre><code class="language-text">IP
+→ destination endpoint/address
+
+Port
+→ transport service endpoint
+</code></pre>
+<hr />
+<h2 id="localhost-does-not-mean-internet">localhost Does Not Mean Internet</h2>
+<pre><code class="language-text">localhost
+</code></pre>
+<p>means the current computer.</p>
+<p>It does not mean:</p>
+<pre><code class="language-text">development server somewhere on the internet
+</code></pre>
+<hr />
+<h2 id="a-port-does-not-identify-a-global-application">A Port Does Not Identify a Global Application</h2>
+<p>Port <code>3000</code> on your laptop and port <code>3000</code> on another server are unrelated.</p>
+<p>For example:</p>
+<pre><code class="language-text">192.168.1.10:3000
+</code></pre>
+<p>and:</p>
+<pre><code class="language-text">192.168.1.11:3000
+</code></pre>
+<p>represent different endpoints.</p>
+<hr />
+<h1 id="security-considerations">Security Considerations</h1>
+<p>Network services should not expose unnecessary ports.</p>
+<p>For example:</p>
+<pre><code class="language-text">Public internet
+     ↓
+Database port exposed
+</code></pre>
+<p>can create significant security risk.</p>
+<p>Good infrastructure commonly limits access using:</p>
+<ul>
+<li>firewalls</li>
+<li>security groups</li>
+<li>private networks</li>
+<li>authentication</li>
+<li>least-privilege network rules</li>
+</ul>
+<p>Later AWS networking topics will build heavily on this.</p>
+<hr />
+<h1 id="performance-considerations">Performance Considerations</h1>
+<p>IP addressing and ports themselves are not usually the main application performance bottleneck.</p>
+<p>However network architecture can affect:</p>
+<ul>
+<li>latency</li>
+<li>routing</li>
+<li>number of network hops</li>
+<li>service reachability</li>
+<li>connection establishment</li>
+<li>cross-region communication</li>
+</ul>
+<p>These topics will be explored later.</p>
+<hr />
+<h1 id="interview-questions">Interview Questions</h1>
+<p>Try answering these without reading your notes.</p>
+<ol>
+<li>What is an IP address?</li>
+<li>Why do networks need IP addresses?</li>
+<li>IPv4 vs IPv6?</li>
+<li>Public IP vs private IP?</li>
+<li>What are the private IPv4 ranges?</li>
+<li>What is localhost?</li>
+<li>What does <code>127.0.0.1</code> mean?</li>
+<li>What is loopback?</li>
+<li>What is a port?</li>
+<li>Why are ports needed?</li>
+<li>IP address vs port?</li>
+<li>What does <code>localhost:3000</code> mean?</li>
+<li>Why is HTTPS normally port 443?</li>
+<li>Why does HTTP normally use port 80?</li>
+<li>Can one machine run multiple network services?</li>
+<li>Can two applications use the same port on the same IP normally?</li>
+<li>Why might you receive <code>address already in use</code>?</li>
+<li>How would you check which process uses port 3000?</li>
+<li>Why should database ports usually not be public?</li>
+<li>Explain DNS → IP → port → HTTP.</li>
+</ol>
+<hr />
+<h1 id="quick-revision">Quick Revision</h1>
+<pre><code class="language-text">Network Communication
+│
+├── DNS
+│   └── Name → IP
+│
+├── IP Address
+│   └── Network Destination
+│
+├── Port
+│   └── Service Endpoint
+│
+└── HTTP
+    └── Application Request / Response
+</code></pre>
+<p>And:</p>
+<pre><code class="language-text">localhost:3000
+│         │
+│         └── Port
+│
+└── Local Computer
+</code></pre>
+<hr />
+<h1 id="my-understanding">My Understanding</h1>
+<p>An IP address identifies a destination on an IP network, while a port helps identify a specific service endpoint used by a transport protocol.</p>
+<p>A single machine can run many network applications because different services can listen on different ports.</p>
+<p><code>localhost</code> refers to the current machine, while public and private IP addresses serve different networking scopes.</p>
+<p>When a browser communicates with an application, DNS can first resolve the hostname to an IP address, the connection targets a service port, and HTTP carries the application request and response.</p>
+<hr />
+<h1 id="completion-checklist">Completion Checklist</h1>
+<ul>
+<li>[ ] Understand what an IP address is</li>
+<li>[ ] Understand IPv4 vs IPv6 at a high level</li>
+<li>[ ] Understand public vs private IP</li>
+<li>[ ] Know the private IPv4 ranges</li>
+<li>[ ] Understand localhost</li>
+<li>[ ] Understand loopback</li>
+<li>[ ] Understand what a port is</li>
+<li>[ ] Understand why ports exist</li>
+<li>[ ] Know common ports</li>
+<li>[ ] Understand default HTTP and HTTPS ports</li>
+<li>[ ] Understand IP + port</li>
+<li>[ ] Run a local server on port 8000</li>
+<li>[ ] Use <code>curl</code> to access it</li>
+<li>[ ] Use <code>lsof</code> to identify the process</li>
+<li>[ ] Try accessing an unused port</li>
+<li>[ ] Explain DNS → IP → port → HTTP without notes</li>
+</ul>
+<hr />
+<h1 id="references">References</h1>
+<h2 id="primary">Primary</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Web_standards/How_the_web_works">MDN — How the Web Works</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_URL">MDN — What Is a URL?</a></li>
+<li><a href="https://www.iana.org/assignments/service-names-port-numbers/service-names-port-numbers.xhtml">IANA — Service Name and Port Number Registry</a></li>
+</ul>
+<h2 id="supporting">Supporting</h2>
+<ul>
+<li><a href="https://www.cloudflare.com/learning/dns/glossary/what-is-my-ip-address/">Cloudflare — What Is My IP Address?</a></li>
+</ul>
+<hr />
+<h1 id="related-topics">Related Topics</h1>
+<ul>
+<li><a href="../dns/">DNS</a></li>
+<li><a href="../tcp/">TCP</a></li>
+<li><a href="../udp/">UDP</a></li>
+<li><a href="../sockets/">Sockets</a></li>
+<li>NAT</li>
+<li>Firewalls</li>
+<li><a href="../http/">HTTP</a></li>
+<li>TLS</li>
+<li>AWS VPC</li>
+<li>Docker Networking</li>
+<li>Kubernetes Networking</li>
+</ul>
+<hr />
+<p><a href="../tcp/">Next: TCP →</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.sections", "navigation.top", "search.highlight", "search.suggest", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
