@@ -17,20 +17,9 @@ theme:
     - search.suggest
     - content.code.copy
   palette:
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: white
-      accent: blue
-      toggle:
-        icon: material/brightness-6
-        name: Switch to dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: black
-      accent: blue
-      toggle:
-        icon: material/brightness-6
-        name: Switch to light mode
+    scheme: slate
+    primary: black
+    accent: blue
 
 plugins:
   - search
