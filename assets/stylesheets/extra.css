@@ -181,9 +181,63 @@ body {
   outline-offset: 2px;
 }
 
+.md-footer {
+  background-color: var(--md-default-bg-color);
+  border-top: 1px solid var(--md-default-fg-color--lighter);
+  color: var(--md-default-fg-color);
+}
+
+.md-footer__inner {
+  min-height: 0;
+  padding: 0.45rem 0.8rem;
+}
+
+.md-footer__link {
+  color: var(--md-default-fg-color);
+  margin: 0;
+  padding: 0.25rem 0;
+}
+
+.md-footer__link:focus,
+.md-footer__link:hover {
+  color: var(--md-typeset-a-color);
+  opacity: 1;
+}
+
+.md-footer__title {
+  font-size: 0.72rem;
+  line-height: 1.25;
+  padding: 0 0.35rem;
+}
+
+.md-footer__direction {
+  font-size: 0.58rem;
+  margin-bottom: 0.1rem;
+  opacity: 0.65;
+}
+
+.md-footer__button {
+  margin: 0;
+  padding: 0.25rem;
+}
+
 .md-footer-meta {
   background-color: var(--md-default-bg-color);
   border-top: 1px solid var(--md-default-fg-color--lighter);
+}
+
+.md-footer-meta__inner {
+  justify-content: center;
+  min-height: 0;
+  padding: 0.45rem 0.8rem;
+}
+
+.md-copyright {
+  font-size: 0.62rem;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
 }
 
 @media screen and (min-width: 76.25em) {
