@@ -168,6 +168,12 @@ body {
   border-top: 1px solid var(--md-default-fg-color--lighter);
 }
 
+@media screen and (min-width: 76.25em) {
+  .md-grid {
+    max-width: 76rem;
+  }
+}
+
 @media screen and (max-width: 44.9375em) {
   .md-main__inner {
     margin-top: 0.4rem;
