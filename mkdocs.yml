@@ -2,7 +2,7 @@ site_name: Engineering Notes
 site_description: Practical, interconnected notes for engineering foundations.
 site_url: https://pawar-mahesh.github.io/engineering-notes/
 docs_dir: .mkdocs-docs
-copyright: Copyright &copy; <span data-current-year>2026</span> Mahesh Pawar
+copyright: Copyright &copy; <span data-current-year></span> Mahesh Pawar
 
 theme:
   name: material
