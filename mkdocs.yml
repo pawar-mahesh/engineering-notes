@@ -10,17 +10,12 @@ theme:
   font: false
   features:
     - navigation.sections
-    - navigation.instant
-    - navigation.instant.prefetch
-    - navigation.tracking
     - navigation.top
     - navigation.footer
     - toc.follow
     - search.highlight
     - search.suggest
     - content.code.copy
-    - content.code.annotate
-    - content.tooltips
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
