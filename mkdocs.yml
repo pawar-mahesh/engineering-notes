@@ -77,5 +77,3 @@ nav:
           - TLS: fundamentals/networking/tls.md
           - TLS Certificates: fundamentals/networking/certificates.md
           - HTTPS: fundamentals/networking/https.md
-  - Guides:
-      - Notes Preparation Guide: guides/notes-guide.md
