@@ -3,6 +3,16 @@
   --md-code-font: "SF Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
+html {
+  scroll-padding-top: 4rem;
+}
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
 [data-md-color-scheme="default"] {
   --md-default-bg-color: #fbfbfd;
   --md-default-fg-color: #1d1d1f;
@@ -42,6 +52,13 @@
   letter-spacing: -0.01em;
 }
 
+.md-header__button,
+.md-header__option,
+.md-search__icon {
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+}
+
 .md-content h1 {
   font-size: clamp(2rem, 4vw, 2.75rem);
   font-weight: 700;
@@ -53,7 +70,14 @@
   font-size: clamp(1.45rem, 2vw, 1.85rem);
   font-weight: 650;
   letter-spacing: -0.025em;
-  margin-top: 2.25em;
+  margin-top: 1.75em;
+}
+
+.md-typeset h3 {
+  font-size: 1.2rem;
+  font-weight: 650;
+  letter-spacing: -0.015em;
+  margin-top: 1.55em;
 }
 
 .md-typeset .admonition,
@@ -64,8 +88,21 @@
 
 .md-typeset {
   color: var(--md-default-fg-color);
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: clamp(1rem, 0.98rem + 0.15vw, 1.0625rem);
+  line-height: 1.7;
+}
+
+.md-typeset p {
+  margin: 0.8em 0;
+}
+
+.md-typeset hr {
+  margin: 1.35rem 0;
+}
+
+.md-typeset ul,
+.md-typeset ol {
+  margin: 0.7em 0;
 }
 
 .md-typeset a {
@@ -82,6 +119,11 @@
   border-radius: 0.75rem;
 }
 
+.md-typeset blockquote {
+  border-left-color: var(--md-accent-fg-color);
+  color: var(--md-default-fg-color--light);
+}
+
 .md-typeset table:not([class]) {
   border: 1px solid var(--md-default-fg-color--lighter);
   border-radius: 0.75rem;
@@ -91,6 +133,10 @@
 
 .md-search__form {
   border-radius: 0.65rem;
+}
+
+.md-search__input:focus {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--md-accent-fg-color) 28%, transparent);
 }
 
 .md-nav__link--active,
@@ -121,6 +167,12 @@
   }
 }
 
+@media screen and (min-width: 100em) {
+  .md-grid {
+    max-width: 96rem;
+  }
+}
+
 @media screen and (max-width: 44.9375em) {
   .md-main__inner {
     margin-top: 0.6rem;
@@ -131,6 +183,17 @@
   }
 
   .md-typeset {
-    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
