@@ -171,13 +171,15 @@ body {
 
 .md-footer__inner {
   min-height: 0;
-  padding: 0.45rem 0.8rem;
+  padding: 0.25rem 0.8rem;
 }
 
 .md-footer__link {
+  align-items: center;
   color: var(--md-default-fg-color);
   margin: 0;
-  padding: 0.25rem 0;
+  min-width: 0;
+  padding: 0.1rem 0;
 }
 
 .md-footer__link:focus,
@@ -187,20 +189,29 @@ body {
 }
 
 .md-footer__title {
-  font-size: 0.72rem;
-  line-height: 1.25;
-  padding: 0 0.35rem;
+  font-size: 0.68rem;
+  line-height: 1.2;
+  min-width: 0;
+  padding: 0 0.25rem;
 }
 
 .md-footer__direction {
-  font-size: 0.58rem;
-  margin-bottom: 0.1rem;
+  display: inline;
+  font-size: 0.55rem;
+  margin-right: 0.2rem;
   opacity: 0.65;
+}
+
+.md-footer__title .md-ellipsis {
+  display: inline;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: normal;
 }
 
 .md-footer__button {
   margin: 0;
-  padding: 0.25rem;
+  padding: 0.15rem;
 }
 
 .md-footer-meta {
